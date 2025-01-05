@@ -5,12 +5,10 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { SiSpacex } from "react-icons/si";
-import { FiArrowRight, FiMapPin } from "react-icons/fi";
+import { IoMdDownload } from "react-icons/io";
 import { useRef } from "react";
-import Image from "next/image";
 
-export const SmoothScrollHero = () => {
+export const SkillsPreview = () => {
   return (
     <div className="bg-zinc-950">
       <ReactLenis
@@ -24,7 +22,7 @@ export const SmoothScrollHero = () => {
       >
         <Nav />
         <Hero />
-        <Schedule />
+        <Skills />
       </ReactLenis>
     </div>
   );
@@ -33,16 +31,21 @@ export const SmoothScrollHero = () => {
 const Nav = () => {
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
-      <SiSpacex className="text-3xl mix-blend-difference" />
+      {/* <SiSpacex className="text-3xl mix-blend-difference" /> */}
+      <motion.img
+        src={"https://logosandtypes.com/wp-content/uploads/2020/11/jacobs.svg"}
+        alt={"J logo"}
+        className="min-w-10 max-w-min h-auto mix-blend-color invert"
+      />
       <button
         onClick={() => {
           document.getElementById("launch-schedule")?.scrollIntoView({
             behavior: "smooth",
           });
         }}
-        className="flex items-center gap-1 text-xs text-zinc-400"
+        className="flex items-center gap-1 text-s text-zinc-400"
       >
-        LAUNCH SCHEDULE <FiArrowRight />
+        Resume <IoMdDownload />
       </button>
     </nav>
   );
@@ -92,7 +95,7 @@ const CenterImage = () => {
         backgroundSize,
         opacity,
         backgroundImage:
-          "url(https://images.unsplash.com/photo-1460186136353-977e9d6085a1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+          "url(https://images.ctfassets.net/tfvkuuj8nae0/3TChTMPUFJrnH1681hNIGw/a14ed2d22a2d1ebc7cdd0192f4d306ce/rainglow-vs-code-theme.png)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -174,7 +177,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
   );
 };
 
-const Schedule = () => {
+const Skills = () => {
   return (
     <section
       id="about-me"
@@ -186,7 +189,7 @@ const Schedule = () => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-black uppercase text-zinc-50"
       >
-        About Me
+        Skills
       </motion.h1>
       
     </section>

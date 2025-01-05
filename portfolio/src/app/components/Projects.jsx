@@ -2,9 +2,17 @@ import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
-export const HoverImageLinks = () => {
+export const Projects = () => {
   return (
-    <section className="bg-neutral-950 p-4 md:p-8">
+    <section className="mx-auto max-w-5xl px-4 py-48 text-white">
+      <motion.h1
+        initial={{ y: 48, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
+        className="mb-20 text-4xl font-black uppercase text-zinc-50"
+      >
+        Projects
+      </motion.h1>
       <div className="mx-auto max-w-5xl">
         <Link
           heading="Plant Pulse"
@@ -14,7 +22,7 @@ export const HoverImageLinks = () => {
         />
         <Link
           heading="Logic Gate Circuit Solver"
-          subheading=""
+          subheading="Personal Web Development Project using React, ReactFlow, C, etc. "
           imgSrc="/imgs/random/6.jpg"
           href="#"
         />
@@ -78,7 +86,11 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
       whileHover="whileHover"
       className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
     >
-      <div>
+      <motion.div
+        initial={{ y: 48, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
+      >
         <motion.span
           variants={{
             initial: { x: 0 },
@@ -108,7 +120,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
         <span className="relative z-10 mt-2 block text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50">
           {subheading}
         </span>
-      </div>
+      </motion.div>
 
       <motion.img
         style={{
