@@ -8,7 +8,7 @@ export const NavBar = () => {
         <motion.img
           src={"https://logosandtypes.com/wp-content/uploads/2020/11/jacobs.svg"}
           alt={"J logo"}
-          className="min-w-10 max-w-min h-auto mix-blend-color invert"
+          className="min-w-10 max-w-[100] h-auto mix-blend-color invert"
         />
         <button
           onClick={() => {
