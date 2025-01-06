@@ -18,19 +18,19 @@ export const Projects = () => {
         <Link
           heading="Plant Pulse"
           subheading="A Full Stack IoT Project using NextJS, React, Python, etc."
-          imgSrc="public/PlantPulse/PlantPulsePreview.png"
+          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png"
           href="https://shockz132.github.io/Portfolio/projects/PlantPulse"
         />
         <Link
           heading="Logic Gate Circuit Solver"
           subheading="Personal Web Development Project using React, ReactFlow, C, etc. "
-          imgSrc="public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
+          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
           href="https://shockz132.github.io/Portfolio/projects/LogicGateCircuitSolver"
         />
         <Link
           heading="Wings Of Sustainability"
           subheading="A backend IoT Project using M5Stack and Python"
-          imgSrc="public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
+          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
           href="https://shockz132.github.io/Portfolio/projects/WingsOfSustainability"
         />
         <Link
