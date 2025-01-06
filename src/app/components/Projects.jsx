@@ -17,19 +17,19 @@ export const Projects = () => {
         <Link
           heading="Plant Pulse"
           subheading="A Full Stack IoT Project using NextJS, React, Python, etc."
-          imgSrc="https://en.wikipedia.org/wiki/PNG#/media/File:PNG_transparency_demonstration_1.png"
-          href="#"
+          imgSrc="/PlantPulse/PlantPulsePreview.png"
+          href="https://shockz132.github.io/Portfolio/projects/PlantPulse"
         />
         <Link
           heading="Logic Gate Circuit Solver"
           subheading="Personal Web Development Project using React, ReactFlow, C, etc. "
-          imgSrc="/imgs/random/6.jpg"
+          imgSrc="/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
           href="#"
         />
         <Link
           heading="WingsOfSustainability"
           subheading="A backend IoT Project using M5Stack and Python"
-          imgSrc="/imgs/random/4.jpg"
+          imgSrc="/WingsOfSustainability/WingsOfSustainabilityPreview.png"
           href="#"
         />
         <Link
@@ -98,8 +98,8 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
           }}
           transition={{
             type: "spring",
-            staggerChildren: 0.075,
-            delayChildren: 0.25,
+            staggerChildren: 0.0375,
+            delayChildren: 0.0125,
           }}
           className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
         >
@@ -135,7 +135,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
         }}
         transition={{ type: "spring" }}
         src={imgSrc}
-        className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
+        className="absolute z-50 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
         alt={`Image representing a link for ${heading}`}
       />
 
