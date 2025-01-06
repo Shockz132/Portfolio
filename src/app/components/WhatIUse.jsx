@@ -12,7 +12,7 @@ export const WhatIUse = () => {
                 What I Use
             </motion.h1>
             <div className="relative">
-                <div className="absolute top-[10%] left-[-8%] blur-sm z-[-1]">
+                <div className="absolute top-[10%] left-[-8%] blur-[6px] z-[-1]">
                 <motion.img
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -34,6 +34,7 @@ export const WhatIUse = () => {
                             <ListItem listItemText={"HTML"} />
                             <ListItem listItemText={"CSS"} />
                             <ListItem listItemText={"Tailwind CSS"} />
+                            <ListItem listItemText={"Javascript"} />
                             <ListItem listItemText={"React JS"} />
                             <ListItem listItemText={"Typescript"} />
                             <ListItem listItemText={"React TS"} />
