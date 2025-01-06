@@ -17,7 +17,7 @@ export const Projects = () => {
         <Link
           heading="Plant Pulse"
           subheading="A Full Stack IoT Project using NextJS, React, Python, etc."
-          imgSrc="/imgs/random/11.jpg"
+          imgSrc="https://en.wikipedia.org/wiki/PNG#/media/File:PNG_transparency_demonstration_1.png"
           href="#"
         />
         <Link

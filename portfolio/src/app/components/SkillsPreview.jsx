@@ -5,12 +5,14 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { TextEffect } from "@/components/core/text-effect";
 import { IoMdDownload } from "react-icons/io";
-import { useRef } from "react";
+import { PanelsTopLeft, CodeXml, BrainCircuit } from "lucide-react";
+import { useRef, useEffect } from "react";
 
 export const SkillsPreview = () => {
   return (
-    <div className="bg-zinc-950">
+    <>
       <ReactLenis
         root
         options={{
@@ -20,38 +22,14 @@ export const SkillsPreview = () => {
           //   syncTouch: true,
         }}
       >
-        <Nav />
         <Hero />
-        <Skills />
+        <Skills className="bg-transparent"/>
       </ReactLenis>
-    </div>
+    </>
   );
 };
 
-const Nav = () => {
-  return (
-    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
-      {/* <SiSpacex className="text-3xl mix-blend-difference" /> */}
-      <motion.img
-        src={"https://logosandtypes.com/wp-content/uploads/2020/11/jacobs.svg"}
-        alt={"J logo"}
-        className="min-w-10 max-w-min h-auto mix-blend-color invert"
-      />
-      <button
-        onClick={() => {
-          document.getElementById("launch-schedule")?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }}
-        className="flex items-center gap-1 text-s text-zinc-400"
-      >
-        Resume <IoMdDownload />
-      </button>
-    </nav>
-  );
-};
-
-const SECTION_HEIGHT = 1500;
+const SECTION_HEIGHT = 1900;
 
 const Hero = () => {
   return (
@@ -78,12 +56,12 @@ const CenterImage = () => {
 
   const backgroundSize = useTransform(
     scrollY,
-    [0, SECTION_HEIGHT + 500],
+    [0, SECTION_HEIGHT + 1000],
     ["170%", "100%"]
   );
   const opacity = useTransform(
     scrollY,
-    [SECTION_HEIGHT, SECTION_HEIGHT + 500],
+    [SECTION_HEIGHT, SECTION_HEIGHT + 1000],
     [1, 0]
   );
 
@@ -192,24 +170,53 @@ const Skills = () => {
         Skills
       </motion.h1>
       
+      <div className="flex-row justify-evenly">
+        <SkillItem
+          title="Web Development"
+          skillIcon={<PanelsTopLeft size="80%"/>}
+          description="Proficient in a wide variety of Frontend Programming Languages. Experienced in creating dynamic, user-friendly web applications using modern frameworks and libraries."
+          yValue="250"
+        />
+        <SkillItem 
+          title="Backend Development" 
+          skillIcon={<CodeXml size="80%"/>}
+          description="Proficient in a wide variety of Backend Programming Languages. Experienced in developing backend functionality, integrating APIs, and managing databases. Helping you create scalable server-side solutions that work seamlessly with frontend components."
+          yValue="750"
+        />
+        <SkillItem 
+          title="Automation & AI Tools" 
+          skillIcon={<BrainCircuit size="80%"/>}
+          description="Proficient in Python, spaCy, Git, Github. Experienced in using Python for automating workflows and scripting tasks. Familiar with spaCy for AI-related projects, and proficient with Git and Github for version control and collaborative development."
+          yValue="1000"
+        />
+      </div>
+
     </section>
   );
 };
 
-const ScheduleItem = () => {
+const SkillItem = ({ title, skillIcon, description, yValue}) => {
+  useEffect(() => {})
+
   return (
     <motion.div
-      initial={{ y: 48, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="mb-9 flex items-center justify-between border-b border-zinc-800 px-3 pb-9"
-    >
-      <div>
-        <p className="mb-1.5 text-xl text-zinc-50">{title}</p>
-        <p className="text-sm uppercase text-zinc-500">{date}</p>
-      </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-500">
-        <p>{location}</p>
+        initial={{ y: {yValue}, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
+        className="mb-48 px-3 pb-9 flex-1"
+      >
+        <div className="text-zinc-50 flex">
+        <div className="flex-5">
+          {skillIcon}
+        </div>
+        <div className="flex-1">
+          <p className="mb-9 text-4xl">
+            {title}
+          </p>
+          <p per='word' preset='blur' delay={0.75}className="text-lg">
+            {description}
+          </p>
+        </div>
       </div>
     </motion.div>
   );
