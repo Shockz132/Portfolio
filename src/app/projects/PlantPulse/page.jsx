@@ -1,7 +1,7 @@
 'use client'
 
 // import Image from "next/image";
-import { NavBar } from "./components/NavBar.jsx";
+import { NavBar } from "@/app/components/NavBar.jsx";
 
 export default function Home() {
   return (

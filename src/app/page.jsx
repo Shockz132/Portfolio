@@ -1,12 +1,12 @@
 'use client'
 
 // import Image from "next/image";
-import { NavBar } from "./components/NavBar";
-import { SkillsPreview } from "./components/SkillsPreview";
-import { AboutMe } from "./components/AboutMe";
-import { Projects } from "./components/Projects";
-import { WhatIUse } from "./components/WhatIUse";
-import { WorkExperience } from "./components/WorkExperience";
+import { NavBar } from "@/app/components/NavBar";
+import { SkillsPreview } from "@/app/components/SkillsPreview";
+import { AboutMe } from "@/app/components/AboutMe";
+import { Projects } from "@/app/components/Projects";
+import { WhatIUse } from "@/app/components/WhatIUse";
+import { WorkExperience } from "@/app/components/WorkExperience";
 
 export default function Home() {
   return (
