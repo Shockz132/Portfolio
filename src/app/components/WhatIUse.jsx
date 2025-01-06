@@ -70,7 +70,7 @@ export const WhatIUse = () => {
                             transition={{ ease: "easeInOut", duration: 0.75 }}
                             className="text-xl font-semibold list-disc pr-[220px] mb-9"
                         >
-                            <motion.div className="ml-[-20] text-3xl underline">Special</motion.div>
+                            <motion.div className="ml-[-20px] text-3xl underline">Special</motion.div>
                             <ListItem listItemText={"Googling"}/>
                         </motion.ul>
                     </div>
