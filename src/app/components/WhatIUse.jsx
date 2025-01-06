@@ -30,7 +30,7 @@ export const WhatIUse = () => {
                             transition={{ ease: "easeInOut", duration: 0.75 }}
                             className="text-xl font-semibold list-disc mb-9"
                         >
-                            <motion.div className="ml-[-20] text-3xl underline">Web Development</motion.div>
+                            <motion.div className="ml-[-20px] text-3xl underline">Web Development</motion.div>
                             <ListItem listItemText={"HTML"} />
                             <ListItem listItemText={"CSS"} />
                             <ListItem listItemText={"Tailwind CSS"} />
@@ -44,7 +44,7 @@ export const WhatIUse = () => {
                             transition={{ ease: "easeInOut", duration: 0.75 }}
                             className="text-xl font-semibold list-disc mb-9"
                         >
-                            <motion.div className="ml-[-20] text-3xl underline">Backend Development</motion.div>
+                            <motion.div className="ml-[-20px] text-3xl underline">Backend Development</motion.div>
                             <ListItem listItemText={"Python"} />
                             <ListItem listItemText={"Javascript"} />
                             <ListItem listItemText={"C"} />
@@ -58,7 +58,7 @@ export const WhatIUse = () => {
                             transition={{ ease: "easeInOut", duration: 0.75 }}
                             className="text-xl font-semibold list-disc mb-9"
                         >
-                            <motion.div className="ml-[-20] text-3xl underline">Software Tools</motion.div>
+                            <motion.div className="ml-[-20px] text-3xl underline">Software Tools</motion.div>
                             <ListItem listItemText={"VSCode"}/>
                             <ListItem listItemText={"Eagle"} />
                             <ListItem listItemText={"Microsoft Office Suite"} />
@@ -68,7 +68,7 @@ export const WhatIUse = () => {
                             initial={{ y: 48, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ ease: "easeInOut", duration: 0.75 }}
-                            className="text-xl font-semibold list-disc pr-[220] mb-9"
+                            className="text-xl font-semibold list-disc pr-[220px] mb-9"
                         >
                             <motion.div className="ml-[-20] text-3xl underline">Special</motion.div>
                             <ListItem listItemText={"Googling"}/>
