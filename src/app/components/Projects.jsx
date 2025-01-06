@@ -1,6 +1,7 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import Image from "next/image";
 
 export const Projects = () => {
   return (
@@ -24,13 +25,13 @@ export const Projects = () => {
           heading="Logic Gate Circuit Solver"
           subheading="Personal Web Development Project using React, ReactFlow, C, etc. "
           imgSrc="/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
-          href="#"
+          href="https://shockz132.github.io/Portfolio/projects/LogicGateCircuitSolver"
         />
         <Link
-          heading="WingsOfSustainability"
+          heading="Wings Of Sustainability"
           subheading="A backend IoT Project using M5Stack and Python"
           imgSrc="/WingsOfSustainability/WingsOfSustainabilityPreview.png"
-          href="#"
+          href="https://shockz132.github.io/Portfolio/projects/WingsOfSustainability"
         />
         <Link
           heading="Careers"
