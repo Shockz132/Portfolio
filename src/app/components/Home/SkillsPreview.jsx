@@ -5,8 +5,6 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { TextEffect } from "@/components/core/text-effect";
-import { IoMdDownload } from "react-icons/io";
 import { PanelsTopLeft, CodeXml, BrainCircuit } from "lucide-react";
 import { useRef, useEffect } from "react";
 
@@ -159,13 +157,13 @@ const Skills = () => {
   return (
     <section
       id="about-me"
-      className="mx-auto max-w-5xl px-4 py-48 text-white"
+      className="mx-auto max-w-5xl px-4 py-48 text-[--foreground]]"
     >
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-zinc-50"
+        className="mb-20 text-4xl font-black uppercase text-[--foreground]]"
       >
         Skills
       </motion.h1>
@@ -205,7 +203,7 @@ const SkillItem = ({ title, skillIcon, description, yValue}) => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-48 px-3 pb-9 flex-1"
       >
-        <div className="text-zinc-50 flex">
+        <div className="text-[--foreground]] flex">
         <div className="flex-5">
           {skillIcon}
         </div>

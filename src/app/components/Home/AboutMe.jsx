@@ -2,10 +2,11 @@ import { TextScramble } from '@/components/core/text-scramble';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, Github, Linkedin, Mail } from 'lucide-react';
 
+
 export function AboutMe() {
 
     return (
-        <section className="mx-auto max-w-5xl h-[80vh] px-4 py-[20vh] text-white">
+        <section className="mx-auto max-w-5xl h-[80vh] px-4 py-[20vh] text-[--foreground]">
             <div className='mx-auto max-w-5xl'>
                 <TextScramble duration={2} className="font-extrabold text-8xl pb-[3%]" >
                     Hi, I'm Jethro
