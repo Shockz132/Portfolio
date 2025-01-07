@@ -33,18 +33,6 @@ export const Projects = () => {
           imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
           href="https://shockz132.github.io/Portfolio/projects/WingsOfSustainability"
         />
-        <Link
-          heading="Careers"
-          subheading="We want cool people"
-          imgSrc="/imgs/random/5.jpg"
-          href="#"
-        />
-        <Link
-          heading="Fun"
-          subheading="Incase you're bored"
-          imgSrc="/imgs/random/10.jpg"
-          href="#"
-        />
       </div>
     </section>
   );

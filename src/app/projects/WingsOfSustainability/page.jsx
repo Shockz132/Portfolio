@@ -8,6 +8,7 @@ import { MyRole } from "@/app/components/Projects/MyRole";
 import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
+import { HacksterLink } from "@/app/components/Projects/HacksterLink";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -21,7 +22,16 @@ export default function Home() {
                   date={"01/2024 - 02/2024"}
                   readMins={3}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
-                  tagsArray={["Backend", "IoT", "Python", "M5Stack", "MQTT"]}
+                  tagsArray={[
+                    "Backend",
+                    "IoT",
+                    "Python",
+                    "M5Stack",
+                    "MQTT"
+                  ]}
+                />
+                <HacksterLink 
+                  hacksterLink={"https://www.hackster.io/513079/wings-of-sustainability-bsf-rearing-f94004"}
                 />
                 <ProjectOverview 
                   overviewContentArray={[
@@ -51,9 +61,10 @@ export default function Home() {
                   ]}
                 />
                 <MyRole 
-                  role={"Project Owner"}
+                  role={"Researcher, Programmer"}
                   descriptionArray={[
-                    "This is a Personal Project that I embarked on for fun to apply my skills I have learnt from other projects I have done like Plant Pulse to real world problems that I face."
+                    "As a Researcher and Programmer, I was responsible for finding supporting resources for the problem statement, brainstorm for possible solutions and find the supporting evidence for said solution.",
+                    "As a Programmer, I was responsible for setting up the connection between the M5Stack and the Qubitro Web Dashboard. This is a crucial step in ensuring the users will be able to access the sensor data from the M5Stack and ensure the reliability of the system."
                   ]}
                 />
                 <ProjectShowcase 
@@ -79,14 +90,31 @@ export default function Home() {
                   ]}
                 />
                 <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="flex flex-wrap"
+                  initial={{ y: 48, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ ease: "easeInOut", duration: 0.75 }}
+                >
+                  <iframe 
+                    src="https://www.youtube.com/embed/gEMfaWGC28o?si=dA2s_VuOo_8cprWE"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"
                   >
-                    <iframe src="https://youtu.be/gEMfaWGC28o?si=NkSmoJmDNlwQ7tL9" className="aspect-video h-[32rem] mx-auto"></iframe>
-                    <iframe src="https://youtu.be/K0nBYma3lNs" className="aspect-video h-[32rem] mx-auto"></iframe>
-                  </motion.div>
+                  </iframe>
+                  <iframe 
+                    src="https://www.youtube.com/embed/K0nBYma3lNs?si=V8hd56sEmEkQHBme"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    className="aspect-video md:h-[32rem] h-[14rem] mx-auto"
+                  >
+                  </iframe>
+                </motion.div>
             </div>
         </main>
         <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">

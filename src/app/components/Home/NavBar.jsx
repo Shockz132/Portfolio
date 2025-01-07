@@ -13,16 +13,12 @@ export const NavBar = () => {
             className="min-w-5 max-w-[50px] h-auto mix-blend-color invert"
           />
         </a>
-        <button
-          onClick={() => {
-            document.getElementById("launch-schedule")?.scrollIntoView({
-              behavior: "smooth",
-            });
-          }}
+        <motion.a
+          href="https://raw.githubusercontent.com/Shockz132/Portfolio/d3c480ddfcb5d914424fdc619c0e417f91845651/public/HomePage/Jethro_Resume.pdf"
           className="flex items-center gap-1 text-s text-zinc-400"
         >
           Resume <IoMdDownload />
-        </button>
+        </motion.a>
       </nav>
     );
   };

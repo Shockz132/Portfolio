@@ -8,7 +8,7 @@ import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
 import { MyRole } from "@/app/components/Projects/MyRole";
 import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
-import { motion } from "framer-motion";
+import { GithubLink } from "@/app/components/Projects/GithubLink";
 
 export default function Home() {
   return (
@@ -22,6 +22,8 @@ export default function Home() {
                   readMins={3}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
                   tagsArray={["Web Development", "React", "ReactFlow", "Vite"]}
+                />
+                <GithubLink 
                   githubLink={"https://github.com/Shockz132/Logic_Gate_Simulator"}
                 />
                 <ProjectOverview 

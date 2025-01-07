@@ -27,14 +27,15 @@ export function AboutMe() {
                     <motion.span>My Links</motion.span>
                     <ArrowRightIcon className='mx-2'/> 
                     <motion.a href="https://www.github.com/Shockz132" className="mr-2"><Github /></motion.a>
-                    <motion.a href="https://www.linkedin.com" className="mr-2"><Linkedin /></motion.a>
+                    <motion.a href="https://www.linkedin.com/in/jethro-chia-6aa114338/" className="mr-2"><Linkedin /></motion.a>
                     <motion.a href="https://www.gmail.com"><Mail /></motion.a>
                 </div>
             </div>
-            <motion.img src="https://gifdb.com/images/high/coding-animated-laptop-flow-stream-ja04010rm5o68zfk.webp"
-                        height="50%"
-                        width="50%"
-                        className="absolute right-20 top-[15%] z-[-1] blur-md"
+            <motion.img 
+                src="https://gifdb.com/images/high/coding-animated-laptop-flow-stream-ja04010rm5o68zfk.webp"
+                height="50%"
+                width="50%"
+                className="absolute right-20 top-[15%] z-[-1] blur-md"
             />
         </section>
     );
