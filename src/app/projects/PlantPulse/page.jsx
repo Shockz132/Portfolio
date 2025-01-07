@@ -7,6 +7,7 @@ import { Features } from "@/app/components/Projects/Features";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
 import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { MyRole } from "@/app/components/Projects/MyRole";
+import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 
 export default function PlantPulsePage() {
 
@@ -77,6 +78,10 @@ export default function PlantPulsePage() {
                     "As Team Leader I was in charge of leading the team in all aspects of the project, including researching, planning, development, programming, prototyping. On top of all that, I am responsible for ensuring my team was well informed on the task and made sure everyone knew what they were doing. I was also in charge of deciding the tech stack, frameworks and libraries that we will use. I took it upon myself to guide my team members on portions of the project they might not be familiar with like Javascript, Typescript, React and ShadCN UI which they have never used before.",
                     "I as a leader assigned my team members roles based on their strengths, always trying to bring out their best wherever possible by assigning them tasks that they were best suited for, be it design or programming. In the end we managed to produce a project that I as a leader can say is something that I am proud of, and my team members should be too.",
                   ]}
+                />
+                <ProjectShowcase 
+                  imgSrcArray={["https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png"]}
+                  imgDescriptionArray={["System Block Diagram"]}
                 />
             </div>
         </main>
