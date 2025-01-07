@@ -22,6 +22,7 @@ export default function Home() {
                   readMins={3}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
                   tagsArray={["Web Development", "React", "ReactFlow", "Vite"]}
+                  githubLink={"https://github.com/Shockz132/Logic_Gate_Simulator"}
                 />
                 <ProjectOverview 
                   overviewContentArray={[
@@ -59,15 +60,15 @@ export default function Home() {
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI1.png",
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI2.png",
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI3.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResult.jpg",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResultTable.jpg",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResult.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResultTable.png",
                   ]}
                   imgDescriptionArray={[
                     "Website UI 1",
                     "Website UI 2",
                     "Website UI 3",
                     "Example Result TXT",
-                    "Example Reuslt Truth Table",
+                    "Example Result Truth Table",
                   ]}
                 />
             </div>
