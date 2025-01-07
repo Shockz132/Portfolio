@@ -58,6 +58,9 @@ export const Header = ({title, date, readMins, imgSrc, tagsArray, githubLink}) =
                         <Github />
                     </motion.span>
                     <motion.a 
+                        initial={{ y: 48, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ ease: "easeInOut", duration: 0.75 }}
                         href={githubLink}
                         className="text-lg font-semibold underline mt-[-3px]"
                     >
