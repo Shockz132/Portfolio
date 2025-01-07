@@ -8,7 +8,7 @@ export const HacksterLink= ({ hacksterLink }) => {
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="pr-5"
+                    className="pr-5 w-[60px] h-auto"
                     src="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/hacksterio.png"
                     alt="image link of hackster.io"
                 />
@@ -17,7 +17,7 @@ export const HacksterLink= ({ hacksterLink }) => {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
                     href={hacksterLink}
-                    className="text-lg font-semibold underline mt-[-3px]"
+                    className="text-lg font-semibold underline mt-[3px]"
                 >
                     View this project on hackster.io
                 </motion.a>

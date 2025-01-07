@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Github } from "lucide-react";
 
 export const GithubLink = ({ githubLink }) => {
     return (

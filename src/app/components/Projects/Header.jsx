@@ -3,7 +3,7 @@ import { Github } from "lucide-react";
 
 export const Header = ({title, date, readMins, imgSrc, tagsArray, githubLink}) => {
     return  (
-        <section className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]">
+        <section className="mx-auto max-w-5xl px-4 text-[--foreground]">
             <div>
                 <motion.h1
                     initial={{ y: 48, opacity: 0 }}
