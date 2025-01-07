@@ -14,7 +14,7 @@ export const NavBar = () => {
           />
         </a>
         <motion.a
-          href="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/HomePage/Jethro_Resume.png"
+          href="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/HomePage/Jethro_Resume.pdf"
           className="flex items-center gap-1 text-s text-zinc-400"
         >
           Resume <IoMdDownload />
