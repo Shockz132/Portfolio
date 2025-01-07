@@ -16,7 +16,7 @@ export default function Home() {
                   readMins={3}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
                   tagsArray={["Web Development", "React", "ReactFlow", "Vite"]}
-                  overviewContent={"Web UI Logic Gate Solver created using HTML, Vanilla CSS, Javascript (React, ReactFlow) and C. Create a circuit using Logic Gates, Inputs and Outputs to generate a text file. Using the generated text file, the C program will generate the truth table for the circuit created."}
+                  overviewContentArray={["Web UI Logic Gate Solver created using HTML, Vanilla CSS, Javascript (React, ReactFlow) and C. Create a circuit using Logic Gates, Inputs and Outputs to generate a text file. Using the generated text file, the C program will generate the truth table for the circuit created."]}
                   contentsArray={["Project Overview"]}
                 />
             </div>
