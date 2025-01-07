@@ -84,11 +84,13 @@ export default function PlantPulsePage() {
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel2.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePoster.jpg",
                   ]}
                   imgDescriptionArray={[
                     "System Block Diagram",
                     "Project Vision Spline 3D Model",
                     "Project Vision Spline 3D Model",
+                    "Plant Pulse Poster",
                   ]}
                 />
             </div>
