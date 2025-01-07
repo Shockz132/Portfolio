@@ -8,7 +8,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-4 text-4xl font-black uppercase text-[--foreground]]"
+                    className="mb-9 text-4xl font-black uppercase text-[--foreground]]"
                 >
                     Features
                 </motion.h2>

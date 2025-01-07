@@ -6,6 +6,7 @@ import { Header } from "@/app/components/Projects/Header";
 import { Features } from "@/app/components/Projects/Features";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
 import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
+import { MyRole } from "@/app/components/Projects/MyRole";
 
 export default function PlantPulsePage() {
 
@@ -66,6 +67,15 @@ export default function PlantPulsePage() {
                     "spaCy",
                     "Beaglebone",
                     "Spline 3D"
+                  ]}
+                />
+                <MyRole 
+                  role={"Team Leader"}
+                  descriptionArray={[
+                    "This project was part of a module I took name known as 'Connected Systems Design Project'. This module was designed to be linked to multiple modules that involves both hardware and both frontend and backend programming. The module aimed to teach students how to:",
+                    "1. describe the functional blocks of a connected system by identifying key concepts and technologies of network architecture, modern communications, and electronic systems. 2. develop a connected system by using open-source hardware and software platform. 3. ideate and create solution for real-life problems by conducting technical research and applying modern tools that support independent learning.",
+                    "As Team Leader I was in charge of leading the team in all aspects of the project, including researching, planning, development, programming, prototyping. On top of all that, I am responsible for ensuring my team was well informed on the task and made sure everyone knew what they were doing. I was also in charge of deciding the tech stack, frameworks and libraries that we will use. I took it upon myself to guide my team members on portions of the project they might not be familiar with like Javascript, Typescript, React and ShadCN UI which they have never used before.",
+                    "I as a leader assigned my team members roles based on their strengths, always trying to bring out their best wherever possible by assigning them tasks that they were best suited for, be it design or programming. In the end we managed to produce a project that I as a leader can say is something that I am proud of, and my team members should be too.",
                   ]}
                 />
             </div>
