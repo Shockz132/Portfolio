@@ -2,7 +2,10 @@
 
 // import Image from "next/image";
 import { NavBar } from "@/app/components/Home/NavBar.jsx";
+import { Features } from "@/app/components/Projects/Features";
 import { Header } from "@/app/components/Projects/Header";
+import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
+import { TableOfContents } from "@/app/components/Projects/TableOfContents";
 
 export default function Home() {
   return (
@@ -16,8 +19,31 @@ export default function Home() {
                   readMins={3}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
                   tagsArray={["Web Development", "React", "ReactFlow", "Vite"]}
-                  overviewContentArray={["Web UI Logic Gate Solver created using HTML, Vanilla CSS, Javascript (React, ReactFlow) and C. Create a circuit using Logic Gates, Inputs and Outputs to generate a text file. Using the generated text file, the C program will generate the truth table for the circuit created."]}
-                  contentsArray={["Project Overview"]}
+                />
+                <ProjectOverview 
+                  overviewContentArray={[
+                    "Web UI Logic Gate Solver created using HTML, Vanilla CSS, Javascript (React, ReactFlow) and C. Create a circuit using Logic Gates, Inputs and Outputs to generate a text file. Using the generated text file, the C program will generate the truth table for the circuit created."
+                  ]}
+                />
+                <TableOfContents 
+                  contentsArray={[
+                    "Project Overview",
+                    "Features"
+                  ]}
+                />
+                <Features 
+                  projectFeaturesArray={[
+                    "Easy to use",
+                    "Drag and Drop UI",
+                    "Truth Table Generation",
+                  ]}
+                  codeFeaturesArray={[
+                    "React JS",
+                    "Vite",
+                    "CSS",
+                    "ReactFlow",
+                    "C",
+                  ]}
                 />
             </div>
         </main>

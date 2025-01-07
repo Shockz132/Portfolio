@@ -50,12 +50,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                 >
                     Code Features
                 </motion.h3>
-                <motion.ol
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="list-decimal mb-9"
-                >
+                <ol className="list-decimal mb-9">
                     {
                         codeFeaturesArray.map((codeFeature) => (
                             <motion.li
@@ -71,7 +66,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                             </motion.li>
                         ))
                     }
-                </motion.ol>
+                </ol>
             </div>
         </section>
     );
