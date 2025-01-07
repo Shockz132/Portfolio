@@ -32,7 +32,7 @@ export const ProjectShowcase = ({imgSrcArray, imgDescriptionArray}) => {
                                     src={imgSrc}
                                     key={index}
                                     alt={`image link to ${imgDescriptionArray[index].replace(/\s+/g, '-').toLowerCase()}`}
-                                    className="w-full mb-24"
+                                    className="w-[50%] mx-auto mb-24"
                                 />
                             </>
                         ))
