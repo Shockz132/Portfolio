@@ -74,10 +74,10 @@ export default function Home() {
                   ]}
                 />
             </div>
+            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center w-full">
+              <p className="w-full text-center"> Copyright © 2025 Jethro. All rights reserved. </p>
+            </footer>
         </main>
-        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-          © 2025 Jethro. All rights reserved.
-        </footer>
     </div>
   );
 }

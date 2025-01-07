@@ -6,6 +6,7 @@ import { SkillsPreview } from "@/app/components/Home/SkillsPreview";
 import { AboutMe } from "@/app/components/Home/AboutMe";
 import { Projects } from "@/app/components/Home/Projects";
 import { WhatIUse } from "@/app/components/Home/WhatIUse";
+import { ContactMe } from "@/app/components/Home/ContactMe";
 import { WorkExperience } from "@/app/components/Home/WorkExperience";
 
 export default function Home() {
@@ -17,13 +18,14 @@ export default function Home() {
           <AboutMe />
           <SkillsPreview />
           <WhatIUse/>
-          <WorkExperience />
+          {/* <WorkExperience /> */}
           <Projects />
+          <ContactMe />
         </div>
+        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center w-full">
+            <p className="w-full text-center"> Copyright © 2025 Jethro. All rights reserved. </p>
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        © 2025 Jethro. All rights reserved.
-      </footer>
     </div>
   );
 }
