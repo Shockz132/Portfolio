@@ -13,9 +13,11 @@ export default function Home() {
                 <Header
                   title={"Wings Of Sustainability"}
                   date={"01/2024 - 02/2024"}
-                  readTime={"3 min read"}
+                  readMins={3}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
-                  tags={["Backend", "IoT", "Python", "M5Stack"]}
+                  tagsArray={["Backend", "IoT", "Python", "M5Stack"]}
+                  overviewContent={"This project aims to help Singapore achieve its food security goal of producing 30% of its nutritional needs by 2030, also known as “30 by 30”, by providing an alternative source of protein consumption (insects) and fertilizer for plants (in the form of compost and frass). It also aims to make insect farming more efficient by automating most of the manual labour and creating a self-sustaining ecosystem between insects and plants."}
+                  contentsArray={["Project Overview"]}
                 />
             </div>
         </main>

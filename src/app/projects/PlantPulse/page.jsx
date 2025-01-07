@@ -13,9 +13,11 @@ export default function PlantPulsePage() {
                 <Header
                   title={"Plant Pulse"}
                   date={"07/2024 - 08/2024"}
-                  readTime={"3 min read"}
+                  readMins={3}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png"
-                  tags={["Fullstack", "IoT", "Beaglebone", "React", "Tailwind CSS", "Python", "Flask", "SQL", "NextJS", "SocketIO", "ShadCN UI"]}
+                  tagsArray={["Fullstack", "IoT", "Beaglebone", "React", "Tailwind CSS", "Python", "Flask", "SQL", "NextJS", "SocketIO", "ShadCN UI"]}
+                  overviewContent={"Web Dashboard with a chatbot to display statistics for a smart community garden integrated with IoT devices like the Beaglebones Black Wireless which communicates with a Python Web Server on the backend. Frontend created using NextJS + TypeScript + Tailwind CSS + ShadCN UI . Web Server backend created using Python (Flask, SocketIO, spaCy). 3D models created using Spline 3D."}
+                  contentsArray={["Project Overview", "Features"]}
                 />
             </div>
         </main>
