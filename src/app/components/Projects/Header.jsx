@@ -19,14 +19,15 @@ export const Header = ({title, date, readTime, imgSrc, tags}) => {
             >
                 {
                     tags.map((tag) => (
-                        <motion.div 
+                        <motion.p 
                             initial={{ y: 48, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ ease: "easeInOut", duration: 0.75 }}
+                            key={tag}
                             className="w-max px-4 py-2 rounded-full border-white border-2 text-md mb-2 font-semibold"
                         >
                             {tag}
-                        </motion.div>
+                        </motion.p>
                     ))
                 }
             </motion.div>
