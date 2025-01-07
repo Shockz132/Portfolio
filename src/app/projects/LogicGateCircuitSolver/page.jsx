@@ -6,6 +6,9 @@ import { Features } from "@/app/components/Projects/Features";
 import { Header } from "@/app/components/Projects/Header";
 import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
+import { MyRole } from "@/app/components/Projects/MyRole";
+import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -45,10 +48,32 @@ export default function Home() {
                     "C",
                   ]}
                 />
+                <MyRole 
+                  role={"Project Owner"}
+                  descriptionArray={[
+                    "This is a Personal Project that I embarked on for fun to apply my skills I have learnt from other projects I have done like Plant Pulse to real world problems that I face."
+                  ]}
+                />
+                <ProjectShowcase 
+                  imgSrcArray={[
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI1.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI2.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI3.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResult.jpg",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResultTable.jpg",
+                  ]}
+                  imgDescriptionArray={[
+                    "Website UI 1",
+                    "Website UI 2",
+                    "Website UI 3",
+                    "Example Result TXT",
+                    "Example Reuslt Truth Table",
+                  ]}
+                />
             </div>
         </main>
         <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-            
+          © 2025 Jethro. All rights reserved.
         </footer>
     </div>
   );
