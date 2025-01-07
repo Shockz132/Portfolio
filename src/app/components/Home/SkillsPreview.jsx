@@ -71,7 +71,7 @@ const CenterImage = () => {
         backgroundSize,
         opacity,
         backgroundImage:
-          "url(https://images.ctfassets.net/tfvkuuj8nae0/3TChTMPUFJrnH1681hNIGw/a14ed2d22a2d1ebc7cdd0192f4d306ce/rainglow-vs-code-theme.png)",
+          "url(https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/HomePage/vscode-window.png)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -83,21 +83,21 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/ReactLogo.svg"
         alt="React JS logo"
         start={-200}
         end={200}
         className="w-[20%]"
       />
       <ParallaxImg
-        src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/TypeScriptLogo.svg"
         alt="typescript logo"
         start={200}
         end={-250}
         className="mx-auto w-[20%]"
       />
       <ParallaxImg
-        src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjUwcHgiPjxwYXRoIGQ9Ik0yMCwyMy40NzRWMzEuNWMwLDAuODI4LTAuNjcyLDEuNS0xLjUsMS41UzE3LDMyLjMyOCwxNywzMS41di0xM2MwLTAuNjU5LDAuNDMxLTEuMjQxLDEuMDYyLTEuNDM1IGMwLjYyNy0wLjE5LDEuMzE0LDAuMDQ5LDEuNjgyLDAuNTk2bDAuMjQ5LDAuMzdMMjAsMThsMTUuMjM0LDIyLjU0NkM0MC41MjQsMzYuOTQ3LDQ0LDMwLjg4LDQ0LDI0YzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwIFM0LDEyLjk1NCw0LDI0czguOTU0LDIwLDIwLDIwYzMuMDgyLDAsNS45OS0wLjcxOCw4LjU5Ny0xLjk2M0wyMCwyMy40NzR6IE0yOCwxNi41YzAtMC44MjgsMC42NzItMS41LDEuNS0xLjVzMS41LDAuNjcyLDEuNSwxLjUgdjEyLjc5bC0zLTQuMzA0VjE2LjV6Ii8+PC9zdmc+"
+        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/NextJSLogo.svg"
         alt="white nextjs logo"
         start={-200}
         end={200}
@@ -111,7 +111,7 @@ const ParallaxImages = () => {
         className="ml-48 w-[15%]"
       />
       <ParallaxImg
-        src="https://cdn.worldvectorlogo.com/logos/c-1.svg"
+        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/CLogo.svg"
         alt="C logo"
         start={150}
         end={-500}
