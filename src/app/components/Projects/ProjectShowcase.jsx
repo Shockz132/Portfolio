@@ -8,7 +8,7 @@ export const ProjectShowcase = ({imgSrcArray, imgDescriptionArray}) => {
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-4 text-4xl font-black uppercase text-[--foreground]]"
+                    className="mb-12 text-4xl font-black uppercase text-[--foreground]]"
                 >
                     Project Showcase
                 </motion.h2>
@@ -20,7 +20,7 @@ export const ProjectShowcase = ({imgSrcArray, imgDescriptionArray}) => {
                                     initial={{ y: 48, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                                    key={`#${imgDescriptionArray[index].replace(/\s+/g, '-').toLowerCase()}`}
+                                    key={`${imgDescriptionArray[index].replace(/\s+/g, '-').toLowerCase()}`}
                                     className="text-lg font-semibold text-center"
                                 >
                                     {imgDescriptionArray[index]}
@@ -32,7 +32,7 @@ export const ProjectShowcase = ({imgSrcArray, imgDescriptionArray}) => {
                                     src={imgSrc}
                                     key={index}
                                     alt={`image link to ${imgDescriptionArray[index].replace(/\s+/g, '-').toLowerCase()}`}
-                                    className="w-full mb-4"
+                                    className="w-full mb-24"
                                 />
                             </>
                         ))
