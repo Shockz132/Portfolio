@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const MyRole = ({role, descriptionArray}) => {
     return (
-        <section className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]">
+        <section id="my-role" className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]">
             <div>
                 <motion.h2
                     initial={{ y: 48, opacity: 0 }}

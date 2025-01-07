@@ -4,8 +4,11 @@
 import { NavBar } from "@/app/components/Home/NavBar.jsx";
 import { Features } from "@/app/components/Projects/Features";
 import { Header } from "@/app/components/Projects/Header";
+import { MyRole } from "@/app/components/Projects/MyRole";
 import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
+import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -28,7 +31,9 @@ export default function Home() {
                 <TableOfContents 
                   contentsArray={[
                     "Project Overview",
-                    "Features"
+                    "Features",
+                    "My Role",
+                    "Project Showcase",
                   ]}
                 />
                 <Features 
@@ -41,9 +46,47 @@ export default function Home() {
                   codeFeaturesArray={[
                     "Python",
                     "MQTT",
-                    "M5Stack"
+                    "Qubitro",
+                    "M5Stack",
                   ]}
                 />
+                <MyRole 
+                  role={"Project Owner"}
+                  descriptionArray={[
+                    "This is a Personal Project that I embarked on for fun to apply my skills I have learnt from other projects I have done like Plant Pulse to real world problems that I face."
+                  ]}
+                />
+                <ProjectShowcase 
+                  imgSrcArray={[
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPrototype1.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPrototype2.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/BSFBoxBlockDiagram.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/BSFMotorBlockDiagram.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/BSFStaticBlockDiagram.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/BSFBoxFlowChart.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/BSFMotorFlowChart.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/BSFStaticFlowChart.png",
+                  ]}
+                  imgDescriptionArray={[
+                    "Wings Of Sustainability Prototype 1",
+                    "Wings Of Sustainability Prototype 2",
+                    "BSF Box Block Diagram",
+                    "BSF Motor Block Diagram",
+                    "BSF Static Block Diagram",
+                    "BSF Box Flow Chart",
+                    "BSF Motor Flow Chart",
+                    "BSF Static Flow Chart",
+                  ]}
+                />
+                <motion.div
+                    initial={{ y: 48, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ ease: "easeInOut", duration: 0.75 }}
+                    className="flex flex-wrap"
+                  >
+                    <iframe src="https://youtu.be/gEMfaWGC28o?si=NkSmoJmDNlwQ7tL9" className="aspect-video h-[32rem] mx-auto"></iframe>
+                    <iframe src="https://youtu.be/K0nBYma3lNs" className="aspect-video h-[32rem] mx-auto"></iframe>
+                  </motion.div>
             </div>
         </main>
         <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
