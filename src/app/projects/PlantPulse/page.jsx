@@ -80,8 +80,16 @@ export default function PlantPulsePage() {
                   ]}
                 />
                 <ProjectShowcase 
-                  imgSrcArray={["https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png"]}
-                  imgDescriptionArray={["System Block Diagram"]}
+                  imgSrcArray={[
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
+                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel2.png",
+                  ]}
+                  imgDescriptionArray={[
+                    "System Block Diagram",
+                    "Project Vision Spline 3D Model",
+                    "Project Vision Spline 3D Model",
+                  ]}
                 />
             </div>
         </main>
