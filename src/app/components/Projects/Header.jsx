@@ -9,7 +9,7 @@ export const Header = ({title, date, readMins, imgSrc, tagsArray, githubLink}) =
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-4 text-8xl font-black uppercase text-zinc-50"
+                    className="mb-4 lg:text-8xl sm:text-6xl text-4xl font-black uppercase text-[--foreground]]"
                 >
                     {title}
                 </motion.h1>

@@ -9,7 +9,6 @@ import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
 import { HacksterLink } from "@/app/components/Projects/HacksterLink";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -94,6 +93,7 @@ export default function Home() {
                   initial={{ y: 48, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ ease: "easeInOut", duration: 0.75 }}
+                  className="flex-col flex-wrap mx-auto max-w-5xl px-4 pb-24 text-[--foreground]"
                 >
                   <iframe 
                     src="https://www.youtube.com/embed/gEMfaWGC28o?si=dA2s_VuOo_8cprWE"
@@ -102,7 +102,7 @@ export default function Home() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
-                    className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"
+                    className="aspect-video md:h-[16rem] h-full mx-auto mb-12"
                   >
                   </iframe>
                   <iframe 
@@ -112,7 +112,7 @@ export default function Home() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
-                    className="aspect-video md:h-[32rem] h-[14rem] mx-auto"
+                    className="aspect-video md:h-[16rem] h-full mx-auto"
                   >
                   </iframe>
                 </motion.div>
