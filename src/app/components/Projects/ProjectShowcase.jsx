@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-export const ProjectShowcase = ({imgSrcArray, imgDescriptionArray}) => {
+export const ProjectShowcase = ({ title, imgSrcArray, imgDescriptionArray }) => {
     return (
         <section id="project-showcase" className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]">
             <div>
@@ -10,7 +10,7 @@ export const ProjectShowcase = ({imgSrcArray, imgDescriptionArray}) => {
                     transition={{ ease: "easeInOut", duration: 0.75 }}
                     className="mb-12 text-4xl font-black uppercase text-[--foreground]]"
                 >
-                    Project Showcase
+                    {title}
                 </motion.h2>
                 <div className="text-lg font-semibold">
                     {

@@ -9,6 +9,8 @@ import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { MyRole } from "@/app/components/Projects/MyRole";
 import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 import { GithubLink } from "@/app/components/Projects/GithubLink";
+import { ProjectProblem } from "@/app/components/Projects/Problem";
+import { WorkProcess } from "@/app/components/Projects/WorkProcess";
 import { motion } from "framer-motion";
 
 export default function PlantPulsePage() {
@@ -39,6 +41,9 @@ export default function PlantPulsePage() {
                 />
                 <GithubLink 
                   githubLink={"https://github.com/Shockz132/Plant_Pulse"}
+                />
+                <ProjectProblem
+                  problemStatement="How can we improve conventional gardening to be more accessible to individuals and the elderly while making it sustainable and contribute to Singapore's 30 by 30 goal? "
                 />
                 <ProjectOverview 
                   overviewContentArray={[
@@ -79,13 +84,60 @@ export default function PlantPulsePage() {
                 <MyRole 
                   role={"Team Leader"}
                   descriptionArray={[
-                    "This project was part of a module I took name known as 'Connected Systems Design Project'. This module was designed to be linked to multiple modules that involves both hardware and both frontend and backend programming. The module aimed to teach students how to:",
-                    "1. describe the functional blocks of a connected system by identifying key concepts and technologies of network architecture, modern communications, and electronic systems. 2. develop a connected system by using open-source hardware and software platform. 3. ideate and create solution for real-life problems by conducting technical research and applying modern tools that support independent learning.",
-                    "As Team Leader I was in charge of leading the team in all aspects of the project, including researching, planning, development, programming, prototyping. On top of all that, I am responsible for ensuring my team was well informed on the task and made sure everyone knew what they were doing. I was also in charge of deciding the tech stack, frameworks and libraries that we will use. I took it upon myself to guide my team members on portions of the project they might not be familiar with like Javascript, Typescript, React and ShadCN UI which they have never used before.",
-                    "I as a leader assigned my team members roles based on their strengths, always trying to bring out their best wherever possible by assigning them tasks that they were best suited for, be it design or programming. In the end we managed to produce a project that I as a leader can say is something that I am proud of, and my team members should be too.",
+                    "As Team Leader I was in charge of leading the team in all aspects of the project, including researching, planning, development, programming, prototyping. assigned my team members roles based on their strengths, always trying to bring out their best wherever possible by assigning them tasks that they were best suited for, be it design or programming. I was also in charge of deciding the tech stack, frameworks and libraries that we will use. I took it upon myself to guide my team members on portions of the project they might not be familiar with like Javascript, Typescript, React and ShadCN UI which they have never used before.",
+                    "The problem statement can be broken down into two parts, 1. improving the accessibility of gardening to even the elderly and 2. contributing to 30 by 30 goal and sustainability. From this I realised that the main issue with conventional gardening for the elderly was the physical strain and the accessibility of gardening will result in an increase in gardeners and therefore making it sustainable. From this analysis I discussed my findings with my team and we conducted a questionnaire to identify key areas to focus on and from our findings we came up with Plant Pulse as our solution.",
                   ]}
                 />
+                <WorkProcess
+                    parts={["Research and Planning", "Development and Prototyping"]}
+                    descriptions={[
+                        "We conducted extensive research on the problem statement and the technology available to us. We also gathered feedback from our team members and stakeholders to identify areas where we could make improvements.",
+                        "We started by designing the system architecture and developing the frontend using React and NextJS. We also developed the backend using Python and Flask. We also implemented the IoT sensors using Beaglebone Black.",
+                        "We started Prototyping by sketching possible designs of our solution.",
+                    ]}
+                    imgArrays={[
+                      [
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire1.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire2.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire3.png",
+                      ],
+                      [
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePlantPlot.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIrrigationTank.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFoodWasteBin.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.png",
+                      ],
+                      [
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
+                      ],
+                    ]}
+                    imgDescriptionArrays={[
+                      [
+                        "Questionnaire results part 1",
+                        "Questionnaire results part 2",
+                        "Questionnaire results part 3",
+                      ],
+                      [
+                        "Plant Plot Prototype",
+                        "Irrigation Tank Prototype",
+                        "Pest Detection Prototype",
+                        "Food Waste Bin Prototype",
+                        "Task Board Prototype",
+                        "Floor plan Prototype",
+                      ],
+                      [
+                        "Frontend Web Development",
+                        "Frontend Web Development",
+                        "Frontend Web Development",
+                      ],
+                    ]}
+                />
                 <ProjectShowcase 
+                  title="Project Showcase"
                   imgSrcArray={[
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
