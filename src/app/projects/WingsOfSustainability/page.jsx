@@ -9,6 +9,7 @@ import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
 import { HacksterLink } from "@/app/components/Projects/HacksterLink";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
