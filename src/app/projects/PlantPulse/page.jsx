@@ -91,7 +91,7 @@ export default function PlantPulsePage() {
                 <WorkProcess
                     parts={["Research and Planning", "Development and Prototyping"]}
                     descriptions={[
-                        "We conducted extensive research on the problem statement and the technology available to us. We also gathered feedback from our team members and stakeholders to identify areas where we could make improvements.",
+                        "We started by conducting a survey around several communities which had a community gardens to interview our target audiences by getting the local elderly community gardeners to do our questionnaire. Following that we collected the data from the questionnaire and identified the ",
                         "We started by designing the system architecture and developing the frontend using React and NextJS. We also developed the backend using Python and Flask. We also implemented the IoT sensors using Beaglebone Black.",
                         "We started Prototyping by sketching possible designs of our solution.",
                     ]}
@@ -107,7 +107,7 @@ export default function PlantPulsePage() {
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFoodWasteBin.png",
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.jpg",
                       ],
                       [
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
