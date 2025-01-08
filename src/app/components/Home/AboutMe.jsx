@@ -8,7 +8,7 @@ export function AboutMe() {
     return (
         <section className="mx-auto max-w-5xl h-[80vh] px-4 py-[20vh] text-[--foreground]">
             <div className='mx-auto max-w-5xl'>
-                <TextScramble duration={2} className="font-extrabold text-8xl pb-[3%]" >
+                <TextScramble duration={2} className="font-extrabold md:text-8xl text-6xl pb-[3%]" >
                     Hi, I'm Jethro
                 </TextScramble>
                 <div className="flex flex-wrap">
@@ -19,7 +19,7 @@ export function AboutMe() {
                         Aspiring Software Developer
                     </TextScramble>
                 </div>
-                <TextScramble duration={2} className="text-xl pr-[30%] pb-[3%]" >
+                <TextScramble duration={2} className="text-xl md:pr-[30%] pb-[3%]" >
                     A Fresh Electronic and Computer Engineering Graduate, passionate about computers and coding, a curious problem-solver with a love for exploring new technologies.
                     Always eager to learn and grow, wanting to create innovative and impactful solutions that contribute to society. 
                 </TextScramble>
