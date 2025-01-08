@@ -12,15 +12,18 @@ export const HacksterLink= ({ hacksterLink }) => {
                     src="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/hacksterio.png"
                     alt="image link of hackster.io"
                 />
-                <motion.a 
+                <motion.span
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                    href={hacksterLink}
-                    className="text-lg font-semibold underline mt-[3px]"
                 >
-                    View this project on hackster.io
-                </motion.a>
+                    <Link
+                        href={hacksterLink}
+                        className="text-lg font-semibold underline mt-[3px]"
+                    >
+                        View this project on hackster.io
+                    </Link>
+                </motion.span>
             </div>
         </section>
     );

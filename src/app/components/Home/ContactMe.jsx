@@ -17,22 +17,22 @@ export const ContactMe = () => {
                         <input
                             type="text"
                             placeholder="Name"
-                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] py-4 px-2"
+                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] min-w-[300px] py-4 px-2"
                         />
                         <input
                             type="email"
                             placeholder="Email"
-                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] py-4 px-2"
+                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] min-w-[300px] py-4 px-2"
                         />
                         <input
                             type="text"
                             placeholder="Subject"
-                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] py-4 px-2"
+                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] min-w-[300px] py-4 px-2"
                         />
                         <textarea
                             placeholder="Message"
                             rows="4"
-                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] py-4 px-2"
+                            className="bg-[--background] border-[--foreground] border-2 outline-2 mb-4 max-w-[40%] min-w-[300px] py-4 px-2"
                         />
                         <button type="submit" className="bg-[--background] w-max px-8 py-4 border-[--foreground] border-2 outline-2 hover:bg-[--foreground] hover:text-[--background]">
                             Submit

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
+import Link from "next/link";
 
 export const GithubLink = ({ githubLink }) => {
     return (
@@ -13,15 +14,18 @@ export const GithubLink = ({ githubLink }) => {
                 >
                     <Github />
                 </motion.span>
-                <motion.a 
+                <motion.span
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                    href={githubLink}
-                    className="text-lg font-semibold underline mt-[-3px]"
                 >
-                    View this project on Github
-                </motion.a>
+                    <Link
+                        href={githubLink}
+                        className="text-lg font-semibold underline mt-[-3px]"
+                    >   
+                        View this project on Github
+                    </Link>
+                </motion.span>
             </div>
         </section>
     );

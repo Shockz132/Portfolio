@@ -22,13 +22,13 @@ export const WhatIUse = () => {
                 />
                 </div>
 
-                <div className="px-8 mb-20 pl-[30%]">
+                <div className="px-8 mb-20 lg:pl-[30%]">
                     <div className="flex justify-between flex-wrap">
                         <motion.ul
                             initial={{ y: 48, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ ease: "easeInOut", duration: 0.75 }}
-                            className="text-xl font-semibold list-disc mb-9"
+                            className="flex-1 min-w-[305px] text-xl font-semibold list-disc mb-9"
                         >
                             <motion.div className="ml-[-20px] text-3xl underline">Web Development</motion.div>
                             <ListItem listItemText={"HTML"} />
@@ -43,7 +43,7 @@ export const WhatIUse = () => {
                             initial={{ y: 48, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ ease: "easeInOut", duration: 0.75 }}
-                            className="text-xl font-semibold list-disc mb-9"
+                            className="flex-1 min-w-[305px] text-xl font-semibold list-disc mb-9"
                         >
                             <motion.div className="ml-[-20px] text-3xl underline">Backend Development</motion.div>
                             <ListItem listItemText={"Python"} />
@@ -57,7 +57,7 @@ export const WhatIUse = () => {
                             initial={{ y: 48, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ ease: "easeInOut", duration: 0.75 }}
-                            className="text-xl font-semibold list-disc mb-9"
+                            className="flex-1 min-w-[305px] text-xl font-semibold list-disc mb-9"
                         >
                             <motion.div className="ml-[-20px] text-3xl underline">Software Tools</motion.div>
                             <ListItem listItemText={"VSCode"}/>
@@ -69,7 +69,7 @@ export const WhatIUse = () => {
                             initial={{ y: 48, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ ease: "easeInOut", duration: 0.75 }}
-                            className="text-xl font-semibold list-disc pr-[220px] mb-9"
+                            className="flex-1 min-w-[305px] text-xl font-semibold list-disc mb-9"
                         >
                             <motion.div className="ml-[-20px] text-3xl underline">Special</motion.div>
                             <ListItem listItemText={"Googling"}/>

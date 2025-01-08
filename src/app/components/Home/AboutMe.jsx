@@ -11,7 +11,7 @@ export function AboutMe() {
                 <TextScramble duration={2} className="font-extrabold text-8xl pb-[3%]" >
                     Hi, I'm Jethro
                 </TextScramble>
-                <div className="flex">
+                <div className="flex flex-wrap">
                     <TextScramble duration={0.5} className="font-bold text-3xl pb-[3%] pr-2" >
                         I'm an
                     </TextScramble>
@@ -33,9 +33,8 @@ export function AboutMe() {
             </div>
             <motion.img 
                 src="https://gifdb.com/images/high/coding-animated-laptop-flow-stream-ja04010rm5o68zfk.webp"
-                height="50%"
                 width="50%"
-                className="absolute right-20 top-[15%] z-[-1] blur-md"
+                className="aspect-square min-w-[500px] max-w-[632px] absolute md:left-[45%] xl:top-[15%] top-[30%] z-[-1] blur-md"
             />
         </section>
     );

@@ -116,14 +116,14 @@ export default function PlantPulsePage() {
                     transition={{ ease: "easeInOut", duration: 0.75 }}
                     className="flex flex-wrap mx-auto max-w-5xl px-4 pb-24 text-[--foreground]"
                   >
-                    <iframe src="https://drive.google.com/file/d/1cxL8Vkn_NqY2WZHSD6scjnA5c02BdRui/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1C74FnFY9fjYM_7NKv-DNgL8rBt5kNaZx/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1ePlEvm_rPPU-Y9sy7wl-1L3xtdwdEvS9/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/17mdH1VXA83hawKc1z1jqsgvKBCErvBqE/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1ahBwwEpj2Gn66m1lwqpuFs8zq3Wf2ZQ_/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/15RKOZdHUOV-hrWDrMusMQ9ECOWP_6nfV/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/17G2G4g4msjpG18MwvXwxTT1gL9oGPkUI/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1hOKeTFwq5Pc4HA4aLvXmAAe0OSX6bf1k/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/1cxL8Vkn_NqY2WZHSD6scjnA5c02BdRui/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/1C74FnFY9fjYM_7NKv-DNgL8rBt5kNaZx/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/1ePlEvm_rPPU-Y9sy7wl-1L3xtdwdEvS9/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/17mdH1VXA83hawKc1z1jqsgvKBCErvBqE/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/1ahBwwEpj2Gn66m1lwqpuFs8zq3Wf2ZQ_/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/15RKOZdHUOV-hrWDrMusMQ9ECOWP_6nfV/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/17G2G4g4msjpG18MwvXwxTT1gL9oGPkUI/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
+                    <iframe src="https://drive.google.com/file/d/1hOKeTFwq5Pc4HA4aLvXmAAe0OSX6bf1k/preview" className="aspect-[9/16] md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
                     <iframe src="https://drive.google.com/file/d/1TDKS5DwIyAYaT-wPDNmq9dPAl1ohsrOi/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
                     <iframe src="https://drive.google.com/file/d/16gQTUcB6WTj5wgX9wQR94dzBh-eRPvST/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
                     <iframe src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview" className="aspect-video md:h-[32rem] h-[14rem] mx-auto mb-12"></iframe>
