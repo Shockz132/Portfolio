@@ -161,7 +161,7 @@ const Skills = () => {
         Skills
       </motion.h1>
       
-      <div className="flex-row justify-evenly">
+      <div>
         <SkillItem
           title="Web Development"
           skillIcon={<PanelsTopLeft size="80%"/>}
@@ -196,7 +196,7 @@ const SkillItem = ({ title, skillIcon, description, yValue}) => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-48 px-3 pb-9 flex-1"
       >
-        <div className="text-[--foreground]] flex">
+      <div className="text-[--foreground]] flex flex-wrap">
         <div className="flex-5">
           {skillIcon}
         </div>
