@@ -9,8 +9,10 @@ import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
 import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 import { TableOfContents } from "@/app/components/Projects/TableOfContents";
 import { HacksterLink } from "@/app/components/Projects/HacksterLink";
-import { motion } from "framer-motion";
 import { WorkProcess } from "@/app/components/Projects/WorkProcess";
+import { ProjectProblem } from "@/app/components/Projects/Problem";
+import { OutcomeAndResults } from "@/app/components/Projects/OutcomeAndResults";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -33,6 +35,9 @@ export default function Home() {
                 />
                 <HacksterLink 
                   hacksterLink={"https://www.hackster.io/513079/wings-of-sustainability-bsf-rearing-f94004"}
+                />
+                <ProjectProblem
+                  problemStatement="How can I automate the process of deriving the truth table from a Logic Gate Circuit? "
                 />
                 <ProjectOverview 
                   overviewContentArray={[
@@ -68,7 +73,7 @@ export default function Home() {
                     "As a Programmer, I was responsible for setting up the connection between the M5Stack and the Qubitro Web Dashboard. This is a crucial step in ensuring the users will be able to access the sensor data from the M5Stack and ensure the reliability of the system."
                   ]}
                 />
-                {/* <WorkProcess
+                <WorkProcess
                     parts={["Research and Planning", "Development and Prototyping", "Frontend Web Development"]}
                     descriptions={[
                         "We started by conducting a survey around several communities which had a community gardens to interview our target audiences by getting the local elderly community gardeners to do our questionnaire. Following that we collected the data from the questionnaire and identified the key areas to focus on when designing a solution. From there we brainstormed and evaluated our ideas based on certain criterias before finalising our solution. Lastly, we designed the system block diagram for our selected idea in preperation for the development and prototyping phase.",
@@ -119,7 +124,13 @@ export default function Home() {
                         "Website Hero section",
                       ],
                     ]}
-                /> */}
+                />
+                <OutcomeAndResults 
+                  contentArray={[
+                    "In the end, the project was a success. I as the team leader feel that the work we have put out for this project was incredibly well done, not to say it couldnt have been improved but for the time we and level of effort that we put into Plant Pulse I can safely say this is a piece of work that I am proud of and the team should be too. After we gave a presentation on the project to a panel of judges which was made up of senior lecturers and the module leader, one of the senior lecturers actually proposed that we further take this project up another level and in certain areas possibly even make into a reality by contacting some companies he has connections with. The module leader also selected our project for NYP's Tech Nexus 2025, where we will present to many directors from companies that NYP closely work with to showcase our work to them, and from there possibly have the opportunity to work with them in the future.",
+                    "If I were to do this project again, I would definitely have allocated more time into building the functionalities of the website as this project, given more time would definitely become much better and maybe even commercial ready work to put out there to test and maybe even turn into a business one day. I would also have wanted to put more time into finding better resources for building the prototype as we could have leveraged on the power of 3D printing to build our prototypes which might have cut down the time spent on building it ourselves by a lot which could ahve given us more time to allocate to other areas like building out the functionalities of the website."
+                  ]}
+                />
                 <ProjectShowcase 
                   imgSrcArray={[
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPrototype1.png",

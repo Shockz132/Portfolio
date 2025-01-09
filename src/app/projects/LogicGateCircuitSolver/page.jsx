@@ -10,6 +10,8 @@ import { MyRole } from "@/app/components/Projects/MyRole";
 import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
 import { GithubLink } from "@/app/components/Projects/GithubLink";
 import { WorkProcess } from "@/app/components/Projects/WorkProcess";
+import { OutcomeAndResults } from "@/app/components/Projects/OutcomeAndResults";
+import { ProjectProblem } from "@/app/components/Projects/Problem";
 
 export default function Home() {
   return (
@@ -27,9 +29,12 @@ export default function Home() {
                 <GithubLink 
                   githubLink={"https://github.com/Shockz132/Logic_Gate_Simulator"}
                 />
+                <ProjectProblem
+                  problemStatement="How can I automate the process of deriving the truth table from a Logic Gate Circuit? "
+                />
                 <ProjectOverview 
                   overviewContentArray={[
-                    "Web UI Logic Gate Solver created using HTML, Vanilla CSS, Javascript (React, ReactFlow) and C. Create a circuit using Logic Gates, Inputs and Outputs to generate a text file. Using the generated text file, the C program will generate the truth table for the circuit created."
+                    "The Logic Gate Circuit Solver was created using HTML, Vanilla CSS, Javascript (React, ReactFlow) and C. Built for you to create a circuit using Logic Gates, Inputs and Outputs to generate a text file. Using the generated text file, the C program will generate the truth table for the circuit created. Making it easy for users to derive the truth table from a Logic Gate Circuit using an easy to use drag and drop UI"
                   ]}
                 />
                 <TableOfContents 
@@ -42,10 +47,11 @@ export default function Home() {
                   projectFeaturesArray={[
                     "Easy to use",
                     "Drag and Drop UI",
-                    "Truth Table Generation",
+                    "Fast Run time",
                   ]}
                   codeFeaturesArray={[
                     "React JS",
+                    "Javascript",
                     "Vite",
                     "CSS",
                     "ReactFlow",
@@ -55,61 +61,34 @@ export default function Home() {
                 <MyRole 
                   role={"Project Owner"}
                   descriptionArray={[
-                    "This is a Personal Project that I embarked on for fun to apply my skills I have learnt from other projects I have done like Plant Pulse to real world problems that I face."
+                    "As the Project Owner this is a Personal Project that I embarked on for fun to apply my skills I have learnt from other projects I have done like Plant Pulse to real world problems that I face. Naturally, working alone meant that I do all the research, planning, designing, programming, etc. by myself. This also meant that if anything goes wrong, I only have myself to rely on which made this project a really fun challenge for myself to see how far I can get doing a whole project by myself.",
+                    "This project was made in"
                   ]}
                 />
-                {/* <WorkProcess
-                    parts={["Research and Planning", "Development and Prototyping", "Frontend Web Development"]}
+                <WorkProcess
+                    parts={["Research and Planning", "Frontend Web Development", "Backend Development"]}
                     descriptions={[
-                        "We started by conducting a survey around several communities which had a community gardens to interview our target audiences by getting the local elderly community gardeners to do our questionnaire. Following that we collected the data from the questionnaire and identified the key areas to focus on when designing a solution. From there we brainstormed and evaluated our ideas based on certain criterias before finalising our solution. Lastly, we designed the system block diagram for our selected idea in preperation for the development and prototyping phase.",
-                        "We started by using the system block diagram for our selected idea in preperation for the development to first build out the Python code for each beaglebone. Alongside that, I was building out the web server and the database so that we can test the beaglebones. Following that we brainstormed ideas for the prototype designs by using detailed sketches and following that we finalised the prototype design and started making the 3D models. Finally once we finalised the 3D models we made replicas of the 3D models using recycled materials we could find at NYP's Makerspace.",
-                        "Before developing the website, we started by first deciding on the tech stack that we will use to build the website. We decided to use NextJS with React Typescript, due to the wide adoption of React among the web development community as well as NextJS being widely used by big companies like Netflix, Notion, Twitch and many more, making NextJS a useful React framework to know for building modern websites and finally we chose Typescript as the syntax is very similar to Javascript making it easy to learn and its stricter type definitions make it safer by reducing the number of bugs and issues that make it into the final production code, reducing problems caused for both the application and the user. The colour scheme is essential to leaving an impression on the user, hence we decided to spend some time to carefully choose the colour scheme. We then continued to design the layout of all the pages of the website and the user experience. Following that, we spent a considerable amount of time to ensure the user experience was smooth and consistent and that the website was easy to use and understand, including a demo of the website.",
+                      "I started by researching on libraries that I could use to help me create a drag and drop UI which I settled on ReactFlow which is a library that is used for node based UI in react, which is perfect for my use case since each logic gate will use nodes to connect to one another. Vite and React JS were a no brainer being widely used in the industry while supporting the ReactFlow library, however choosing Vite over NextJS was because I did not see a use for the extensive set of features that NextJS provides and Vite being something I am familiar with and being more lightweight and suitable for smaller scale projects. The reason I chose to use C is very simple, I just wanted to learn the language and felt that this was a suitable project to implement it as a backend to generate the truth table. The planning of the design was fairly simple since it would follow the conventional design of logic gate circuits where the flow is from left to right where the inputs are on the left and the ouput is on the right. ",
+                      "I faced a little difficulty starting out the front end development process as I was working with a library I am unfamiliar with but to overcome this I started by reading the documentation of the ReactFlow library and was playing around with some of the components to see how they work and trying to customise the components to fit my use case. After familiarising myself with the library, I started to work on building the UI, building the input variable components, the 6 logic gates and the output variable components. Following that, I created the functionality to connect the components to each other and handle the generation of the text file which is needed for the backend to generate the truth table.",
+                      "I faced some difficulty starting out the back end development process as I was unfamiliar with the C language but I overcame this by watching a full tutorial on C programming and by creating a program to first be able to generate a truth table given a equation which can be derived from the circuit. Once I ensured that I was familiar with the C language and the fundamental functionality of the program was working perfectly I went on the create the actual program to read the text file and generate the truth table. I spent majority of the time debugging some logic errors in the code that was caused due to my infamiliarity with the language."
                     ]}
                     imgArrays={[
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire1.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire2.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire3.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIdeaTable.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
-                      ],
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePlantPlot.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIrrigationTank.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFoodWasteBin.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.jpg",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel2.png",    
-                      ],
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
-                      ],
+                      [],
+                      [],
+                      [],
                     ]}
                     imgDescriptionArrays={[
-                      [
-                        "Questionnaire results part 1",
-                        "Questionnaire results part 2",
-                        "Questionnaire results part 3",
-                        "Idea Evaluation Table",
-                        "System Block Diagram",
-                      ],
-                      [
-                        "Plant Plot Prototype",
-                        "Irrigation Tank Prototype",
-                        "Pest Detection Prototype",
-                        "Food Waste Bin Prototype",
-                        "Task Board Prototype",
-                        "Floor plan Prototype",
-                        "Floor plan 3D model 1",
-                        "Floor plan 3D model 2",
-                      ],
-                      [
-                        "Website Hero section",
-                      ],
+                      [],
+                      [],
+                      [],
                     ]}
-                /> */}
+                /> 
+                <OutcomeAndResults 
+                  contentArray={[
+                    "In the end, the project was a success, it serves its purpose of being an easy to use drag and drop UI logic gate circuit solver that automates the process of solving logic gate circuits. It also served its purpose of teaching me the language of C and putting my front end web development skills to the test by building node based components using the ReactFlow library.",
+                    "If I were to continue to work on this project in the future, I would look into changing from C to Javascript for handling the generation of the truth table since it would be more seamless by doing everything on the website itself and I wouldn't need to work within the constraints of using C. I would also look into making the number of input variables up to the user as well as adding in other electrical circuit components like BJT, Diodes, MOSFET, etc. to make it more useful for more conventional circuit analysis."
+                  ]}
+                />
                 <ProjectShowcase 
                   imgSrcArray={[
                     "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI1.png",

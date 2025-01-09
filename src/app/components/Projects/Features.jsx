@@ -48,7 +48,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                     transition={{ ease: "easeInOut", duration: 0.75 }}
                     className="mb-4 text-2xl font-bold uppercase text-[--foreground]]"
                 >
-                    Code Features
+                    Frameworks and Libraries
                 </motion.h3>
                 <ol className="list-decimal mb-9">
                     {
