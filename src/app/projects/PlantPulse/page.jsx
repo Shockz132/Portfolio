@@ -55,7 +55,10 @@ export default function PlantPulsePage() {
                 <TableOfContents 
                   contentsArray={[
                     "Project Overview",
-                    "Features"
+                    "Features",
+                    "My Role",
+                    "Work Process",
+                    "Outcome and Results",
                   ]}
                 />
                 <Features 
@@ -89,17 +92,19 @@ export default function PlantPulsePage() {
                   ]}
                 />
                 <WorkProcess
-                    parts={["Research and Planning", "Development and Prototyping"]}
+                    parts={["Research and Planning", "Development and Prototyping", "Frontend Web Development"]}
                     descriptions={[
-                        "We started by conducting a survey around several communities which had a community gardens to interview our target audiences by getting the local elderly community gardeners to do our questionnaire. Following that we collected the data from the questionnaire and identified the ",
-                        "We started by designing the system architecture and developing the frontend using React and NextJS. We also developed the backend using Python and Flask. We also implemented the IoT sensors using Beaglebone Black.",
-                        "We started Prototyping by sketching possible designs of our solution.",
+                        "We started by conducting a survey around several communities which had a community gardens to interview our target audiences by getting the local elderly community gardeners to do our questionnaire. Following that we collected the data from the questionnaire and identified the key areas to focus on when designing a solution. From there we brainstormed and evaluated our ideas based on certain criterias before finalising our solution. Lastly, we designed the system block diagram for our selected idea in preperation for the development and prototyping phase.",
+                        "We started by using the system block diagram for our selected idea in preperation for the development to first build out the Python code for each beaglebone. Alongside that, I was building out the web server and the database so that we can test the beaglebones. Following that we brainstormed ideas for the prototype designs by using detailed sketches and following that we finalised the prototype design and started making the 3D models. Finally once we finalised the 3D models we made replicas of the 3D models using recycled materials we could find at NYP's Makerspace.",
+                        "Before developing the website, we started by first deciding on the tech stack that we will use to build the website. We decided to use NextJS with React Typescript, due to the wide adoption of React among the web development community as well as NextJS being widely used by big companies like Netflix, Notion, Twitch and many more, making NextJS a useful React framework to know for building modern websites and finally we chose Typescript as the syntax is very similar to Javascript making it easy to learn and its stricter type definitions make it safer by reducing the number of bugs and issues that make it into the final production code, reducing problems caused for both the application and the user. The colour scheme is essential to leaving an impression on the user, hence we decided to spend some time to carefully choose the colour scheme. We then continued to design the layout of all the pages of the website and the user experience. Following that, we spent a considerable amount of time to ensure the user experience was smooth and consistent and that the website was easy to use and understand, including a demo of the website.",
                     ]}
                     imgArrays={[
                       [
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire1.png",
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire2.png",
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire3.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIdeaTable.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
                       ],
                       [
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePlantPlot.png",
@@ -108,10 +113,10 @@ export default function PlantPulsePage() {
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFoodWasteBin.png",
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.jpg",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
+                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel2.png",    
                       ],
                       [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
                         "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
                       ],
                     ]}
@@ -120,6 +125,8 @@ export default function PlantPulsePage() {
                         "Questionnaire results part 1",
                         "Questionnaire results part 2",
                         "Questionnaire results part 3",
+                        "Idea Evaluation Table",
+                        "System Block Diagram",
                       ],
                       [
                         "Plant Plot Prototype",
@@ -128,14 +135,30 @@ export default function PlantPulsePage() {
                         "Food Waste Bin Prototype",
                         "Task Board Prototype",
                         "Floor plan Prototype",
+                        "Floor plan 3D model 1",
+                        "Floor plan 3D model 2",
                       ],
                       [
-                        "Frontend Web Development",
-                        "Frontend Web Development",
-                        "Frontend Web Development",
+                        "Website Hero section",
                       ],
                     ]}
                 />
+                <motion.div 
+                  initial={{ y: 48, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ ease: "easeInOut", duration: 0.75 }}
+                  className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]"
+                >
+                  <motion.p
+                    initial={{ y: 48, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ ease: "easeInOut", duration: 0.75 }}
+                    className="text-lg font-semibold text-center"
+                  >
+                    Plant Pulse Website Demo
+                  </motion.p>
+                  <iframe src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview" className="aspect-video md:h-[16rem] h-full mx-auto mb-12"></iframe>
+                </motion.div>
                 <ProjectShowcase 
                   title="Project Showcase"
                   imgSrcArray={[

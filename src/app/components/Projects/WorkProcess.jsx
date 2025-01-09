@@ -28,7 +28,7 @@ export const WorkProcess = ({parts, descriptions, imgArrays, imgDescriptionArray
                                     initial={{ y: 48, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                                    className="text-lg font-semibold"
+                                    className="text-2xl font-semibold mb-4"
                                 >
                                     {part}
                                 </motion.p>
@@ -37,6 +37,7 @@ export const WorkProcess = ({parts, descriptions, imgArrays, imgDescriptionArray
                                     initial={{ y: 48, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     transition={{ ease: "easeInOut", duration: 0.75 }}
+                                    className="text-lg"
                                 >
                                     {descriptions[index]}
                                 </motion.p>
