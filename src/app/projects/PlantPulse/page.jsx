@@ -55,6 +55,7 @@ export default function PlantPulsePage() {
                 />
                 <TableOfContents 
                   contentsArray={[
+                    "Problem",
                     "Project Overview",
                     "Features",
                     "My Role",

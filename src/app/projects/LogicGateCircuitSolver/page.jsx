@@ -39,8 +39,12 @@ export default function Home() {
                 />
                 <TableOfContents 
                   contentsArray={[
+                    "Problem",
                     "Project Overview",
-                    "Features"
+                    "Features",
+                    "My Role",
+                    "Work Process",
+                    "Project Showcase",
                   ]}
                 />
                 <Features 

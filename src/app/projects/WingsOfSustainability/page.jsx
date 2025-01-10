@@ -37,7 +37,7 @@ export default function Home() {
                   hacksterLink={"https://www.hackster.io/513079/wings-of-sustainability-bsf-rearing-f94004"}
                 />
                 <ProjectProblem
-                  problemStatement="How can I automate the process of deriving the truth table from a Logic Gate Circuit? "
+                  problemStatement="How can we create a solution that improves the urban farming sector? "
                 />
                 <ProjectOverview 
                   overviewContentArray={[
@@ -46,9 +46,11 @@ export default function Home() {
                 />
                 <TableOfContents 
                   contentsArray={[
+                    "Problem",
                     "Project Overview",
                     "Features",
                     "My Role",
+                    "Work Process",
                     "Project Showcase",
                   ]}
                 />
@@ -74,61 +76,26 @@ export default function Home() {
                   ]}
                 />
                 <WorkProcess
-                    parts={["Research and Planning", "Development and Prototyping", "Frontend Web Development"]}
+                    parts={["Research and Planning", "Development and Prototyping"]}
                     descriptions={[
-                        "We started by conducting a survey around several communities which had a community gardens to interview our target audiences by getting the local elderly community gardeners to do our questionnaire. Following that we collected the data from the questionnaire and identified the key areas to focus on when designing a solution. From there we brainstormed and evaluated our ideas based on certain criterias before finalising our solution. Lastly, we designed the system block diagram for our selected idea in preperation for the development and prototyping phase.",
-                        "We started by using the system block diagram for our selected idea in preperation for the development to first build out the Python code for each beaglebone. Alongside that, I was building out the web server and the database so that we can test the beaglebones. Following that we brainstormed ideas for the prototype designs by using detailed sketches and following that we finalised the prototype design and started making the 3D models. Finally once we finalised the 3D models we made replicas of the 3D models using recycled materials we could find at NYP's Makerspace.",
-                        "Before developing the website, we started by first deciding on the tech stack that we will use to build the website. We decided to use NextJS with React Typescript, due to the wide adoption of React among the web development community as well as NextJS being widely used by big companies like Netflix, Notion, Twitch and many more, making NextJS a useful React framework to know for building modern websites and finally we chose Typescript as the syntax is very similar to Javascript making it easy to learn and its stricter type definitions make it safer by reducing the number of bugs and issues that make it into the final production code, reducing problems caused for both the application and the user. The colour scheme is essential to leaving an impression on the user, hence we decided to spend some time to carefully choose the colour scheme. We then continued to design the layout of all the pages of the website and the user experience. Following that, we spent a considerable amount of time to ensure the user experience was smooth and consistent and that the website was easy to use and understand, including a demo of the website.",
+                        "We started to research on the areas of urban farming, which proved to be a challenge since the problem statement was very general which made it hard to narrow down to a niche that we could focus on, however after finding a niche we managed to brainstorm for ideas relatively quickly by ranking all our ideas to see which was the best. We proceeded to plan how we would make our solution, however we had a limitation of 3 M5Stack devices so we had to plan our solution around those constraints and we tackled this by clearly defining the purpose of each of the M5Stacks to ensure that have the key components for the system and during development we would have a clear goal.",
+                        "During the Development phase, the main challenge we faced was getting the MQTT to work reliably between M5Stacks, and the M5Stack crashing after the code size gets too big. However once we got over those hurdles, the development process was relatively smooth when programming the blocks due to the ease of use when using UI Flow. "
                     ]}
                     imgArrays={[
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire1.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire2.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire3.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIdeaTable.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
-                      ],
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePlantPlot.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIrrigationTank.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFoodWasteBin.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.jpg",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel2.png",    
-                      ],
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
-                      ],
+                      [],
+                      [],
+                      [],
                     ]}
                     imgDescriptionArrays={[
-                      [
-                        "Questionnaire results part 1",
-                        "Questionnaire results part 2",
-                        "Questionnaire results part 3",
-                        "Idea Evaluation Table",
-                        "System Block Diagram",
-                      ],
-                      [
-                        "Plant Plot Prototype",
-                        "Irrigation Tank Prototype",
-                        "Pest Detection Prototype",
-                        "Food Waste Bin Prototype",
-                        "Task Board Prototype",
-                        "Floor plan Prototype",
-                        "Floor plan 3D model 1",
-                        "Floor plan 3D model 2",
-                      ],
-                      [
-                        "Website Hero section",
-                      ],
+                      [],
+                      [],
+                      [],
                     ]}
                 />
                 <OutcomeAndResults 
                   contentArray={[
-                    "In the end, the project was a success. I as the team leader feel that the work we have put out for this project was incredibly well done, not to say it couldnt have been improved but for the time we and level of effort that we put into Plant Pulse I can safely say this is a piece of work that I am proud of and the team should be too. After we gave a presentation on the project to a panel of judges which was made up of senior lecturers and the module leader, one of the senior lecturers actually proposed that we further take this project up another level and in certain areas possibly even make into a reality by contacting some companies he has connections with. The module leader also selected our project for NYP's Tech Nexus 2025, where we will present to many directors from companies that NYP closely work with to showcase our work to them, and from there possibly have the opportunity to work with them in the future.",
-                    "If I were to do this project again, I would definitely have allocated more time into building the functionalities of the website as this project, given more time would definitely become much better and maybe even commercial ready work to put out there to test and maybe even turn into a business one day. I would also have wanted to put more time into finding better resources for building the prototype as we could have leveraged on the power of 3D printing to build our prototypes which might have cut down the time spent on building it ourselves by a lot which could ahve given us more time to allocate to other areas like building out the functionalities of the website."
+                    "In the end the project was a success. We as a team were very proud of the work that we had put into the project. Not only did we create a system that promotes sustainability, it would also contribute to Singapore's 30 by 30 goal of producing 30% of our food locally by 2030. A senior lecturer even contacted us saying we could consider taking this project one step further if we managed to find a company to partner with us, and he said that our project could even become a real product that could be released into the real world.",
+                    "If we were given more time to work ont he project, we would definitely have spent more time on making a better prototype by using 3D printing to make it more sturdy and durable and designing a better prototype using gears and a slightly different design for the counting of the insects as well."
                   ]}
                 />
                 <ProjectShowcase 
