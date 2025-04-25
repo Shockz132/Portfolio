@@ -5,7 +5,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { PanelsTopLeft, CodeXml, BrainCircuit } from "lucide-react";
+import { PanelsTopLeft, CodeXml, BrainCircuit, Network } from "lucide-react";
 import { useRef, useEffect } from "react";
 
 export const SkillsPreview = () => {
@@ -170,13 +170,13 @@ const Skills = () => {
         />
         <SkillItem 
           title="Internet of Things System Design" 
-          skillIcon={<CodeXml size="80%"/>}
+          skillIcon={<Network size="80%"/>}
           description="Experienced in designing end-to-end IoT solutions by integrating hardware, software, and cloud components. Proficient in working with platforms like Arduino Uno, M5Stack Fire Duo, BeagleBone Black Wireless, MQTT, Qubitro, and WebSocketIO to develop automated and data-driven systems."
           yValue="750"
         />
         <SkillItem 
           title="Electronics System Design" 
-          skillIcon={<CodeXml size="80%"/>}
+          skillIcon={<CircuitBoard size="80%"/>}
           description="Proficient in PCB design, electronic circuit analysis, and digital electronics. Experienced in using tools like AutoDesk Eagle and soldering components to design and implement functional electronic systems, including microcontroller-based solutions and custom circuitry."
           yValue="1000"
         />
