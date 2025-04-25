@@ -20,8 +20,7 @@ export function AboutMe() {
                     </TextScramble>
                 </div>
                 <TextScramble duration={2} className="text-xl md:pr-[30%] pb-[3%]" >
-                    A Fresh Electronic and Computer Engineering Graduate, passionate about computers and coding, a curious problem-solver with a love for exploring new technologies.
-                    Always eager to learn and grow, wanting to create innovative and impactful solutions that contribute to society. 
+                    An Electronic and Computer Engineering Polytechnic Student, passionate about computers and coding, a curious problem-solver with a love for exploring new technologies. Always eager to learn and grow, wanting to create innovative and impactful solutions that contribute to society.
                 </TextScramble>
                 <div className="flex">
                     <motion.span>My Links</motion.span>
