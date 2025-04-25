@@ -169,16 +169,22 @@ const Skills = () => {
           yValue="250"
         />
         <SkillItem 
-          title="Backend Development" 
+          title="Internet of Things System Design" 
           skillIcon={<CodeXml size="80%"/>}
-          description="Proficient in a wide variety of Backend Programming Languages. Experienced in developing backend functionality, integrating APIs, and managing databases. Helping you create scalable server-side solutions that work seamlessly with frontend components."
+          description="Experienced in designing end-to-end IoT solutions by integrating hardware, software, and cloud components. Proficient in working with platforms like Arduino Uno, M5Stack Fire Duo, BeagleBone Black Wireless, MQTT, Qubitro, and WebSocketIO to develop automated and data-driven systems."
           yValue="750"
+        />
+        <SkillItem 
+          title="Electronics System Design" 
+          skillIcon={<CodeXml size="80%"/>}
+          description="Proficient in PCB design, electronic circuit analysis, and digital electronics. Experienced in using tools like AutoDesk Eagle and soldering components to design and implement functional electronic systems, including microcontroller-based solutions and custom circuitry."
+          yValue="1000"
         />
         <SkillItem 
           title="Automation & AI Tools" 
           skillIcon={<BrainCircuit size="80%"/>}
           description="Proficient in Python, spaCy, Git, Github. Experienced in using Python for automating workflows and scripting tasks. Familiar with spaCy for AI-related projects, and proficient with Git and Github for version control and collaborative development."
-          yValue="1000"
+          yValue="1250"
         />
       </div>
 

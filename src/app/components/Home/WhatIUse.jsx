@@ -50,6 +50,7 @@ export const WhatIUse = () => {
                             <ListItem listItemText={"Javascript"} />
                             <ListItem listItemText={"C"} />
                             <ListItem listItemText={"C#"} />
+                            <ListItem listItemText={"SQL"} />
                         </motion.ul>
                     </div>
                     <div className="flex flex-wrap justify-between">
