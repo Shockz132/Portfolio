@@ -5,7 +5,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { PanelsTopLeft, CodeXml, BrainCircuit, Network } from "lucide-react";
+import { PanelsTopLeft, CircuitBoard, BrainCircuit, Network } from "lucide-react";
 import { useRef, useEffect } from "react";
 
 export const SkillsPreview = () => {
