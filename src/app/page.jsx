@@ -20,7 +20,7 @@ export default function Home() {
           <WhatIUse/>
           {/* <WorkExperience /> */}
           <Projects />
-          <ContactMe />
+          {/* <ContactMe /> */}
         </div>
         <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center w-full">
             <p className="w-full text-center"> Copyright © 2025 Jethro. All rights reserved. </p>

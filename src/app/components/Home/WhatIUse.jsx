@@ -38,6 +38,7 @@ export const WhatIUse = () => {
                             <ListItem listItemText={"React JS"} />
                             <ListItem listItemText={"Typescript"} />
                             <ListItem listItemText={"React TS"} />
+                            <ListItem listItemText={"React Native"} />
                         </motion.ul>
                         <motion.ul
                             initial={{ y: 48, opacity: 0 }}
