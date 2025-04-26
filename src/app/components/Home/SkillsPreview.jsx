@@ -187,7 +187,6 @@ const Skills = () => {
           yValue="1250"
         />
       </div>
-
     </section>
   );
 };
