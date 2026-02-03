@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Jethro's Portfolio",
-  description: "CPB ICA2 Portfolio",
+  description: "Jethro's Portfolio",
 };
 
 export default function RootLayout({ children }) {
