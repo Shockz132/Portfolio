@@ -20,7 +20,7 @@ export default function HealthifyPage() {
                 <NavBar />
                 <Header
                   title={"Healthify"}
-                  date={"01/2025 - 02/2025"}
+                  date={"06/2025 - 08/2025"}
                   readMins={5}
                   imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyPreview.png"
                   tagsArray={[
