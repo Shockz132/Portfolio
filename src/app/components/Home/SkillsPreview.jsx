@@ -5,7 +5,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { PanelsTopLeft, CircuitBoard, BrainCircuit, Network } from "lucide-react";
+import { PanelsTopLeft, CircuitBoard, BrainCircuit, Network, Server } from "lucide-react";
 import { useRef, useEffect } from "react";
 
 export const SkillsPreview = () => {
@@ -165,7 +165,7 @@ const Skills = () => {
         <SkillItem
           title="Web Development"
           skillIcon={<PanelsTopLeft size="80%"/>}
-          description="Proficient in a wide variety of Frontend Programming Languages. Experienced in creating dynamic, user-friendly web applications using modern frameworks and libraries."
+          description="Proficient in a wide variety of Frontend Programming Languages. Experienced in creating dynamic, user-friendly web and mobile applications using modern frameworks and libraries."
           yValue="250"
         />
         <SkillItem 
@@ -183,8 +183,14 @@ const Skills = () => {
         <SkillItem 
           title="Automation & AI Tools" 
           skillIcon={<BrainCircuit size="80%"/>}
-          description="Proficient in Python, spaCy, Git, Github. Experienced in using Python for automating workflows and scripting tasks. Familiar with spaCy for AI-related projects, and proficient with Git and Github for version control and collaborative development."
+          description="Proficient in Python, Docling, spaCy, Git, Github, Docker. Experienced in using Python for automating workflows and scripting tasks. Familiar with Docling and spaCy for AI-related projects, and proficient with Docker, Git and Github for containerization, version control, and collaborative development."
           yValue="1250"
+        />
+        <SkillItem 
+          title="Backend Development" 
+          skillIcon={<Server size="80%"/>}
+          description="Proficient in Backend Programming Languages like Python, C, C#, SQL. Experienced in creating robust and scalable backend systems and databases."
+          yValue="1500"
         />
       </div>
     </section>
