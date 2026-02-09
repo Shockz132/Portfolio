@@ -20,7 +20,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                 >
                     Project Features
                 </motion.h3>
-                <ol
+                <motion.ol
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
@@ -41,7 +41,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                             </motion.li>
                         ))
                     }
-                </ol>
+                </motion.ol>
                 <motion.h3
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -50,7 +50,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                 >
                     Frameworks and Libraries
                 </motion.h3>
-                <ol className="list-decimal mb-9">
+                <motion.ol className="list-decimal mb-9">
                     {
                         codeFeaturesArray.map((codeFeature) => (
                             <motion.li
@@ -66,7 +66,7 @@ export const Features = ({projectFeaturesArray, codeFeaturesArray}) => {
                             </motion.li>
                         ))
                     }
-                </ol>
+                </motion.ol>
             </div>
         </section>
     );

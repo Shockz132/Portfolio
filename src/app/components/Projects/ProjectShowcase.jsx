@@ -15,12 +15,11 @@ export const ProjectShowcase = ({ title, imgSrcArray, imgDescriptionArray }) => 
                 <div className="text-lg font-semibold">
                     {
                         imgSrcArray.map((imgSrc, index) => (
-                            <>
+                            <div key={index}>
                                 <motion.p
                                     initial={{ y: 48, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                                    key={`${imgDescriptionArray[index].replace(/\s+/g, '-').toLowerCase()}`}
                                     className="text-lg font-semibold text-center"
                                 >
                                     {imgDescriptionArray[index]}
@@ -30,11 +29,10 @@ export const ProjectShowcase = ({ title, imgSrcArray, imgDescriptionArray }) => 
                                     whileInView={{ y: 0, opacity: 1 }}
                                     transition={{ ease: "easeInOut", duration: 0.75 }}
                                     src={imgSrc}
-                                    key={index}
                                     alt={`image link to ${imgDescriptionArray[index].replace(/\s+/g, '-').toLowerCase()}`}
                                     className="w-[50%] mx-auto mb-24"
                                 />
-                            </>
+                            </div>
                         ))
                     }
                 </div>

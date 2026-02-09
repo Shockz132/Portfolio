@@ -65,16 +65,15 @@ export default function Home() {
                 <MyRole 
                   role={"Project Owner"}
                   descriptionArray={[
-                    "As the Project Owner this is a Personal Project that I embarked on for fun to apply my skills I have learnt from other projects I have done like Plant Pulse to real world problems that I face. Naturally, working alone meant that I do all the research, planning, designing, programming, etc. by myself. This also meant that if anything goes wrong, I only have myself to rely on which made this project a really fun challenge for myself to see how far I can get doing a whole project by myself.",
-                    "This project was made in"
+                    "This is a personal project I built solo to apply my front-end skills to a real problem I was facing. Working alone meant handling all research, planning, design, and programming myself, a fun challenge to see how far I could take a project independently.",
                   ]}
                 />
                 <WorkProcess
                     parts={["Research and Planning", "Frontend Web Development", "Backend Development"]}
                     descriptions={[
-                      "I started by researching on libraries that I could use to help me create a drag and drop UI which I settled on ReactFlow which is a library that is used for node based UI in react, which is perfect for my use case since each logic gate will use nodes to connect to one another. Vite and React JS were a no brainer being widely used in the industry while supporting the ReactFlow library, however choosing Vite over NextJS was because I did not see a use for the extensive set of features that NextJS provides and Vite being something I am familiar with and being more lightweight and suitable for smaller scale projects. The reason I chose to use C is very simple, I just wanted to learn the language and felt that this was a suitable project to implement it as a backend to generate the truth table. The planning of the design was fairly simple since it would follow the conventional design of logic gate circuits where the flow is from left to right where the inputs are on the left and the ouput is on the right. ",
-                      "I faced a little difficulty starting out the front end development process as I was working with a library I am unfamiliar with but to overcome this I started by reading the documentation of the ReactFlow library and was playing around with some of the components to see how they work and trying to customise the components to fit my use case. After familiarising myself with the library, I started to work on building the UI, building the input variable components, the 6 logic gates and the output variable components. Following that, I created the functionality to connect the components to each other and handle the generation of the text file which is needed for the backend to generate the truth table.",
-                      "I faced some difficulty starting out the back end development process as I was unfamiliar with the C language but I overcame this by watching a full tutorial on C programming and by creating a program to first be able to generate a truth table given a equation which can be derived from the circuit. Once I ensured that I was familiar with the C language and the fundamental functionality of the program was working perfectly I went on the create the actual program to read the text file and generate the truth table. I spent majority of the time debugging some logic errors in the code that was caused due to my infamiliarity with the language."
+                      "I chose ReactFlow for its node-based UI, perfect for connecting logic gates. Vite was a better fit than NextJS for a lightweight project, and I picked C for the backend purely to learn the language.",
+                      "Getting started with ReactFlow took some time reading docs and experimenting with components. Once familiar, I built input/output variable components, six logic gate types, the connection logic, and the text file generation for the backend.",
+                      "Learning C was the main hurdle. I started by building a simpler truth-table-from-equation program, then expanded it to read the generated circuit file. Most debugging time was spent on logic errors from unfamiliarity with the language."
                     ]}
                     imgArrays={[
                       [],
@@ -89,8 +88,8 @@ export default function Home() {
                 /> 
                 <OutcomeAndResults 
                   contentArray={[
-                    "In the end, the project was a success, it serves its purpose of being an easy to use drag and drop UI logic gate circuit solver that automates the process of solving logic gate circuits. It also served its purpose of teaching me the language of C and putting my front end web development skills to the test by building node based components using the ReactFlow library.",
-                    "If I were to continue to work on this project in the future, I would look into changing from C to Javascript for handling the generation of the truth table since it would be more seamless by doing everything on the website itself and I wouldn't need to work within the constraints of using C. I would also look into making the number of input variables up to the user as well as adding in other electrical circuit components like BJT, Diodes, MOSFET, etc. to make it more useful for more conventional circuit analysis."
+                    "The project serves its purpose as an easy-to-use drag-and-drop logic gate circuit solver. It also taught me C and pushed my front-end skills with ReactFlow's node-based components.",
+                    "Future improvements would include switching the backend from C to JavaScript for a seamless in-browser experience, allowing user-defined input variable counts, and adding more circuit components like BJTs, diodes, and MOSFETs."
                   ]}
                 />
                 <ProjectShowcase 
