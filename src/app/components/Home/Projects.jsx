@@ -17,6 +17,12 @@ export const Projects = () => {
       </motion.h1>
       <div className="mx-auto max-w-5xl">
         <Link
+          heading="Healthify"
+          subheading="A Health and Wellness Application"
+          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyFeatured.png"
+          href="https://shockz132.github.io/Portfolio/projects/Healthify"
+        />
+        <Link
           heading="Plant Pulse"
           subheading="A Full Stack IoT Project using NextJS, React, Python, etc."
           imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png"
@@ -33,12 +39,6 @@ export const Projects = () => {
           subheading="A backend IoT Project using M5Stack and Python"
           imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
           href="https://shockz132.github.io/Portfolio/projects/WingsOfSustainability"
-        />
-        <Link
-          heading="Healthify"
-          subheading="A Health and Wellness Application"
-          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyFeatured.png"
-          href="https://shockz132.github.io/Portfolio/projects/Healthify"
         />
       </div>
     </section>

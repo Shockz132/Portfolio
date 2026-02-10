@@ -83,7 +83,7 @@ export default function HealthifyPage() {
                     "I co-developed Healthify alongside Cayden2606, taking ownership of the AI integration, location services, appointment system, and theming across the full stack.",
                     "On the AI side, I integrated Google Gemini 2.0 Flash for health conversations and image analysis, built appointment intent extraction from chat, and managed conversational context.",
                     "For clinic discovery, I built the interactive map with Flutter Map and OpenStreetMap, integrated Geoapify for clinic data across Singapore, and implemented GPS-based and region-based search with Haversine distance calculations.",
-                    "I designed the multi-step appointment booking flow (Category → Service → Date → Time → Info) with full CRUD, AI-assisted pre-fill, automatic status transitions, and email confirmations via Resend.",
+                    "For the multi-step appointment booking flow I designed the AI-assisted pre-fill that suggests relevant services and auto-fills user information from conversational context.",
                     "For theming, I built a custom Material Design 3 theme system with 15 color palettes, dark/light mode persistence in Firebase, and HSL manipulation for dark mode. I also set up Firebase Auth, Firestore architecture, Cloudinary profile uploads, and the onboarding flow."
                   ]}
                 />
