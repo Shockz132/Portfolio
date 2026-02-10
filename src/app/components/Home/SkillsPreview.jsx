@@ -1,225 +1,143 @@
-import { ReactLenis } from "lenis/dist/lenis-react";
-import {
-  motion,
-  useMotionTemplate,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { PanelsTopLeft, CircuitBoard, BrainCircuit, Network, Server } from "lucide-react";
-import { useRef, useEffect } from "react";
+import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { PanelsTopLeft, CircuitBoard, BrainCircuit, Network, Server, Smartphone } from "lucide-react";
+import React, { useRef } from "react";
 
 export const SkillsPreview = () => {
   return (
-    <>
-      <ReactLenis
-        root
-        options={{
-          // Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
-          lerp: 0.05,
-          //   infinite: true,
-          //   syncTouch: true,
-        }}
-      >
-        <Hero />
-        <Skills className="bg-transparent"/>
-      </ReactLenis>
-    </>
-  );
-};
-
-const SECTION_HEIGHT = 1900;
-
-const Hero = () => {
-  return (
-    <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
-      className="relative w-full"
-    >
-      <CenterImage />
-
-      <ParallaxImages />
-
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
-    </div>
-  );
-};
-
-const CenterImage = () => {
-  const { scrollY } = useScroll();
-
-  const clip1 = useTransform(scrollY, [0, 1500], [25, 0]);
-  const clip2 = useTransform(scrollY, [0, 1500], [75, 100]);
-
-  const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
-
-  const backgroundSize = useTransform(
-    scrollY,
-    [0, SECTION_HEIGHT + 1000],
-    ["170%", "100%"]
-  );
-  const opacity = useTransform(
-    scrollY,
-    [SECTION_HEIGHT, SECTION_HEIGHT + 1000],
-    [1, 0]
-  );
-
-  return (
-    <motion.div
-      className="sticky top-0 h-screen w-full"
-      style={{
-        clipPath,
-        backgroundSize,
-        opacity,
-        backgroundImage:
-          "url(https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/HomePage/vscode-window.png)",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    />
-  );
-};
-
-const ParallaxImages = () => {
-  return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
-      <ParallaxImg
-        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/ReactLogo.svg"
-        alt="React JS logo"
-        start={-200}
-        end={200}
-        className="w-[20%]"
-      />
-      <ParallaxImg
-        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/TypeScriptLogo.svg"
-        alt="typescript logo"
-        start={200}
-        end={-250}
-        className="mx-auto w-[20%]"
-      />
-      <ParallaxImg
-        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/NextJSLogo.svg"
-        alt="white nextjs logo"
-        start={-200}
-        end={200}
-        className="ml-auto w-[20%]"
-      />
-      <ParallaxImg
-        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-        alt="python logo"
-        start={150}
-        end={-500}
-        className="ml-48 w-[15%]"
-      />
-      <ParallaxImg
-        src="https://raw.githubusercontent.com/Shockz132/Portfolio/b6fb1f341e734182ecbf30e9f0e6d27fcc66e767/public/HomePage/CLogo.svg"
-        alt="C logo"
-        start={150}
-        end={-500}
-        className="ml-auto mr-48 w-[18%]"
-      />
-    </div>
-  );
-};
-
-const ParallaxImg = ({ className, alt, src, start, end }) => {
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: [`${start}px end`, `end ${end * -1}px`],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
-
-  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
-  const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
-
-  return (
-    <motion.img
-      src={src}
-      alt={alt}
-      className={className}
-      ref={ref}
-      style={{ transform, opacity }}
-    />
-  );
-};
-
-const Skills = () => {
-  return (
     <section
-      id="about-me"
-      className="mx-auto max-w-5xl px-4 py-48 text-[--foreground]]"
+      id="skills"
+      className="mx-auto max-w-5xl px-6 py-48 text-[--foreground]"
     >
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-[--foreground]]"
+        className="mb-20 text-4xl font-black uppercase text-[--foreground]"
       >
         Skills
       </motion.h1>
       
-      <div>
-        <SkillItem
-          title="Web Development"
-          skillIcon={<PanelsTopLeft size="80%"/>}
-          description="Proficient in a wide variety of Frontend Programming Languages. Experienced in creating dynamic, user-friendly web and mobile applications using modern frameworks and libraries."
-          yValue="250"
-        />
-        <SkillItem 
-          title="Internet of Things System Design" 
-          skillIcon={<Network size="80%"/>}
-          description="Experienced in designing end-to-end IoT solutions by integrating hardware, software, and cloud components. Proficient in working with platforms like Arduino Uno, M5Stack Fire Duo, BeagleBone Black Wireless, MQTT, Qubitro, and WebSocketIO to develop automated and data-driven systems."
-          yValue="750"
-        />
-        <SkillItem 
-          title="Electronics System Design" 
-          skillIcon={<CircuitBoard size="80%"/>}
-          description="Proficient in PCB design, electronic circuit analysis, and digital electronics. Experienced in using tools like AutoDesk Eagle and soldering components to design and implement functional electronic systems, including microcontroller-based solutions and custom circuitry."
-          yValue="1000"
-        />
-        <SkillItem 
-          title="Automation & AI Tools" 
-          skillIcon={<BrainCircuit size="80%"/>}
-          description="Proficient in Python, Docling, spaCy, Git, Github, Docker. Experienced in using Python for automating workflows and scripting tasks. Familiar with Docling and spaCy for AI-related projects, and proficient with Docker, Git and Github for containerization, version control, and collaborative development."
-          yValue="1250"
-        />
-        <SkillItem 
-          title="Backend Development" 
-          skillIcon={<Server size="80%"/>}
-          description="Proficient in Backend Programming Languages like Python, C, C#, SQL. Experienced in creating robust and scalable backend systems and databases."
-          yValue="1500"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {skillsData.map((skill, index) => (
+             <TiltCard key={index} {...skill} index={index} />
+        ))}
       </div>
     </section>
   );
 };
 
-const SkillItem = ({ title, skillIcon, description, yValue}) => {
-  useEffect(() => {})
+const TiltCard = ({ title, icon, description, tags, index }) => {
+  const ref = useRef(null);
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+
+  const handleMouseMove = (e) => {
+    const rect = ref.current.getBoundingClientRect();
+
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
     <motion.div
-        initial={{ y: {yValue}, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-48 px-3 pb-9 flex-1"
-      >
-      <div className="text-[--foreground]] flex flex-wrap">
-        <div className="flex-5">
-          {skillIcon}
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      initial={{ y: 48, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 0.75, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      style={{
+        rotateY,
+        rotateX,
+        transformStyle: "preserve-3d",
+      }}
+      className="relative flex flex-col rounded-2xl bg-neutral-900/30 border border-neutral-800"
+    >
+        <div 
+          style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} 
+          className="flex-1 flex flex-col items-center text-center p-8 gap-6 rounded-2xl"
+        >
+            <div className="p-4 rounded-2xl bg-neutral-800/50 text-[--foreground] shadow-md">
+                {icon}
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[--foreground] mb-2">
+                  {title}
+              </h3>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                  {description}
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2 mt-auto">
+                {tags.map((tag, i) => (
+                    <span key={i} className="px-2 py-1 text-[10px] font-medium rounded-full bg-neutral-900 text-neutral-400 border border-neutral-700/50 shadow-sm">
+                        {tag}
+                    </span>
+                ))}
+            </div>
         </div>
-        <div className="flex-1">
-          <p className="mb-9 text-4xl">
-            {title}
-          </p>
-          <p per='word' preset='blur' delay={0.75}className="text-lg">
-            {description}
-          </p>
-        </div>
-      </div>
     </motion.div>
   );
 };
+
+const skillsData = [
+    {
+        title: "Web Development",
+        icon: <PanelsTopLeft size={28} strokeWidth={1.5}/>,
+        description: "Experienced in creating dynamic, user-friendly web applications using modern frameworks and libraries.",
+        tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS", "JavaScript"],
+    },
+    {
+        title: "Automation & AI",
+        icon: <BrainCircuit size={28} strokeWidth={1.5}/>,
+        description: "Building AI agents and pipelines for automating workflows, document processing, and intelligent search.",
+        tags: ["LangChain", "LangGraph", "Docling", "spaCy", "Docker", "RAG"],
+    },
+    {
+        title: "Backend Development", 
+        icon: <Server size={28} strokeWidth={1.5}/>,
+        description: "Creating robust and scalable backend systems, APIs, and databases.",
+        tags: ["Python", "FastAPI", "C", "C#", "SQL", "REST APIs"],
+    },
+    {
+        title: "Mobile Development",
+        icon: <Smartphone size={28} strokeWidth={1.5}/>,
+        description: "Building cross-platform mobile applications with modern tooling and native-like performance.",
+        tags: ["Flutter", "Dart", "Firebase", "Material Design"],
+    },
+    {
+        title: "IoT System Design", 
+        icon: <Network size={28} strokeWidth={1.5}/>,
+        description: "Designing end-to-end IoT solutions integrating hardware, software, and cloud components.",
+        tags: ["Arduino", "M5Stack", "BeagleBone", "MQTT", "Qubitro", "WebSocket"],
+    },
+    {
+        title: "Electronics Design", 
+        icon: <CircuitBoard size={28} strokeWidth={1.5}/>,
+        description: "PCB design, circuit analysis, and digital electronics with microcontroller-based solutions.",
+        tags: ["PCB Design", "AutoDesk Eagle", "Soldering", "Digital Electronics"],
+    },
+];

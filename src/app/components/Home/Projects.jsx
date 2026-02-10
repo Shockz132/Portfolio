@@ -9,6 +9,7 @@ export const Projects = () => {
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-black uppercase text-[--foreground]]"
       >
@@ -84,6 +85,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
       <motion.div
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
       >
         <motion.span
