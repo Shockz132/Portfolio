@@ -1,37 +1,39 @@
 import { motion } from "framer-motion";
+import { Trophy } from "lucide-react";
 
 export const OutcomeAndResults = ({contentArray}) => {
     return (
-        <section id="outcome-and-results" className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]">
+        <section id="outcome-and-results" className="mx-auto max-w-4xl px-6 py-24 text-[--foreground]">
             <div className="mb-20">
-                <motion.h2
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-4 text-4xl font-black uppercase text-[--foreground]]"
-                >
-                    Outcome and Results
-                </motion.h2>
                 <motion.div
-                    initial={{ y: 48, opacity: 0 }}
+                    initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="text-lg font-semibold"
+                    className="flex items-center gap-3 mb-10"
                 >
-                    {
-                        contentArray.map((content) => (
-                            <motion.p
-                                initial={{ y: 48, opacity: 0 }}
-                                whileInView={{ y: 0, opacity: 1 }}
-                                transition={{ ease: "easeInOut", duration: 0.75 }}
-                                key={content}
-                                className="text-lg mb-8 font-semibold leading-loose"
-                            >
-                                {content}
-                            </motion.p>
-                        ))
-                    }
+                    <div className="p-2 bg-yellow-500/10 rounded-lg text-yellow-500">
+                        <Trophy size={28} />
+                    </div>
+                    <h2 className="text-3xl font-bold uppercase tracking-wide">
+                        Outcome & Results
+                    </h2>
                 </motion.div>
+
+                <div className="pl-4 border-l-2 border-neutral-800 space-y-8">
+                    {contentArray.map((content, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ x: -20, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="relative"
+                        >
+                            <span className="absolute -left-[25px] top-2 w-3 h-3 rounded-full bg-neutral-700 ring-4 ring-[#0a0a0a]" />
+                            <p className="text-lg md:text-xl leading-relaxed text-neutral-300">
+                                {content}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

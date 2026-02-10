@@ -1,41 +1,30 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { ImageIcon } from "lucide-react";
+import { ImageGallery } from "./ImageGallery";
 
-export const ProjectShowcase = ({ title, imgSrcArray, imgDescriptionArray }) => {
+export const ProjectShowcase = ({ title = "Project Showcase", imgSrcArray, imgDescriptionArray }) => {
     return (
-        <section id="project-showcase" className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]">
-            <div>
-                <motion.h2
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-12 text-4xl font-black uppercase text-[--foreground]]"
-                >
-                    {title}
-                </motion.h2>
-                <div className="text-lg font-semibold">
-                    {
-                        imgSrcArray.map((imgSrc, index) => (
-                            <div key={index}>
-                                <motion.p
-                                    initial={{ y: 48, opacity: 0 }}
-                                    whileInView={{ y: 0, opacity: 1 }}
-                                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                                    className="text-lg font-semibold text-center"
-                                >
-                                    {imgDescriptionArray[index]}
-                                </motion.p>
-                                <motion.img
-                                    initial={{ y: 48, opacity: 0 }}
-                                    whileInView={{ y: 0, opacity: 1 }}
-                                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                                    src={imgSrc}
-                                    alt={`image link to ${imgDescriptionArray[index].replace(/\s+/g, '-').toLowerCase()}`}
-                                    className="w-[50%] mx-auto mb-24"
-                                />
-                            </div>
-                        ))
-                    }
-                </div>
+        <section id="project-showcase" className="mx-auto max-w-6xl px-6 py-24 text-[--foreground]">
+             <div className="mb-16">
+                 {title && (
+                     <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        className="flex items-center gap-3 mb-8"
+                    >
+                        <div className="p-2 bg-pink-500/10 rounded-lg text-pink-500">
+                            <ImageIcon size={24} />
+                        </div>
+                        <h2 className="text-3xl font-bold uppercase tracking-wide">
+                            {title}
+                        </h2>
+                    </motion.div>
+                 )}
+
+                <ImageGallery 
+                    imgSrcArray={imgSrcArray} 
+                    imgDescriptionArray={imgDescriptionArray} 
+                />
             </div>
         </section>
     );

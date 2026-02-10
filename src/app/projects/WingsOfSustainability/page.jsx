@@ -133,7 +133,7 @@ export default function Home() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                    className="aspect-video md:h-[16rem] h-full mx-auto mb-12"
+                    className="w-full max-w-3xl aspect-video mx-auto mb-12 rounded-xl shadow-2xl border border-neutral-800"
                   >
                   </iframe>
                   <iframe 
@@ -143,7 +143,7 @@ export default function Home() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                    className="aspect-video md:h-[16rem] h-full mx-auto"
+                    className="w-full max-w-3xl aspect-video mx-auto rounded-xl shadow-2xl border border-neutral-800"
                   >
                   </iframe>
                 </motion.div>

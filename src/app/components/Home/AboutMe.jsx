@@ -1,4 +1,4 @@
-import { TextScramble } from '@/components/core/text-scramble';
+import { TextScramble } from '@/app/components/core/text-scramble';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, Github, Linkedin, Mail } from 'lucide-react';
 

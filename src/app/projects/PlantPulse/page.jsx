@@ -13,6 +13,7 @@ import { ProjectProblem } from "@/app/components/Projects/Problem";
 import { WorkProcess } from "@/app/components/Projects/WorkProcess";
 import { OutcomeAndResults } from "@/app/components/Projects/OutcomeAndResults";
 import { motion } from "framer-motion";
+import { Video } from "lucide-react";
 
 export default function PlantPulsePage() {
 
@@ -158,7 +159,10 @@ export default function PlantPulsePage() {
                   >
                     Plant Pulse Website Demo
                   </motion.p>
-                  <iframe src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview" className="aspect-video md:h-[16rem] h-full mx-auto mb-12"></iframe>
+                  <iframe 
+                    src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview" 
+                    className="w-full max-w-4xl aspect-video mx-auto mb-12 rounded-xl shadow-2xl border border-neutral-800"
+                  ></iframe>
                 </motion.div>
                 <OutcomeAndResults 
                   contentArray={[
@@ -184,31 +188,63 @@ export default function PlantPulsePage() {
                   ]}
                 />
                 <div>
-                  <motion.p
-                      initial={{ y: 48, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ ease: "easeInOut", duration: 0.75 }}
-                      className="text-lg font-semibold text-center"
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    className="flex items-center gap-3 mb-8 mx-auto max-w-6xl px-6 pt-12"
                   >
-                      Project Videos
-                  </motion.p>
+                     <div className="p-2 bg-red-500/10 rounded-lg text-red-500">
+                        <Video size={24} />
+                    </div>
+                    <h2 className="text-3xl font-bold uppercase tracking-wide">
+                        Project Videos
+                    </h2>
+                  </motion.div>
                   <motion.div
                     initial={{ y: 48, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="flex flex-wrap mx-auto max-w-5xl px-4 pb-24 text-[--foreground]"
+                    className="mx-auto max-w-6xl px-6 pb-24 text-[--foreground]"
                   >
-                    <iframe src="https://drive.google.com/file/d/1cxL8Vkn_NqY2WZHSD6scjnA5c02BdRui/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1C74FnFY9fjYM_7NKv-DNgL8rBt5kNaZx/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1ePlEvm_rPPU-Y9sy7wl-1L3xtdwdEvS9/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/17mdH1VXA83hawKc1z1jqsgvKBCErvBqE/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1ahBwwEpj2Gn66m1lwqpuFs8zq3Wf2ZQ_/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/15RKOZdHUOV-hrWDrMusMQ9ECOWP_6nfV/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/17G2G4g4msjpG18MwvXwxTT1gL9oGPkUI/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1hOKeTFwq5Pc4HA4aLvXmAAe0OSX6bf1k/preview" className="aspect-[9/16] md:h-[20rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1TDKS5DwIyAYaT-wPDNmq9dPAl1ohsrOi/preview" className="aspect-video md:h-[16rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/16gQTUcB6WTj5wgX9wQR94dzBh-eRPvST/preview" className="aspect-video md:h-[16rem] h-full mx-auto mb-12"></iframe>
-                    <iframe src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview" className="aspect-video md:h-[16rem] h-full mx-auto mb-12"></iframe>
+                    {/* Vertical Videos Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        {[
+                          "1cxL8Vkn_NqY2WZHSD6scjnA5c02BdRui",
+                          "1C74FnFY9fjYM_7NKv-DNgL8rBt5kNaZx",
+                          "1ePlEvm_rPPU-Y9sy7wl-1L3xtdwdEvS9",
+                          "17mdH1VXA83hawKc1z1jqsgvKBCErvBqE",
+                          "1ahBwwEpj2Gn66m1lwqpuFs8zq3Wf2ZQ_",
+                          "15RKOZdHUOV-hrWDrMusMQ9ECOWP_6nfV",
+                          "17G2G4g4msjpG18MwvXwxTT1gL9oGPkUI",
+                          "1hOKeTFwq5Pc4HA4aLvXmAAe0OSX6bf1k"
+                        ].map((id) => (
+                           <div key={id} className="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 bg-neutral-900 aspect-[9/16]">
+                               <iframe 
+                                  src={`https://drive.google.com/file/d/${id}/preview`} 
+                                  className="w-full h-full"
+                                  loading="lazy"
+                                ></iframe>
+                           </div>
+                        ))}
+                    </div>
+
+                    {/* Horizontal Videos */}
+                    <div className="space-y-12">
+                         {[
+                           "1TDKS5DwIyAYaT-wPDNmq9dPAl1ohsrOi",
+                           "16gQTUcB6WTj5wgX9wQR94dzBh-eRPvST",
+                           "1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S"
+                         ].map((id) => (
+                             <div key={id} className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-neutral-800 bg-neutral-900 aspect-video">
+                                 <iframe 
+                                    src={`https://drive.google.com/file/d/${id}/preview`} 
+                                    className="w-full h-full"
+                                    loading="lazy"
+                                  ></iframe>
+                             </div>
+                         ))}
+                    </div>
+
                   </motion.div>
                 </div>
             </div>

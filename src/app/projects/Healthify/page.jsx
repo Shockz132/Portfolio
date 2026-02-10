@@ -22,7 +22,7 @@ export default function HealthifyPage() {
                   title={"Healthify"}
                   date={"06/2025 - 08/2025"}
                   readMins={5}
-                  imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyPreview.png"
+                  imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyFeatured.png"
                   tagsArray={[
                     "Flutter",
                     "Dart",
