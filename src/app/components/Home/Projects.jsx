@@ -33,28 +33,28 @@ export const Projects = () => {
           <Link
             heading="HEALTHIFY"
             subheading="A Health and Wellness Application"
-            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyFeatured.png"
+            imgSrc="/Healthify/HealthifyFeatured.png"
             href="/projects/Healthify"
             hoverClass="hover:bg-theme-yellow"
           />
           <Link
             heading="PLANT PULSE"
             subheading="A Full Stack IoT Project"
-            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png"
+            imgSrc="/PlantPulse/PlantPulsePreview.png"
             href="/projects/PlantPulse"
             hoverClass="hover:bg-theme-green"
           />
           <Link
             heading="CIRCUIT SOLVER"
             subheading="Web Dev Project w/ React & C"
-            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
+            imgSrc="/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
             href="/projects/LogicGateCircuitSolver"
             hoverClass="hover:bg-theme-orange"
           />
           <Link
             heading="WINGS OF SUSTAINABILITY"
             subheading="Backend IoT Project"
-            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
+            imgSrc="/WingsOfSustainability/WingsOfSustainabilityPreview.png"
             href="/projects/WingsOfSustainability"
             hoverClass="hover:bg-theme-green"
           />
@@ -130,7 +130,7 @@ const Link = ({ heading, imgSrc, subheading, href, hoverClass }) => {
           whileHover: { scale: 1, rotate: "12.5deg" },
         }}
         transition={{ type: "spring" }}
-        src={imgSrc}
+        src={getAssetPath(imgSrc)}
         className={`absolute z-50 h-32 w-48 object-cover md:h-64 md:w-96 border-4 border-theme-blue shadow-[8px_8px_0px_0px_var(--theme-yellow)] bg-theme-bg`}
         alt={`Image representing a link for ${heading}`}
       />
