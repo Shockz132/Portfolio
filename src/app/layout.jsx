@@ -15,11 +15,6 @@ const spaceMono = Space_Mono({
 export const metadata = {
   title: "Jethro's Portfolio",
   description: "Jethro's Portfolio",
-  icons: {
-    icon: "/Portfolio/giraffe_pfp.jpg",
-    shortcut: "/Portfolio/giraffe_pfp.jpg",
-    apple: "/Portfolio/giraffe_pfp.jpg",
-  },
 };
 
 import { SmoothScroll } from "@/app/components/core/smooth-scroll";
