@@ -4,7 +4,7 @@ export const WhatIUse = () => {
     return (
         <section id="what-i-use" className="w-full bg-theme-bg pt-32 pb-48 border-b-4 border-theme-blue relative">
             {/* Structural Lines */}
-            <div className="absolute left-8 md:left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+            <div className="hidden md:block absolute left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
 
             <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24">
                 <motion.div

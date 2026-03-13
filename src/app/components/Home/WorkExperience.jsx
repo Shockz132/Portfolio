@@ -12,7 +12,7 @@ export const WorkExperience = () => {
   return (
     <div className="relative border-b-4 border-theme-blue bg-theme-bg overflow-hidden">
       {/* Structural Lines */}
-      <div className="absolute left-8 md:left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+      <div className="hidden md:block absolute left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
 
       <WorkExperienceList />
     </div>

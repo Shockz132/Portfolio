@@ -4,8 +4,8 @@ export function BioBridge() {
     return (
         <section className="relative w-full py-24 md:py-32 bg-theme-bg overflow-hidden border-b-4 border-theme-blue">
             {/* Structural Lines */}
-            <div className="absolute left-8 md:left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
-            <div className="absolute right-8 md:right-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+            <div className="hidden md:block absolute left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+            <div className="hidden md:block absolute right-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
 
             {/* Background Massive Text (Scrolling effectively) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-10 whitespace-nowrap z-0">
