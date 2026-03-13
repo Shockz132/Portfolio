@@ -1,334 +1,205 @@
 'use client'
 
-import { NavBar } from "@/app/components/Home/NavBar.jsx";
-import { Header } from "@/app/components/Projects/Header";
-import { Features } from "@/app/components/Projects/Features";
-import { TableOfContents } from "@/app/components/Projects/TableOfContents";
-import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
-import { MyRole } from "@/app/components/Projects/MyRole";
-import { GithubLink } from "@/app/components/Projects/GithubLink";
-import { ProjectProblem } from "@/app/components/Projects/Problem";
-import { OutcomeAndResults } from "@/app/components/Projects/OutcomeAndResults";
+import { NavBar } from "@/app/components/NavBar";
+import { Footer } from "@/app/components/Footer";
+import { ProjectHeader } from "@/app/components/Projects/ProjectHeader";
+import { ProjectProblem } from "@/app/components/Projects/ProjectProblem";
+import { ProjectTechStack } from "@/app/components/Projects/ProjectTechStack";
+import { ProjectOutcomes } from "@/app/components/Projects/ProjectOutcomes";
+import { InteractiveShowcase } from "@/app/components/Projects/Healthify/InteractiveShowcase";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { FiLayout, FiServer, FiCpu, FiGlobe } from "react-icons/fi";
 
 export default function HealthifyPage() {
+  const tocLinks = [
+    { name: "PROBLEM", href: "#problem", id: "problem" },
+    { name: "TECH STACK", href: "#tech-stack", id: "tech-stack" },
+    { name: "OUTCOMES", href: "#outcomes", id: "outcomes" },
+    { name: "FEATURES", href: "#ai-assistant", id: "ai-assistant" },
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            <div>
-                <NavBar />
-                <Header
-                  title={"Healthify"}
-                  date={"06/2025 - 08/2025"}
-                  readMins={5}
-                  imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyFeatured.png"
-                  tagsArray={[
-                    "Flutter",
-                    "Dart",
-                    "Firebase",
-                    "Google Gemini",
-                    "OpenStreetMap",
-                    "Material Design 3"
-                  ]}
-                />
-                <GithubLink 
-                  githubLink={"https://github.com/Cayden2606/Healthify"}
-                />
-                <ProjectProblem
-                  problemStatement="Finding clinics, understanding what service you need, and booking appointments often means juggling multiple apps with unclear flows. How can we bring all of this into one simple, intelligent workflow?"
-                />
-                <ProjectOverview 
-                  overviewContentArray={[
-                    "Healthify is a Flutter healthcare app built in collaboration with Cayden2606 as part of the EGE312 Mobile Computing Project. It combines AI-powered health assistance (Google Gemini 2.0 Flash), interactive clinic discovery, smart appointment booking, and personal health tracking, all in one app tailored for Singapore.",
-                    "Note: This is a concept application built for educational purposes. No real clinic bookings or medical appointments are made through this app.",
-                  ]}
-                />
-                <TableOfContents 
-                  contentsArray={[
-                    "Problem",
-                    "Project Overview",
-                    "Features",
-                    "My Role",
-                    "Outcome and Results",
-                    "Project Showcase"
-                  ]}
-                />
-                <Features 
-                  projectFeaturesArray={[
-                    "AI Health Assistant with Google Gemini 2.0 Flash (chat & image analysis)",
-                    "Interactive Clinic Map with search by region, distance, and open status",
-                    "Smart Appointment Booking with AI-assisted service recommendations",
-                    "Appointment Management with email notifications",
-                    "Real-time Step Counter and Health Tracking",
-                    "15+ Theme Palettes with Dark/Light mode",
-                    "User Profiles with Cloudinary image uploads",
-                    "Onboarding Flow for first-time users"
-                  ]}
-                  codeFeaturesArray={[
-                    "Flutter 3.6.0+ / Dart",
-                    "Material Design 3",
-                    "Firebase (Auth, Firestore)",
-                    "Google Gemini 2.0 Flash",
-                    "Flutter Map + OpenStreetMap",
-                    "Geoapify Places API",
-                    "Cloudinary",
-                    "Resend API",
-                    "Provider (State Management)"
-                  ]}
-                />
-                <MyRole 
-                  role={"Co-Developer"}
-                  descriptionArray={[
-                    "I co-developed Healthify alongside Cayden2606, taking ownership of the AI integration, location services, appointment system, and theming across the full stack.",
-                    "On the AI side, I integrated Google Gemini 2.0 Flash for health conversations and image analysis, built appointment intent extraction from chat, and managed conversational context.",
-                    "For clinic discovery, I built the interactive map with Flutter Map and OpenStreetMap, integrated Geoapify for clinic data across Singapore, and implemented GPS-based and region-based search with Haversine distance calculations.",
-                    "For the multi-step appointment booking flow I designed the AI-assisted pre-fill that suggests relevant services and auto-fills user information from conversational context.",
-                    "For theming, I built a custom Material Design 3 theme system with 15 color palettes, dark/light mode persistence in Firebase, and HSL manipulation for dark mode. I also set up Firebase Auth, Firestore architecture, Cloudinary profile uploads, and the onboarding flow."
-                  ]}
-                />
-                <OutcomeAndResults 
-                  contentArray={[
-                    "Healthify delivers an end-to-end healthcare workflow, from asking health questions to an AI assistant, discovering nearby clinics on a map, and booking appointments, all within a single app.",
-                    "The project was a strong learning experience in Flutter cross-platform development and integrating multiple third-party services (Gemini AI, Geoapify, Cloudinary, Resend) into a cohesive product. Collaborating with Cayden2606 also sharpened our skills in Git workflows and dividing responsibilities effectively.",
-                    "Future improvements would include symptom diagnosis assistance, medication reminders, video consultations, and integration with real healthcare providers."
-                  ]}
-                />
-                
-                {/* App Showcase Section */}
-                <section id="project-showcase" className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]">
-                  <motion.h2
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-12 text-4xl font-black uppercase text-[--foreground]"
-                  >
-                    App Showcase
-                  </motion.h2>
+    <div className="min-h-screen bg-theme-bg text-theme-blue font-sans">
+      <NavBar links={tocLinks} />
 
-                  {/* Onboarding Flow */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-16"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">Onboarding Experience</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/introScreen1.png", alt: "Welcome Screen" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/introScreen2.png", alt: "AI Assistant Intro" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/introScreen3.png", alt: "Find & Connect" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/introScreen4.png", alt: "Get Started" }
-                      ].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ y: 48, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ ease: "easeInOut", duration: 0.75, delay: idx * 0.1 }}
-                          className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
-                        >
-                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+      {/* Structural Lines - Aligned with NavBar Dividers (68px/76px offset to overlap border) */}
+      <div className="fixed left-[68px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
+      <div className="fixed right-[76px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
 
-                  {/* Authentication & Home */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-16"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">Home & Authentication</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/loginscreen.PNG", alt: "Login Screen" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/HomeScreen.PNG", alt: "Home Dashboard" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/lightpurpleHome.PNG", alt: "Light Purple Theme" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/DarkRedishHome.PNG", alt: "Dark Reddish Theme" }
-                      ].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ y: 48, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ ease: "easeInOut", duration: 0.75, delay: idx * 0.1 }}
-                          className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
-                        >
-                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+      <main className="w-full relative pt-24 pb-32 overflow-x-clip">
+        {/* Playful polka-dot background pattern */}
+        <div className="absolute inset-0 pointer-events-none z-0 opacity-20 bg-[radial-gradient(var(--theme-green)_15%,transparent_15%)] bg-[size:40px_40px]" />
 
-                  {/* AI Health Assistant */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-16"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">AI Health Assistant</h3>
-                    <p className="text-lg mb-6 text-[--foreground]/80">Powered by Google Gemini 2.0 Flash for intelligent health conversations and image analysis</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                      {[
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/AIChat.PNG", alt: "AI Chat Interface" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/AIChatWithPicture.PNG", alt: "AI Image Analysis" }
-                      ].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ y: 48, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ ease: "easeInOut", duration: 0.75, delay: idx * 0.1 }}
-                          className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
-                        >
-                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+        <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10">
 
-                  {/* Clinic Discovery */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-16"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">Interactive Clinic Discovery</h3>
-                    <p className="text-lg mb-6 text-[--foreground]/80">Find clinics by region, distance, saved favorites, or current open status</p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/ClinicMapRegions.PNG", alt: "Search by Regions" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/ClinicsMapNearby.png", alt: "Nearby Clinics" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/ClinicMapSaved.PNG", alt: "Saved Clinics" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/ClinicMapOpen.PNG", alt: "Currently Open" }
-                      ].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ y: 48, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ ease: "easeInOut", duration: 0.75, delay: idx * 0.1 }}
-                          className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
-                        >
-                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+          <ProjectHeader
+            title="Health"
+            titleAccent="ify"
+            concatTitle={true}
+            date="06/2025 - 08/2025"
+            subtitle="An AI-powered healthcare application built with Flutter & Firebase."
+            tags={["Flutter", "Dart", "Firebase", "Google Gemini", "OpenStreetMap", "MD3"]}
+            repoLink="https://github.com/Shockz132/Healthify"
+            repoType="github"
+            imgSrc="/Healthify/HealthifyFeatured.png"
+          />
 
-                  {/* Appointment Booking */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-16"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">Smart Appointment Booking</h3>
-                    <p className="text-lg mb-6 text-[--foreground]/80">Multi-step booking flow with AI-assisted service recommendations</p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/makeAppointmentScreen1.png", alt: "Select Category" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/makeAppointmentScreen2.png", alt: "Select Service" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/makeAppointmentScreen3.png", alt: "Select Date" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/makeAppointmentScreen4.png", alt: "Select Time" }
-                      ].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ y: 48, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ ease: "easeInOut", duration: 0.75, delay: idx * 0.1 }}
-                          className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
-                        >
-                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+          <ProjectProblem
+            problemText="Finding clinics, understanding requirements, and booking appointments often means juggling multiple apps. How can we bring all of this into one simple, intelligent workflow?"
+            overviewText="Healthify is a Flutter healthcare concept app built with Cayden2606. It combines AI-powered health assistance, interactive clinic discovery, smart booking, and personal health tracking, tailored for Singapore."
+            roleText="As Co-Developer, I took ownership of the AI integration (Gemini 2.0), location services (OpenStreetMap), the appointment scheduling logic, and the extensive Material Design 3 theming across the entire stack."
+          />
 
-                  {/* Appointment Management */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-16"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">Appointment Management</h3>
-                    <p className="text-lg mb-6 text-[--foreground]/80">Full CRUD operations with email notifications and location integration</p>
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                      {[
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/UpcomingAppointment.png", alt: "Upcoming Appointments" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/ViewLocationOfAppointmentOnGoogleMapsOrHealthify.PNG", alt: "View Location" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/EditUpcommingAppointment.PNG", alt: "Edit Appointment" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/PassedAppointment.png", alt: "Past Appointments" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/EmailNotficationResend.png", alt: "Email Notification" }
-                      ].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ y: 48, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ ease: "easeInOut", duration: 0.75, delay: idx * 0.1 }}
-                          className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
-                        >
-                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+          <ProjectTechStack
+            categories={[
+              {
+                title: "Frontend",
+                color: "bg-theme-yellow",
+                iconShape: "circle",
+                chips: ["Flutter", "Dart", "Material Design 3"]
+              },
+              {
+                title: "Backend",
+                color: "bg-theme-green",
+                iconShape: "square",
+                chipColor: "bg-theme-cream",
+                chips: ["Firebase", "Firestore", "Auth", "Storage"]
+              },
+              {
+                title: "AI Engine",
+                color: "bg-theme-orange",
+                iconShape: "diamond",
+                lightText: true,
+                chipColor: "bg-theme-blue text-theme-cream",
+                chipBorder: "border-white",
+                chips: ["Google Gemini 2.0 Flash", "Vision API"]
+              },
+              {
+                title: "External APIs",
+                color: "bg-theme-yellow",
+                lightText: false,
+                chipColor: "bg-theme-green",
+                chips: ["OpenStreetMap", "Resend Email", "Google Maps"]
+              }
+            ]}
+          />
 
-                  {/* Settings & Profile */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mb-16"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">Settings & Profile</h3>
-                    <p className="text-lg mb-6 text-[--foreground]/80">Extensive customization with 15+ color themes, dark mode, and profile management</p>
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                      {[
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/SettingsPage.png", alt: "Settings Light" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/SettingsPageDarkMode.png", alt: "Settings Dark" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/SettingsPageThemesOptions.png", alt: "Theme Options" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/UpdateUserProfilePage.png", alt: "Profile Update" },
-                        { src: "https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/UpdateUserPhoneNumber.png", alt: "Phone Input" }
-                      ].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ y: 48, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ ease: "easeInOut", duration: 0.75, delay: idx * 0.1 }}
-                          className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
-                        >
-                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+          <ProjectOutcomes
+            takeaways={[
+              {
+                title: "End-to-End Workflow",
+                content: "Delivered a seamless user journey from AI assistance to clinic discovery and secure booking."
+              },
+              {
+                title: "Core Integrations",
+                content: "Mastered Flutter cross-platform development with complex APIs like Gemini, Geoapify, and Resend."
+              },
+              {
+                title: "Technical Collaboration",
+                content: "Sharpened team-based development skills using Git workflows and modular project structure."
+              }
+            ]}
+            metrics={[
+              { value: "100%", label: "Completion", description: "Full CRUD functionality across all features.", color: "bg-theme-green" },
+              { value: "60 FPS", label: "Performance", description: "Smooth UI rendering across devices.", color: "bg-theme-yellow" }
+            ]}
+            futureScope="Future improvements would focus on expanding medical capabilities, including symptom diagnosis assistance, medication reminders, integrated video consultations, and establishing direct connections with real healthcare providers."
+          />
 
-                  {/* App Icon */}
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="flex flex-col items-center"
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[--foreground]">App Icon</h3>
-                    <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl">
-                      <img 
-                        src="https://raw.githubusercontent.com/Cayden2606/Healthify/main/screenshots/app_icon.png" 
-                        alt="Healthify App Icon" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </motion.div>
-                </section>
+          {/* APP SHOWCASE - INTERACTIVE GALLERIES */}
+          <section id="ai-assistant" className="mb-32 w-full max-w-none scroll-mt-32">
+            <div className="flex items-center gap-6 mb-16 px-12 md:px-24">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
+                App Showcase
+              </h2>
+              <div className="h-2 flex-1 bg-theme-blue"></div>
             </div>
-            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center w-full">
-              <p className="w-full text-center"> Copyright © 2025 Jethro. All rights reserved. </p>
-            </footer>
-        </main>
+
+            {/* Feature 1: AI Assistant */}
+            <InteractiveShowcase
+              id="ai-assistant-showcase"
+              title="AI Health Assistant"
+              description="Powered by Gemini 2.0 Flash. Multi-modal chat allowing users to upload symptom images (Vision) and get instantaneous AI-driven guidance."
+              color="orange"
+              images={[
+                { src: "/Healthify/screenshots/HealthifyAIChat.png", alt: "AI Chat Interface" },
+                { src: "/Healthify/screenshots/HealthifyAIChat.png", alt: "Response Log" },
+                { src: "/Healthify/screenshots/HealthifyAIChatWithPicture.png", alt: "Vision Capability" }
+              ]}
+            />
+
+            {/* Feature 2: Clinic Discovery */}
+            <InteractiveShowcase
+              id="clinic-map"
+              title="Clinic Discovery"
+              description="Integrated OpenStreetMap with Geoapify. Users can search for specific service types and view clinics on an interactive map with detail cards."
+              color="green"
+              reverse={true}
+              images={[
+                { src: "/Healthify/screenshots/HealthifyClinicMapOpen.png", alt: "Service Search" },
+                { src: "/Healthify/screenshots/HealthifyClinicMapRegions.png", alt: "Map View" },
+                { src: "/Healthify/screenshots/HealthifyClinicMapSaved.png", alt: "Clinic Directory" }
+              ]}
+            />
+
+            {/* Feature 3: Onboarding & Login */}
+            <InteractiveShowcase
+              id="onboarding"
+              title="Secure Onboarding"
+              description="Complete Firebase Auth implementation. Clean, brutalist welcome flow with email authentication and personalized setup."
+              color="yellow"
+              images={[
+                { src: "/Healthify/screenshots/HealthifyIntroScreen1.png", alt: "Welcome Intro" },
+                { src: "/Healthify/screenshots/HealthifyIntroScreen2.png", alt: "Splash Screen" },
+                { src: "/Healthify/screenshots/HealthifyLoginScreen.png", alt: "Brutalist Login" },
+                { src: "/Healthify/screenshots/HealthifyIntroScreen4.png", alt: "New User Reg" }
+              ]}
+            />
+
+            {/* Feature 4: Booking Workflow */}
+            <InteractiveShowcase
+              id="booking"
+              title="Appointment Workflow"
+              description="Full CRUD operations. Multi-step booking flow with AI-assistance, location tracking, and Resend email notifications."
+              color="blue"
+              reverse={true}
+              images={[
+                { src: "/Healthify/screenshots/HealthifyMakeAppointmentScreen1.png", alt: "Select Category" },
+                { src: "/Healthify/screenshots/HealthifyMakeAppointmentScreen2.png", alt: "Choose Service" },
+                { src: "/Healthify/screenshots/HealthifyMakeAppointmentScreen3.png", alt: "Pick Date" },
+                { src: "/Healthify/screenshots/HealthifyMakeAppointmentScreen4.png", alt: "Confirm Time" },
+                { src: "/Healthify/screenshots/HealthifyUpcomingAppointment.png", alt: "Upcoming Dash" },
+                { src: "/Healthify/screenshots/HealthifyEditUpcommingAppointment.png", alt: "Modify Booking" },
+                { src: "/Healthify/screenshots/HealthifyPassedAppointment.png", alt: "History Log" },
+                { src: "/Healthify/screenshots/HealthifyEmailNotficationResend.png", alt: "Email Notices" }
+              ]}
+            />
+
+            {/* Feature 5: Theming & Personalization */}
+            <InteractiveShowcase
+              id="personalization"
+              title="Theming & Profiles"
+              description="Extensive personalization. Users can switch between 15 distinct color palettes, toggle dark mode, and manage profile data."
+              color="yellow"
+              images={[
+                { src: "/Healthify/screenshots/HealthifyHomeScreen.png", alt: "Default Green" },
+                { src: "/Healthify/screenshots/HealthifyLightPurpleHome.png", alt: "Light Purple" },
+                { src: "/Healthify/screenshots/HealthifyDarkRedishHome.png", alt: "Dark Reddish" },
+                { src: "/Healthify/screenshots/HealthifySettingsPageThemesOptions.png", alt: "Theme Selector" },
+                { src: "/Healthify/screenshots/HealthifySettingsPage.png", alt: "Settings Hub" },
+                { src: "/Healthify/screenshots/HealthifySettingsPageDarkMode.png", alt: "Dark Mode UI" },
+                { src: "/Healthify/screenshots/HealthifyUpdateUserProfilePage.png", alt: "Edit Identity" },
+                { src: "/Healthify/screenshots/HealthifyUpdateUserPhoneNumber.png", alt: "Verify Contact" }
+              ]}
+            />
+
+          </section>
+
+        </div>
+      </main>
+
+      <Footer text="Healthify Project Showcase | Built with 🦒" />
     </div>
   );
 }
+

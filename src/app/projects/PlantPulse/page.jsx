@@ -1,257 +1,165 @@
 'use client'
 
-// import Image from "next/image";
-import { NavBar } from "@/app/components/Home/NavBar.jsx";
-import { Header } from "@/app/components/Projects/Header";
-import { Features } from "@/app/components/Projects/Features";
-import { TableOfContents } from "@/app/components/Projects/TableOfContents";
-import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
-import { MyRole } from "@/app/components/Projects/MyRole";
-import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
-import { GithubLink } from "@/app/components/Projects/GithubLink";
-import { ProjectProblem } from "@/app/components/Projects/Problem";
-import { WorkProcess } from "@/app/components/Projects/WorkProcess";
-import { OutcomeAndResults } from "@/app/components/Projects/OutcomeAndResults";
+import { NavBar } from "@/app/components/NavBar";
+import { Footer } from "@/app/components/Footer";
+import { ProjectHeader } from "@/app/components/Projects/ProjectHeader";
+import { ProjectProblem } from "@/app/components/Projects/ProjectProblem";
+import { ProjectTechStack } from "@/app/components/Projects/ProjectTechStack";
+import { ProjectOutcomes } from "@/app/components/Projects/ProjectOutcomes";
 import { motion } from "framer-motion";
-import { Video } from "lucide-react";
+import { FiLayout, FiCpu, FiServer, FiActivity, FiVideo } from "react-icons/fi";
 
 export default function PlantPulsePage() {
+  const tocLinks = [
+    { name: "PROBLEM", href: "#problem", id: "problem" },
+    { name: "TECH STACK", href: "#tech-stack", id: "tech-stack" },
+    { name: "OUTCOMES", href: "#outcomes", id: "outcomes" },
+    { name: "VIDEOS", href: "#videos", id: "videos" },
+  ];
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            <div>
-                <NavBar />
-                <Header
-                  title={"Plant Pulse"}
-                  date={"07/2024 - 08/2024"}
-                  readMins={3}
-                  imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png"
-                  tagsArray={[
-                    "Fullstack",
-                    "IoT", 
-                    "Beaglebone",
-                    "React",
-                    "Tailwind CSS",
-                    "Python",
-                    "Flask",
-                    "SQL",
-                    "NextJS",
-                    "SocketIO",
-                    "ShadCN UI"
-                  ]}
-                />
-                <GithubLink 
-                  githubLink={"https://github.com/Shockz132/Plant_Pulse"}
-                />
-                <ProjectProblem
-                  problemStatement="How can we improve conventional gardening to be more accessible to individuals and the elderly while making it sustainable and contribute to Singapore's 30 by 30 goal? "
-                />
-                <ProjectOverview 
-                  overviewContentArray={[
-                    "PlantPulse is an IoT-enabled smart community garden system that makes plant care easier and more accessible, especially for the elderly. Using real-time sensor data, it monitors soil moisture, detects pests, and automates watering, so gardeners can stay informed without needing to be physically present.",
-                    "Each plot uses a raised barrel design to reduce physical strain, and a food waste bin with force sensors tracks composting weight for fertilizer conversion. These features contribute to Singapore's 30 by 30 goal of sustainably producing 30% of our nutritional needs by 2030."
-                  ]}
-                />
-                <TableOfContents 
-                  contentsArray={[
-                    "Problem",
-                    "Project Overview",
-                    "Features",
-                    "My Role",
-                    "Work Process",
-                    "Outcome and Results",
-                  ]}
-                />
-                <Features 
-                  projectFeaturesArray={[
-                    "Real-time Information on Plants",
-                    "Pest Detection and Watering",
-                    "Automated Watering",
-                    "Barrel Design",
-                    "Food Waste Bin",
-                    "Variety of IoT Sensors",
-                  ]}
-                  codeFeaturesArray={[
-                    "React TS",
-                    "NextJS",
-                    "Tailwind CSS",
-                    "ShadCN UI",
-                    "Python",
-                    "Flask",
-                    "SocketIO",
-                    "SQL",
-                    "spaCy",
-                    "Beaglebone",
-                    "Spline 3D"
-                  ]}
-                />
-                <MyRole 
-                  role={"Team Leader"}
-                  descriptionArray={[
-                    "As Team Leader, I led the team across all phases, research, planning, development, programming, and prototyping. I assigned roles based on each member's strengths, decided on the tech stack, and guided the team on unfamiliar technologies like React, TypeScript, and ShadCN UI.",
-                    "I broke down the problem into two parts: improving gardening accessibility for the elderly, and contributing to sustainability. From surveys with local community gardeners, we identified key pain points and designed Plant Pulse as our solution.",
-                  ]}
-                />
-                <WorkProcess
-                    parts={["Research and Planning", "Development and Prototyping", "Frontend Web Development"]}
-                    descriptions={[
-                        "We surveyed elderly community gardeners to identify key pain points, then brainstormed and evaluated ideas against set criteria before finalising our solution. We designed the system block diagram using official sensor documentation from the mikroe website to map out signals between components.",
-                        "I distributed roles across the team based on strengths. Each member was responsible for their own Beaglebone's Python code, while I built the Flask web server and SQL database. We faced challenges with sensor inconsistency, data formatting, and database setup, resolved through documentation, standardising data formats, and teamwork. We then designed 3D models and built physical prototypes from recycled materials at NYP's Makerspace.",
-                        "We chose NextJS with React TypeScript for the website, paired with Tailwind CSS and ShadCN UI. The main challenge was the team's unfamiliarity with the framework, but we overcame it through tutorials and practice. We carefully designed the colour scheme, page layouts, and user experience to ensure the site was intuitive and polished.",
-                    ]}
-                    imgArrays={[
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire1.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire2.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseQuestionnaire3.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIdeaTable.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
-                      ],
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePlantPlot.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseIrrigationTank.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFoodWasteBin.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePestDetection.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.jpg",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel2.png",    
-                      ],
-                      [
-                        "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png",
-                      ],
-                    ]}
-                    imgDescriptionArrays={[
-                      [
-                        "Questionnaire results part 1",
-                        "Questionnaire results part 2",
-                        "Questionnaire results part 3",
-                        "Idea Evaluation Table",
-                        "System Block Diagram",
-                      ],
-                      [
-                        "Plant Plot Prototype",
-                        "Irrigation Tank Prototype",
-                        "Pest Detection Prototype",
-                        "Food Waste Bin Prototype",
-                        "Task Board Prototype",
-                        "Floor plan Prototype",
-                        "Floor plan 3D model 1",
-                        "Floor plan 3D model 2",
-                      ],
-                      [
-                        "Website Hero section",
-                      ],
-                    ]}
-                />
-                <motion.div 
-                  initial={{ y: 48, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ ease: "easeInOut", duration: 0.75 }}
-                  className="mx-auto max-w-5xl px-4 pb-24 text-[--foreground]"
-                >
-                  <motion.p
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="text-lg font-semibold text-center"
-                  >
-                    Plant Pulse Website Demo
-                  </motion.p>
-                  <iframe 
-                    src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview" 
-                    className="w-full max-w-4xl aspect-video mx-auto mb-12 rounded-xl shadow-2xl border border-neutral-800"
-                  ></iframe>
-                </motion.div>
-                <OutcomeAndResults 
-                  contentArray={[
-                    "The project was a success. After presenting to a panel of senior lecturers, one proposed we take it further by connecting us with industry contacts. The module leader also selected Plant Pulse for NYP's Tech Nexus 2025, where we'll showcase to company directors.",
-                    "Given more time, I'd focus on expanding the website's functionality toward something closer to production-ready, and leverage 3D printing for sturdier prototypes to free up time for other development areas."
-                  ]}
-                />
-                <ProjectShowcase 
-                  title="Project Showcase"
-                  imgSrcArray={[
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseBlockDiagram.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel1.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseModel2.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulseFloorPlanPrototype.jpg",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePoster.jpg",
-                  ]}
-                  imgDescriptionArray={[
-                    "System Block Diagram",
-                    "Project Vision Spline 3D Model 1",
-                    "Project Vision Spline 3D Model 2",
-                    "Plant Pulse Floor Plan Prototype",
-                    "Plant Pulse Poster",
-                  ]}
-                />
-                <div>
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    className="flex items-center gap-3 mb-8 mx-auto max-w-6xl px-6 pt-12"
-                  >
-                     <div className="p-2 bg-red-500/10 rounded-lg text-red-500">
-                        <Video size={24} />
-                    </div>
-                    <h2 className="text-3xl font-bold uppercase tracking-wide">
-                        Project Videos
-                    </h2>
-                  </motion.div>
-                  <motion.div
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.75 }}
-                    className="mx-auto max-w-6xl px-6 pb-24 text-[--foreground]"
-                  >
-                    {/* Vertical Videos Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                        {[
-                          "1cxL8Vkn_NqY2WZHSD6scjnA5c02BdRui",
-                          "1C74FnFY9fjYM_7NKv-DNgL8rBt5kNaZx",
-                          "1ePlEvm_rPPU-Y9sy7wl-1L3xtdwdEvS9",
-                          "17mdH1VXA83hawKc1z1jqsgvKBCErvBqE",
-                          "1ahBwwEpj2Gn66m1lwqpuFs8zq3Wf2ZQ_",
-                          "15RKOZdHUOV-hrWDrMusMQ9ECOWP_6nfV",
-                          "17G2G4g4msjpG18MwvXwxTT1gL9oGPkUI",
-                          "1hOKeTFwq5Pc4HA4aLvXmAAe0OSX6bf1k"
-                        ].map((id) => (
-                           <div key={id} className="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 bg-neutral-900 aspect-[9/16]">
-                               <iframe 
-                                  src={`https://drive.google.com/file/d/${id}/preview`} 
-                                  className="w-full h-full"
-                                  loading="lazy"
-                                ></iframe>
-                           </div>
-                        ))}
-                    </div>
+    <div className="min-h-screen bg-theme-bg text-theme-blue font-sans">
+      <NavBar links={tocLinks} />
 
-                    {/* Horizontal Videos */}
-                    <div className="space-y-12">
-                         {[
-                           "1TDKS5DwIyAYaT-wPDNmq9dPAl1ohsrOi",
-                           "16gQTUcB6WTj5wgX9wQR94dzBh-eRPvST",
-                           "1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S"
-                         ].map((id) => (
-                             <div key={id} className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-neutral-800 bg-neutral-900 aspect-video">
-                                 <iframe 
-                                    src={`https://drive.google.com/file/d/${id}/preview`} 
-                                    className="w-full h-full"
-                                    loading="lazy"
-                                  ></iframe>
-                             </div>
-                         ))}
-                    </div>
+      {/* Structural Lines */}
+      <div className="fixed left-[68px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
+      <div className="fixed right-[76px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
 
-                  </motion.div>
-                </div>
+      <main className="w-full relative pt-24 pb-32 overflow-x-clip">
+        {/* Pattern Background */}
+        <div className="absolute inset-0 pointer-events-none z-0 opacity-20 bg-[radial-gradient(var(--theme-yellow)_15%,transparent_15%)] bg-[size:40px_40px]" />
+
+        <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10">
+
+          <ProjectHeader
+            title="Plant"
+            titleAccent="Pulse"
+            date="07/2024 - 08/2024"
+            subtitle="An IoT-enabled smart community garden connected system for accessible and sustainable urban farming."
+            tags={["React", "Next.js", "Python", "Flask", "SQLite", "BeagleBone"]}
+            repoLink="https://github.com/Shockz132/Plant-Pulse"
+            repoType="github"
+            imgSrc="/PlantPulse/PlantPulsePreview.png"
+          />
+
+          <ProjectProblem
+            problemText="How can we make taking care of plants in a community garden easier and more accessible, especially for senior citizens who may be physically hindered?"
+            overviewText="PlantPulse provides real-time updates on plant conditions, including soil moisture and pest detection via environmental, infrared, and motion sensors. Its unique barrel design reduces physical strain, and a built-in food waste bin with force and reed sensors facilitates composting, directly supporting Singapore's 30 by 30 food security goal."
+            roleText="As a primary developer, I managed the integration of IoT sensors with the BeagleBone Black Wireless microcontrollers, built the SQLite & Python Flask backend, and crafted the React front-end."
+          />
+
+          <ProjectTechStack
+            categories={[
+              {
+                title: "Frontend & UI",
+                color: "bg-theme-orange",
+                iconShape: "circle",
+                chips: ["React (NextJS)", "Tailwind CSS", "Shadcn UI", "Spline 3D", "HTML"]
+              },
+              {
+                title: "Backend & Server",
+                color: "bg-theme-yellow",
+                iconShape: "square",
+                chipColor: "bg-theme-cream",
+                chips: ["SQLite", "Python", "Flask", "SQLAlchemy", "SocketIO", "spaCy"]
+              },
+              {
+                title: "IoT & Hardware",
+                color: "bg-theme-green",
+                iconShape: "diamond",
+                lightText: true,
+                chipColor: "bg-white",
+                chips: ["BeagleBone", "Motion/Tamper Click", "IR/UV Click", "Environment Click"]
+              }
+            ]}
+          />
+
+          <ProjectOutcomes
+            takeaways={[
+              {
+                title: "Industry Showcase",
+                content: "The project was a massive success, receiving positive feedback during showcases to industry professionals and was selected for NYP's Tech Nexus 2025."
+              },
+              {
+                title: "Full-Stack IoT Ecosystem",
+                content: "Successfully bridged multiple sensor nodes and BeagleBone microcontrollers via a centralized Python web server and database."
+              },
+              {
+                title: "Accessible Farming",
+                content: "Demonstrated the viability of automated urban farming using a raised barrel design to reduce physical strain, empowering senior citizens."
+              }
+            ]}
+            metrics={[
+              { value: "Tech Nexus", label: "Selected", description: "Chosen for Tech Nexus 2025 Showcase.", color: "bg-theme-orange" },
+              { value: "30 by 30", label: "Goal Sync", description: "Directly supports SG food security.", color: "bg-theme-green" },
+              { value: "IoT", label: "Automated", description: "Hands-free plant care and monitoring.", color: "bg-theme-yellow" }
+            ]}
+            futureScope="Future iterations will explore integrating AI-driven plant health diagnostics via camera sensors and an expanded mobile app for push notifications."
+          />
+
+          {/* Unique Videos Section */}
+          <section id="videos" className="mb-32 scroll-mt-32">
+            <div className="flex items-center gap-6 mb-16">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
+                Project Showcase
+              </h2>
+              <div className="h-2 flex-1 bg-theme-blue"></div>
             </div>
-            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center w-full">
-              <p className="w-full text-center"> Copyright © 2025 Jethro. All rights reserved. </p>
-            </footer>
-        </main>
+
+            <div className="space-y-24">
+              {/* Main Demo Video */}
+              <motion.div
+                initial={{ y: 32, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                className="relative bg-theme-cream border-[6px] border-theme-blue p-4 shadow-[24px_24px_0px_0px_var(--theme-yellow)]"
+              >
+                <div className="flex items-center gap-3 mb-4 font-mono font-bold text-sm uppercase">
+                  <FiVideo className="text-theme-orange" /> Website Walkthrough
+                </div>
+                <div className="aspect-video bg-neutral-900 border-4 border-theme-blue overflow-hidden shadow-inner">
+                  <iframe
+                    src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview"
+                    className="w-full h-full"
+                    allow="autoplay"
+                  ></iframe>
+                </div>
+              </motion.div>
+
+              {/* Hardware Clips Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  { id: "1cxL8Vkn_NqY2WZHSD6scjnA5c02BdRui", label: "Pest Detection" },
+                  { id: "1C74FnFY9fjYM_7NKv-DNgL8rBt5kNaZx", label: "Irrigation Test" },
+                  { id: "1ePlEvm_rPPU-Y9sy7wl-1L3xtdwdEvS9", label: "Compost Tracking" },
+                  { id: "17mdH1VXA83hawKc1z1jqsgvKBCErvBqE", label: "Sensor Setup" },
+                  { id: "1ahBwwEpj2Gn66m1lwqpuFs8zq3Wf2ZQ_", label: "Hardware Hub" },
+                  { id: "15RKOZdHUOV-hrWDrMusMQ9ECOWP_6nfV", label: "User Interaction" },
+                  { id: "17G2G4g4msjpG18MwvXwxTT1gL9oGPkUI", label: "Prototype View" },
+                  { id: "1hOKeTFwq5Pc6HA4aLvXmAAe0OSX6bf1k", label: "Barrel Design" }
+                ].map((clip, idx) => (
+                  <motion.div
+                    key={clip.id}
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="bg-white border-4 border-theme-blue p-3 shadow-[8px_8px_0px_0px_#1b27b5] group hover:-translate-y-2 transition-transform"
+                  >
+                    <div className="aspect-[9/16] bg-neutral-900 border-2 border-theme-blue mb-3 overflow-hidden">
+                      <iframe src={`https://drive.google.com/file/d/${clip.id}/preview`} className="w-full h-full" loading="lazy"></iframe>
+                    </div>
+                    <p className="font-mono font-black text-xs uppercase text-center text-theme-blue">{clip.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <Footer text="Plant Pulse Showcase | Built with 🦒" />
     </div>
   );
 }

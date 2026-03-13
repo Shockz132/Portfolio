@@ -1,51 +1,69 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import Image from "next/image";
 
 export const Projects = () => {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-48 text-[--foreground]]">
-      <motion.h1
-        initial={{ y: 48, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-[--foreground]]"
-      >
-        Projects
-      </motion.h1>
-      <div className="mx-auto max-w-5xl">
-        <Link
-          heading="Healthify"
-          subheading="A Health and Wellness Application"
-          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyFeatured.png"
-          href="https://shockz132.github.io/Portfolio/projects/Healthify"
-        />
-        <Link
-          heading="Plant Pulse"
-          subheading="A Full Stack IoT Project using NextJS, React, Python, etc."
-          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png"
-          href="https://shockz132.github.io/Portfolio/projects/PlantPulse"
-        />
-        <Link
-          heading="Logic Gate Circuit Solver"
-          subheading="Personal Web Development Project using React, ReactFlow, C, etc. "
-          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
-          href="https://shockz132.github.io/Portfolio/projects/LogicGateCircuitSolver"
-        />
-        <Link
-          heading="Wings Of Sustainability"
-          subheading="A backend IoT Project using M5Stack and Python"
-          imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
-          href="https://shockz132.github.io/Portfolio/projects/WingsOfSustainability"
-        />
+    <section id="projects" className="w-full bg-theme-bg pt-32 pb-48 relative border-b-4 border-theme-blue overflow-hidden">
+      <div className="absolute left-8 md:left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+      <div className="absolute right-8 md:right-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+
+      {/* Background Motifs */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-30 bg-[radial-gradient(var(--theme-green)_15%,transparent_15%)] bg-[size:40px_40px]">
+      </div>
+
+      <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 relative z-10">
+        <motion.div
+          initial={{ y: 48, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ ease: "easeInOut", duration: 0.75 }}
+          className="mb-24"
+        >
+          <div className="font-mono text-xs font-bold tracking-[0.2em] mb-4 border-l-4 border-theme-blue text-theme-blue bg-theme-yellow inline-block px-2 py-1 shadow-[2px_2px_0px_0px_#1b27b5] brut-hover">
+            [ 04 ]
+          </div>
+          <h1 className="text-[12vw] md:text-8xl leading-none font-black uppercase tracking-tighter text-theme-blue mb-12 drop-shadow-[4px_4px_0px_var(--theme-green)]">
+            Selected Work
+          </h1>
+        </motion.div>
+
+        <div className="border-t-4 border-theme-blue">
+          <Link
+            heading="HEALTHIFY"
+            subheading="A Health and Wellness Application"
+            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/Healthify/HealthifyFeatured.png"
+            href="/projects/Healthify"
+            hoverClass="hover:bg-theme-yellow"
+          />
+          <Link
+            heading="PLANT PULSE"
+            subheading="A Full Stack IoT Project"
+            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/PlantPulse/PlantPulsePreview.png"
+            href="/projects/PlantPulse"
+            hoverClass="hover:bg-theme-green"
+          />
+          <Link
+            heading="CIRCUIT SOLVER"
+            subheading="Web Dev Project w/ React & C"
+            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
+            href="/projects/LogicGateCircuitSolver"
+            hoverClass="hover:bg-theme-orange"
+          />
+          <Link
+            heading="WINGS OF SUSTAINABILITY"
+            subheading="Backend IoT Project"
+            imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/WingsOfSustainability/WingsOfSustainabilityPreview.png"
+            href="/projects/WingsOfSustainability"
+            hoverClass="hover:bg-theme-green"
+          />
+        </div>
       </div>
     </section>
   );
 };
 
-const Link = ({ heading, imgSrc, subheading, href }) => {
+const Link = ({ heading, imgSrc, subheading, href, hoverClass }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -80,42 +98,22 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
       onMouseMove={handleMouseMove}
       initial="initial"
       whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
+      className={`group relative flex flex-col md:flex-row items-start md:items-center justify-between border-b-4 border-theme-blue py-8 md:py-12 transition-all duration-300 ${hoverClass} px-4 md:px-8 text-theme-blue hover:border-r-8 hover:z-20`}
     >
       <motion.div
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
+        className="z-10"
       >
-        <motion.span
-          variants={{
-            initial: { x: 0 },
-            whileHover: { x: -16 },
-          }}
-          transition={{
-            type: "spring",
-            staggerChildren: 0.0375,
-            delayChildren: 0.0125,
-          }}
-          className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
+        <span
+          className="relative block text-4xl md:text-6xl font-black tracking-tighter transition-colors duration-500 drop-shadow-[2px_2px_0px_var(--theme-cream)]"
         >
-          {heading.split("").map((l, i) => (
-            <motion.span
-              variants={{
-                initial: { x: 0 },
-                whileHover: { x: 16 },
-              }}
-              transition={{ type: "spring" }}
-              className="inline-block"
-              key={i}
-            >
-              {l}
-            </motion.span>
-          ))}
-        </motion.span>
-        <span className="relative z-10 mt-2 block text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50">
-          {subheading}
+          {heading}
+        </span>
+        <span className="relative mt-4 inline-block text-sm font-mono font-bold tracking-wider uppercase opacity-90 border-4 border-theme-blue px-3 py-1 bg-theme-bg group-hover:bg-theme-yellow text-theme-blue shadow-[4px_4px_0px_0px_#1b27b5] transition-all duration-300">
+          [ {subheading} ]
         </span>
       </motion.div>
 
@@ -132,7 +130,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
         }}
         transition={{ type: "spring" }}
         src={imgSrc}
-        className="absolute z-50 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
+        className={`absolute z-50 h-32 w-48 object-cover md:h-64 md:w-96 border-4 border-theme-blue shadow-[8px_8px_0px_0px_var(--theme-yellow)] bg-theme-bg`}
         alt={`Image representing a link for ${heading}`}
       />
 
@@ -148,9 +146,9 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
           },
         }}
         transition={{ type: "spring" }}
-        className="relative z-10 p-4"
+        className="relative z-10 p-4 mt-4 md:mt-0 font-black"
       >
-        <FiArrowRight className="text-5xl text-neutral-50" />
+        <FiArrowRight className="text-5xl" strokeWidth={3} />
       </motion.div>
     </motion.a>
   );

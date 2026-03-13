@@ -3,28 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --theme-blue: #1b27b5;
+  --theme-bg: #eae9e5;
+  --theme-yellow: #F7C948;
+  --theme-orange: #E8650A;
+  --theme-green: #4CAF71;
+  --theme-cream: #FAF8F0;
+  
+  --color-ink-black: #1b27b5;
+  --color-ink-dark: #121a8f;
+  --color-paper-light: #eae9e5;
+  --color-paper-dark: #dcdbd7;
+  --color-pure-white: #ffffff;
+  
+  --background: 43 11% 91%;
+  --foreground: 235 74% 41%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 43 11% 91%;
+    --foreground: 235 74% 41%;
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 43 11% 91%;
+    --foreground: 235 74% 41%;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--theme-blue);
+  background: var(--theme-bg);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -34,4 +48,33 @@ body {
   body {
     @apply bg-background text-foreground box-border;
   }
+}
+
+@layer utilities {
+  .brut-border {
+    border: 3px solid var(--theme-blue);
+    box-shadow: 6px 6px 0px 0px var(--theme-blue);
+  }
+  .brut-hover {
+    transition: all 0.2s ease;
+  }
+  .brut-hover:hover {
+    transform: translate(-8px, -8px);
+  }
+  .brut-badge {
+    border: 2px solid var(--theme-blue);
+    box-shadow: 3px 3px 0px 0px var(--theme-blue);
+  }
+  .halftone-effect {
+    filter: sepia(100%) hue-rotate(190deg) saturate(400%) contrast(150%) brightness(90%);
+    mix-blend-mode: multiply;
+  }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-wobble {
+  animation: wobble 2s ease-in-out infinite;
 }

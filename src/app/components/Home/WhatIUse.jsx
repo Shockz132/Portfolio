@@ -2,90 +2,83 @@ import { motion } from "framer-motion"
 
 export const WhatIUse = () => {
     return (
-        <section id="what-i-use" className="mx-auto max-w-5xl px-6 py-48 text-[--foreground]">
-            <motion.h1
-                initial={{ y: 48, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ ease: "easeInOut", duration: 0.75 }}
-                className="mb-20 text-4xl font-black uppercase text-[--foreground]"
-            >
-                What I Use
-            </motion.h1>
+        <section id="what-i-use" className="w-full bg-theme-bg pt-32 pb-48 border-b-4 border-theme-blue relative">
+            {/* Structural Lines */}
+            <div className="absolute left-8 md:left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
 
-            <TerminalComponent />
+            <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24">
+                <motion.div
+                    initial={{ y: 48, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ ease: "easeInOut", duration: 0.75 }}
+                    className="mb-24"
+                >
+                    <div className="font-mono text-xs font-bold tracking-[0.2em] mb-4 border-l-4 border-theme-blue text-theme-blue bg-theme-green inline-block px-2 py-1 shadow-[2px_2px_0px_0px_#1b27b5] brut-hover">
+                        [ 03 ]
+                    </div>
+                    <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-theme-blue drop-shadow-[4px_4px_0px_var(--theme-yellow)]">
+                        Tech Stack
+                    </h1>
+                </motion.div>
+
+                <TechStackGrid />
+            </div>
         </section>
     );
 };
 
-const TerminalComponent = () => {
+const TechStackGrid = () => {
     return (
         <motion.div
             initial={{ y: 60, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ ease: "easeOut", duration: 0.6 }}
-            className="w-full rounded-xl bg-neutral-950 border border-neutral-800 shadow-2xl overflow-hidden font-mono text-sm md:text-base"
+            className="w-full border-4 border-theme-blue bg-theme-bg shadow-[8px_8px_0px_0px_#1b27b5] overflow-hidden"
         >
-            <div className="flex items-center gap-2 px-4 py-3 bg-neutral-900 border-b border-neutral-800">
-                <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <div className="ml-4 text-neutral-500 text-xs select-none">jethro@portfolio: ~/tech-stack</div>
-            </div>
-            
-            <div className="p-6 space-y-8">
-                {toolCategories.map((category, index) => (
-                    <CommandLine key={index} category={category} index={index} />
-                ))}
-                <div className="flex items-center gap-2">
-                    <span className="text-green-500">➜</span>
-                    <span className="text-blue-400">~</span>
-                    <span className="animate-pulse bg-neutral-500 w-2.5 h-5 block" />
-                </div>
-            </div>
-        </motion.div>
-    )
-}
+            {toolCategories.map((category, index) => {
+                const colors = ["bg-theme-yellow", "bg-theme-orange", "bg-theme-green", "bg-theme-blue"];
+                const textColors = ["text-theme-blue", "text-theme-blue", "text-theme-blue", "text-theme-yellow"];
+                const color = colors[index % colors.length];
+                const textColor = textColors[index % textColors.length];
 
-const CommandLine = ({ category, index }) => {
-    return (
-        <div className="space-y-3">
-            <div className="flex flex-wrap gap-2 text-[--foreground] font-bold">
-                <span className="text-green-500">➜</span>
-                <span className="text-blue-400">~</span>
-                <span className="text-neutral-400">$</span>
-                <span className="text-yellow-200">ls</span>
-                <span className="text-purple-400">./{category.dirName}</span>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-2 pl-4">
-                {category.tools.map((tool, i) => (
-                    <span key={i} className="text-neutral-300 hover:text-white transition-colors cursor-default">
-                        {tool}
-                    </span>
-                ))}
-            </div>
-        </div>
+                return (
+                    <div key={index} className="flex flex-col md:flex-row border-b-4 border-theme-blue last:border-b-0">
+                        <div className={`w-full md:w-1/3 p-6 border-b-4 md:border-b-0 md:border-r-4 border-theme-blue ${color} flex items-center justify-center md:justify-start`}>
+                            <h3 className={`font-mono text-base font-black uppercase tracking-widest ${textColor} drop-shadow-[2px_2px_0px_rgba(255,255,255,0.3)]`}>
+                                [ {category.dirName} ]
+                            </h3>
+                        </div>
+                        <div className="w-full md:w-2/3 p-6 flex flex-wrap gap-4 items-center bg-theme-cream">
+                            {category.tools.map((tool, i) => (
+                                <span key={i} className="px-4 py-2 border-4 border-theme-blue bg-theme-bg text-theme-blue font-sans font-bold text-sm shadow-[4px_4px_0px_0px_#1b27b5] brut-hover hover:bg-theme-blue hover:text-white transition-colors cursor-pointer">
+                                    {tool}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                );
+            })}
+        </motion.div>
     )
 }
 
 const toolCategories = [
     {
-        dirName: "Web_Development",
-        tools: ["HTML", "CSS", "Tailwind CSS", "Javascript", "React JS", "Typescript", "React TS", "React Native"],
+        dirName: "Web_Dev",
+        tools: ["HTML", "CSS", "Tailwind CSS", "Javascript", "React JS", "Typescript", "React Native"],
     },
     {
-        dirName: "Backend_Development",
-        tools: ["Python", "Javascript", "C", "C#", "SQL"],
+        dirName: "Backend",
+        tools: ["Python", "C", "C#", "SQL", "FastAPI"],
     },
     {
-        dirName: "Software_Tools",
-        tools: ["VSCode", "Eagle", "Microsoft Office Suite", "Github"],
+        dirName: "AI_ML",
+        tools: ["LangChain", "LangGraph", "Docker", "RAG"],
     },
     {
-        dirName: "Special",
-        tools: ["Googling"],
+        dirName: "Tools",
+        tools: ["VSCode", "Eagle", "Github", "Figma"],
     },
 ];

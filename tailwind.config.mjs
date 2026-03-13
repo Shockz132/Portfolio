@@ -8,7 +8,17 @@ export default {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-space-grotesk)', 'sans-serif'],
+  			mono: ['var(--font-space-mono)', 'monospace'],
+  		},
   		colors: {
+            'theme-blue': '#1b27b5',
+            'theme-bg': '#eae9e5',
+            'theme-yellow': '#F7C948',
+            'theme-orange': '#E8650A',
+            'theme-green': '#4CAF71',
+            'theme-cream': '#FAF8F0',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

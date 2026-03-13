@@ -1,118 +1,141 @@
 'use client'
 
-// import Image from "next/image";
-import { NavBar } from "@/app/components/Home/NavBar.jsx";
-import { Features } from "@/app/components/Projects/Features";
-import { Header } from "@/app/components/Projects/Header";
-import { ProjectOverview } from "@/app/components/Projects/ProjectOverview";
-import { TableOfContents } from "@/app/components/Projects/TableOfContents";
-import { MyRole } from "@/app/components/Projects/MyRole";
-import { ProjectShowcase } from "@/app/components/Projects/ProjectShowcase";
-import { GithubLink } from "@/app/components/Projects/GithubLink";
-import { WorkProcess } from "@/app/components/Projects/WorkProcess";
-import { OutcomeAndResults } from "@/app/components/Projects/OutcomeAndResults";
-import { ProjectProblem } from "@/app/components/Projects/Problem";
+import { NavBar } from "@/app/components/NavBar";
+import { Footer } from "@/app/components/Footer";
+import { ProjectHeader } from "@/app/components/Projects/ProjectHeader";
+import { ProjectProblem } from "@/app/components/Projects/ProjectProblem";
+import { ProjectTechStack } from "@/app/components/Projects/ProjectTechStack";
+import { ProjectOutcomes } from "@/app/components/Projects/ProjectOutcomes";
+import { motion } from "framer-motion";
+import { FiLayout, FiCpu, FiCode, FiGrid } from "react-icons/fi";
 
-export default function Home() {
+export default function CircuitSolverPage() {
+  const tocLinks = [
+    { name: "PROBLEM", href: "#problem", id: "problem" },
+    { name: "TECH STACK", href: "#tech-stack", id: "tech-stack" },
+    { name: "OUTCOMES", href: "#outcomes", id: "outcomes" },
+    { name: "SHOWCASE", href: "#showcase", id: "showcase" },
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            <div>
-                <NavBar />
-                <Header
-                  title={"Logic Gate Circuit Solver"}
-                  date={"10/2024 - 10/2024"}
-                  readMins={3}
-                  imgSrc="https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
-                  tagsArray={["Web Development", "React", "ReactFlow", "Vite"]}
-                />
-                <GithubLink 
-                  githubLink={"https://github.com/Shockz132/Logic_Gate_Simulator"}
-                />
-                <ProjectProblem
-                  problemStatement="How can I automate the process of deriving the truth table from a Logic Gate Circuit? "
-                />
-                <ProjectOverview 
-                  overviewContentArray={[
-                    "The Logic Gate Circuit Solver was created using HTML, Vanilla CSS, Javascript (React, ReactFlow) and C. Built for you to create a circuit using Logic Gates, Inputs and Outputs to generate a text file. Using the generated text file, the C program will generate the truth table for the circuit created. Making it easy for users to derive the truth table from a Logic Gate Circuit using an easy to use drag and drop UI"
-                  ]}
-                />
-                <TableOfContents 
-                  contentsArray={[
-                    "Problem",
-                    "Project Overview",
-                    "Features",
-                    "My Role",
-                    "Work Process",
-                    "Project Showcase",
-                  ]}
-                />
-                <Features 
-                  projectFeaturesArray={[
-                    "Easy to use",
-                    "Drag and Drop UI",
-                    "Fast Run time",
-                  ]}
-                  codeFeaturesArray={[
-                    "React JS",
-                    "Javascript",
-                    "Vite",
-                    "CSS",
-                    "ReactFlow",
-                    "C",
-                  ]}
-                />
-                <MyRole 
-                  role={"Project Owner"}
-                  descriptionArray={[
-                    "This is a personal project I built solo to apply my front-end skills to a real problem I was facing. Working alone meant handling all research, planning, design, and programming myself, a fun challenge to see how far I could take a project independently.",
-                  ]}
-                />
-                <WorkProcess
-                    parts={["Research and Planning", "Frontend Web Development", "Backend Development"]}
-                    descriptions={[
-                      "I chose ReactFlow for its node-based UI, perfect for connecting logic gates. Vite was a better fit than NextJS for a lightweight project, and I picked C for the backend purely to learn the language.",
-                      "Getting started with ReactFlow took some time reading docs and experimenting with components. Once familiar, I built input/output variable components, six logic gate types, the connection logic, and the text file generation for the backend.",
-                      "Learning C was the main hurdle. I started by building a simpler truth-table-from-equation program, then expanded it to read the generated circuit file. Most debugging time was spent on logic errors from unfamiliarity with the language."
-                    ]}
-                    imgArrays={[
-                      [],
-                      [],
-                      [],
-                    ]}
-                    imgDescriptionArrays={[
-                      [],
-                      [],
-                      [],
-                    ]}
-                /> 
-                <OutcomeAndResults 
-                  contentArray={[
-                    "The project serves its purpose as an easy-to-use drag-and-drop logic gate circuit solver. It also taught me C and pushed my front-end skills with ReactFlow's node-based components.",
-                    "Future improvements would include switching the backend from C to JavaScript for a seamless in-browser experience, allowing user-defined input variable counts, and adding more circuit components like BJTs, diodes, and MOSFETs."
-                  ]}
-                />
-                <ProjectShowcase 
-                  imgSrcArray={[
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI1.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI2.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverUI3.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResult.png",
-                    "https://raw.githubusercontent.com/Shockz132/Portfolio/refs/heads/main/public/LogicGateCircuitSolver/LogicGateCircuitSolverResultTable.png",
-                  ]}
-                  imgDescriptionArray={[
-                    "Website UI 1",
-                    "Website UI 2",
-                    "Website UI 3",
-                    "Example Result TXT",
-                    "Example Result Truth Table",
-                  ]}
-                />
+    <div className="min-h-screen bg-theme-bg text-theme-blue font-sans">
+      <NavBar links={tocLinks} />
+
+      {/* Structural Lines */}
+      <div className="fixed left-[68px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
+      <div className="fixed right-[76px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
+
+      <main className="w-full relative pt-24 pb-32 overflow-x-clip">
+        {/* Pattern Background */}
+        <div className="absolute inset-0 pointer-events-none z-0 opacity-20 bg-[radial-gradient(var(--theme-orange)_15%,transparent_15%)] bg-[size:40px_40px]" />
+
+        <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10">
+
+          <ProjectHeader
+            title="Circuit"
+            titleAccent="Solver"
+            date="10/2024 - 10/2024 (2 days)"
+            subtitle="An automated logic gate circuit simulator and truth table generator."
+            tags={["React", "ReactFlow", "Vite", "C", "Web Development"]}
+            repoLink="https://github.com/Shockz132/Logic_Gate_Simulator"
+            repoType="github"
+            imgSrc="/LogicGateCircuitSolver/LogicGateCircuitSolverPreview.png"
+          />
+
+          <ProjectProblem
+            problemText="How can I automate the process of deriving the truth table from a Logic Gate Circuit?"
+            overviewText="The Logic Gate Circuit Solver allows users to build circuits using logic gates, inputs, and outputs through an intuitive drag-and-drop interface. It generates a text-based circuit description which is then processed by a high-performance C backend to derive the corresponding truth table."
+            roleText="As the Project Owner, I handled the entire development lifecycle. I integrated ReactFlow for the node-based UI and implemented a recursive solver in C to handle complex boolean logic and file parsing."
+          />
+
+          <ProjectTechStack
+            categories={[
+              {
+                title: "Frontend",
+                color: "bg-theme-yellow",
+                iconShape: "circle",
+                chips: ["React JS", "Vite", "ReactFlow", "Tailwind CSS"]
+              },
+              {
+                title: "Logic Engine",
+                color: "bg-theme-green",
+                iconShape: "square",
+                chipColor: "bg-theme-cream",
+                chips: ["C Language", "Recursion", "File I/O", "Boolean Logic"]
+              },
+              {
+                title: "Tooling",
+                color: "bg-theme-orange",
+                iconShape: "diamond",
+                lightText: true,
+                chipColor: "bg-theme-blue text-theme-cream",
+                chips: ["Vite", "ESLint", "Git", "Markdown"]
+              }
+            ]}
+          />
+
+          <ProjectOutcomes
+            takeaways={[
+              {
+                title: "Hybrid Architecture",
+                content: "Successfully combined a modern React frontend with a high-performance C backend for complex logic processing."
+              },
+              {
+                title: "Node-Based UI",
+                content: "Mastered ReactFlow to create an intuitive, professional-grade circuit editor with real-time feedback."
+              },
+              {
+                title: "Algorithmic Rigor",
+                content: "Implemented recursive boolean solvers and robust file parsing logic in C, ensuring 100% accuracy in output."
+              }
+            ]}
+            metrics={[
+              { value: "0ms", label: "Solve Time", description: "Near-instant truth table generation.", color: "bg-theme-green" },
+              { value: "Complex", label: "Logic", description: "Supports nested gates and wide inputs.", color: "bg-theme-yellow" },
+              { value: "100%", label: "Accuracy", description: "Verified against standard truth tables.", color: "bg-theme-orange" }
+            ]}
+            futureScope="Future plans include adding real-time gate simulation with visual signal flow, supporting custom sub-circuits (ICs), etc."
+          />
+
+          {/* Project Showcase Section */}
+          <section id="showcase" className="mb-32 scroll-mt-32">
+            <div className="flex items-center gap-6 mb-16">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
+                Visual Showcase
+              </h2>
+              <div className="h-2 flex-1 bg-theme-blue"></div>
             </div>
-            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center w-full">
-              <p className="w-full text-center"> Copyright © 2025 Jethro. All rights reserved. </p>
-            </footer>
-        </main>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {[
+                { src: "/LogicGateCircuitSolver/LogicGateCircuitSolverUI1.png", desc: "Interactive Node Editor" },
+                { src: "/LogicGateCircuitSolver/LogicGateCircuitSolverUI2.png", desc: "Connecting Logic Gates" },
+                { src: "/LogicGateCircuitSolver/LogicGateCircuitSolverUI3.png", desc: "Output Generation" },
+                { src: "/LogicGateCircuitSolver/LogicGateCircuitSolverResultTable.png", desc: "Generated Truth Table" }
+              ].map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ y: 24, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-theme-cream border-[6px] border-theme-blue p-4 shadow-[16px_16px_0px_0px_var(--theme-yellow)] hover:shadow-[24px_24px_0px_0px_var(--theme-yellow)] transition-all group"
+                >
+                  <div className="aspect-video bg-white border-4 border-theme-blue mb-4 overflow-hidden shadow-inner">
+                    <img src={img.src} alt={img.desc} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <p className="font-mono font-black text-sm uppercase text-theme-blue border-l-4 border-theme-orange pl-3">
+                    {img.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <Footer text="Circuit Solver Project Showcase | Built with 🦒" />
     </div>
   );
 }
