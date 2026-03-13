@@ -1,6 +1,7 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import { getAssetPath } from "@/app/utils/paths";
 
 export const Projects = () => {
   return (
@@ -93,7 +94,7 @@ const Link = ({ heading, imgSrc, subheading, href, hoverClass }) => {
 
   return (
     <motion.a
-      href={href}
+      href={getAssetPath(href)}
       ref={ref}
       onMouseMove={handleMouseMove}
       initial="initial"
