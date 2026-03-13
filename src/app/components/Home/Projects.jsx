@@ -6,8 +6,8 @@ import { getAssetPath } from "@/app/utils/paths";
 export const Projects = () => {
   return (
     <section id="projects" className="w-full bg-theme-bg pt-32 pb-48 relative border-b-4 border-theme-blue overflow-hidden">
-      <div className="absolute left-8 md:left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
-      <div className="absolute right-8 md:right-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+      <div className="hidden md:block absolute left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+      <div className="hidden md:block absolute right-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
 
       {/* Background Motifs */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-30 bg-[radial-gradient(var(--theme-green)_15%,transparent_15%)] bg-[size:40px_40px]">

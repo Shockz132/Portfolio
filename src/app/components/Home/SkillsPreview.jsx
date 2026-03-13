@@ -10,7 +10,7 @@ export const SkillsPreview = () => {
       className="w-full bg-theme-bg pt-32 pb-48 border-b-4 border-theme-blue relative text-theme-blue overflow-hidden"
     >
       {/* Structural Lines */}
-      <div className="absolute left-8 md:left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+      <div className="hidden md:block absolute left-16 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
 
       {/* Mascot Accent */}
       <div className="absolute bottom-0 right-0 pointer-events-none z-0 lg:z-40 opacity-20 lg:opacity-100 overflow-hidden lg:overflow-visible flex items-end justify-end">

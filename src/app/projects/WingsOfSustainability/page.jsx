@@ -23,8 +23,8 @@ export default function WingsOfSustainabilityPage() {
       <NavBar links={tocLinks} />
 
       {/* Structural Lines */}
-      <div className="fixed left-[68px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
-      <div className="fixed right-[76px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
+      <div className="hidden md:block fixed left-[68px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
+      <div className="hidden md:block fixed right-[76px] top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-40" />
 
       <main className="w-full relative pt-24 pb-32 overflow-x-clip">
         {/* Pattern Background */}
