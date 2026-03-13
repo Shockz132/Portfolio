@@ -8,6 +8,7 @@ import { ProjectTechStack } from "@/app/components/Projects/ProjectTechStack";
 import { ProjectOutcomes } from "@/app/components/Projects/ProjectOutcomes";
 import { motion } from "framer-motion";
 import { FiLayout, FiCpu, FiFeather, FiActivity, FiVideo, FiImage } from "react-icons/fi";
+import { getAssetPath } from "@/app/utils/paths";
 
 export default function WingsOfSustainabilityPage() {
   const tocLinks = [
@@ -125,7 +126,7 @@ export default function WingsOfSustainabilityPage() {
                   className="bg-white border-4 border-theme-blue p-3 shadow-[12px_12px_0px_0px_var(--theme-green)] hover:-translate-y-2 transition-all group"
                 >
                   <div className="aspect-square bg-theme-cream border-2 border-theme-blue mb-4 overflow-hidden">
-                    <img src={img.src} alt={img.desc} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                    <img src={getAssetPath(img.src)} alt={img.desc} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <div className="flex items-center gap-2">
                     <FiImage className="text-theme-orange" />

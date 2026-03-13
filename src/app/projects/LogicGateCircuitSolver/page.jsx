@@ -8,6 +8,7 @@ import { ProjectTechStack } from "@/app/components/Projects/ProjectTechStack";
 import { ProjectOutcomes } from "@/app/components/Projects/ProjectOutcomes";
 import { motion } from "framer-motion";
 import { FiLayout, FiCpu, FiCode, FiGrid } from "react-icons/fi";
+import { getAssetPath } from "@/app/utils/paths";
 
 export default function CircuitSolverPage() {
   const tocLinks = [
@@ -122,7 +123,7 @@ export default function CircuitSolverPage() {
                   className="bg-theme-cream border-[6px] border-theme-blue p-4 shadow-[16px_16px_0px_0px_var(--theme-yellow)] hover:shadow-[24px_24px_0px_0px_var(--theme-yellow)] transition-all group"
                 >
                   <div className="aspect-video bg-white border-4 border-theme-blue mb-4 overflow-hidden shadow-inner">
-                    <img src={img.src} alt={img.desc} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                    <img src={getAssetPath(img.src)} alt={img.desc} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <p className="font-mono font-black text-sm uppercase text-theme-blue border-l-4 border-theme-orange pl-3">
                     {img.desc}
