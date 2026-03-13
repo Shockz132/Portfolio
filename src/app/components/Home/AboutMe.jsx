@@ -1,5 +1,6 @@
 import { TextScramble } from '@/app/components/core/text-scramble';
 import { motion } from 'framer-motion';
+import { getAssetPath } from '@/app/utils/paths';
 
 export function AboutMe() {
     return (
@@ -28,7 +29,7 @@ export function AboutMe() {
                     <div className="w-full md:w-1/2 md:pl-12 flex flex-col justify-end pb-4 md:pb-8 relative">
                         {/* Giraffe Mascot */}
                         <img
-                            src="/giraffe_wave.png"
+                            src={getAssetPath("/giraffe_wave.png")}
                             alt="Excited Waving Giraffe Mascot"
                             className="absolute bottom-32 md:bottom-24 right-0 md:-right-8 3xl:right-0 w-[50vw] md:w-[15vw] 2xl:w-[300px] object-contain drop-shadow-[4px_4px_0px_theme(colors.theme-blue)] animate-wobble z-0 2xl:z-30 opacity-30 2xl:opacity-100 pointer-events-none"
                         />

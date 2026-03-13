@@ -6,6 +6,7 @@ import {
 } from "framer-motion";
 import { Building2 } from "lucide-react";
 import { useRef } from "react";
+import { getAssetPath } from "@/app/utils/paths";
 
 export const WorkExperience = () => {
   return (
@@ -29,7 +30,7 @@ const WorkExperienceList = () => {
 
       {/* Mascot Accent */}
       <div className="absolute right-0 top-64 pointer-events-none z-0 lg:z-30 opacity-20 lg:opacity-100 transform translate-x-12 lg:translate-x-1/4">
-        <img src="/giraffe_coding.png" alt="Giraffe Coding" className="w-[60vw] md:w-[40vw] max-w-[350px] object-contain drop-shadow-[4px_4px_0px_theme(colors.theme-blue)]" />
+        <img src={getAssetPath("/giraffe_coding.png")} alt="Giraffe Coding" className="w-[60vw] md:w-[40vw] max-w-[350px] object-contain drop-shadow-[4px_4px_0px_theme(colors.theme-blue)]" />
       </div>
 
       <div className="max-w-full mx-auto px-8 md:px-16 lg:px-24 relative z-10">

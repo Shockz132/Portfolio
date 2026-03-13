@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion";
+import { getAssetPath } from "@/app/utils/paths";
 
 export const Footer = ({ text = "Copyright © 2025 Jethro. Made with 🦒" }) => {
   return (
@@ -10,7 +11,7 @@ export const Footer = ({ text = "Copyright © 2025 Jethro. Made with 🦒" }) =>
       </div>
 
       {/* Mascot Accent */}
-      <img src="/giraffe_reading.png" alt="reading giraffe" className="absolute top-8 right-8 md:right-32 w-32 h-32 md:w-48 md:h-48 object-contain animate-wobble z-0 pointer-events-none drop-shadow-[4px_4px_0px_theme(colors.theme-blue)]" />
+      <img src={getAssetPath("/giraffe_reading.png")} alt="reading giraffe" className="absolute top-8 right-8 md:right-32 w-32 h-32 md:w-48 md:h-48 object-contain animate-wobble z-0 pointer-events-none drop-shadow-[4px_4px_0px_theme(colors.theme-blue)]" />
 
       <div className="relative z-10 bg-theme-cream border-4 border-theme-blue p-4 shadow-[6px_6px_0px_0px_#1b27b5] brut-hover transform -rotate-1">
         <p className="w-full text-center font-mono font-bold text-xs md:text-sm tracking-widest text-theme-blue uppercase">

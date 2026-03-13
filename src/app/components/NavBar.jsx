@@ -4,15 +4,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { getAssetPath } from "@/app/utils/paths";
 
 export const NavBar = ({ links }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const defaultLinks = [
-    { name: "ABOUT", href: "/#about", id: "about" },
-    { name: "EXPERIENCE", href: "/#experience", id: "experience" },
-    { name: "SKILLS", href: "/#skills", id: "skills" },
-    { name: "PROJECTS", href: "/#projects", id: "projects" },
+    { name: "ABOUT", href: getAssetPath("/#about"), id: "about" },
+    { name: "EXPERIENCE", href: getAssetPath("/#experience"), id: "experience" },
+    { name: "SKILLS", href: getAssetPath("/#skills"), id: "skills" },
+    { name: "PROJECTS", href: getAssetPath("/#projects"), id: "projects" },
   ];
 
   const navLinks = links || defaultLinks;
@@ -33,7 +34,7 @@ export const NavBar = ({ links }) => {
     <nav className="fixed left-0 right-0 top-0 z-50 flex items-stretch justify-between bg-theme-bg border-b-4 border-theme-blue h-[72px] text-theme-blue">
       <div className="flex items-center">
         <Link href="/" className="flex flex-shrink-0 items-center justify-center border-2 border-r-4 border-theme-blue w-[72px] h-[72px] bg-theme-yellow hover:bg-theme-orange transition-colors duration-300 p-2">
-          <img src="/giraffe_pfp.jpg" alt="Logo" className="w-full h-full object-cover rounded-full border-2 border-theme-blue" />
+          <img src={getAssetPath("/giraffe_pfp.jpg")} alt="Logo" className="w-full h-full object-cover rounded-full border-2 border-theme-blue" />
         </Link>
         <div className="hidden sm:flex font-mono text-[11px] tracking-widest uppercase items-center ml-6 font-bold">
           JETHRO CHIA <span className="ml-2 bg-theme-blue text-theme-bg px-2 py-0.5">DEV_</span>

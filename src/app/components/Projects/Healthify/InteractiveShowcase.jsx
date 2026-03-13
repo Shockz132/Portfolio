@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
+import { getAssetPath } from '@/app/utils/paths';
 
 export const InteractiveShowcase = ({ id, title, description, color, images, reverse = false }) => {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -104,7 +105,7 @@ export const InteractiveShowcase = ({ id, title, description, color, images, rev
                 className="w-full h-full relative z-10"
               >
                 <img
-                  src={images[activeIdx].src}
+                  src={getAssetPath(images[activeIdx].src)}
                   alt={images[activeIdx].alt}
                   className="w-full h-full object-contain rounded-xl sm:rounded-2xl"
                 />

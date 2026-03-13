@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FiGithub } from "react-icons/fi";
 import { SiHackster } from "react-icons/si";
 import { ExternalLink } from "lucide-react";
+import { getAssetPath } from "@/app/utils/paths";
 
 export const ProjectHeader = ({ 
   title, 
@@ -69,7 +70,7 @@ export const ProjectHeader = ({
           className="relative z-10 bg-theme-cream border-[6px] border-theme-blue p-4 shadow-[24px_24px_0px_0px_var(--theme-yellow)] transform"
         >
           <div className="bg-theme-green border-4 border-theme-blue p-2 relative overflow-hidden">
-            <img src={imgSrc} alt={`${title} preview`} className="w-full h-auto object-cover" />
+            <img src={getAssetPath(imgSrc)} alt={`${title} preview`} className="w-full h-auto object-cover" />
           </div>
         </motion.div>
 

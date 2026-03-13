@@ -1,6 +1,7 @@
 import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { PanelsTopLeft, CircuitBoard, BrainCircuit, Network, Server, Smartphone } from "lucide-react";
 import React, { useRef } from "react";
+import { getAssetPath } from "@/app/utils/paths";
 
 export const SkillsPreview = () => {
   return (
@@ -13,7 +14,7 @@ export const SkillsPreview = () => {
 
       {/* Mascot Accent */}
       <div className="absolute bottom-0 right-0 pointer-events-none z-0 lg:z-40 opacity-20 lg:opacity-100 overflow-hidden lg:overflow-visible flex items-end justify-end">
-        <img src="/giraffe_reading.png" alt="reading giraffe" className="w-[50vw] md:w-[30vw] max-w-[300px] object-contain drop-shadow-[4px_4px_0px_theme(colors.theme-blue)] translate-x-1/4 translate-y-12" />
+        <img src={getAssetPath("/giraffe_reading.png")} alt="reading giraffe" className="w-[50vw] md:w-[30vw] max-w-[300px] object-contain drop-shadow-[4px_4px_0px_theme(colors.theme-blue)] translate-x-1/4 translate-y-12" />
       </div>
 
       <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24">
