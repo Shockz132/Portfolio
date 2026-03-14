@@ -4,7 +4,7 @@ import { getAssetPath } from '@/app/utils/paths';
 
 export function AboutMe() {
     return (
-        <section id="about" className="relative w-full min-h-[60vh] flex flex-col border-b-4 border-theme-blue overflow-hidden bg-theme-bg pt-12 md:pt-16">
+        <section id="about" className="relative w-full min-h-[60vh] flex flex-col border-b-4 border-theme-blue overflow-hidden bg-theme-bg pt-20 md:pt-24">
             {/* Playful polka-dot background pattern */}
             <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-30 bg-[radial-gradient(var(--theme-yellow)_15%,transparent_15%)] bg-[size:3rch_3ch] md:bg-[size:40px_40px]">
             </div>
