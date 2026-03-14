@@ -1,12 +1,22 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import { getAssetPath } from '@/app/utils/paths';
 
 export const InteractiveShowcase = ({ id, title, description, color, images, reverse = false }) => {
   const [activeIdx, setActiveIdx] = useState(0);
+
+  // Preload all images on mount so switching between previews is instant.
+  // Image objects are not stored — setting src triggers the browser to fetch
+  // and cache each image; the cache persists independently of the JS objects.
+  useEffect(() => {
+    images.forEach((img) => {
+      const preloadImg = new Image();
+      preloadImg.src = getAssetPath(img.src);
+    });
+  }, [images]);
 
   const themeColors = {
     orange: {
@@ -98,10 +108,10 @@ export const InteractiveShowcase = ({ id, title, description, color, images, rev
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIdx}
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                initial={{ opacity: 0, y: 20, scale: 0.97 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -40, scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 100, damping: 15 }}
+                exit={{ opacity: 0, y: -20, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 350, damping: 28 }}
                 className="w-full h-full relative z-10"
               >
                 <img
