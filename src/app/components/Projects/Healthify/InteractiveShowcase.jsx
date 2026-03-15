@@ -2,15 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { getAssetPath } from '@/app/utils/paths';
 
 export const InteractiveShowcase = ({ id, title, description, color, images, reverse = false }) => {
   const [activeIdx, setActiveIdx] = useState(0);
-
-  useEffect(() => {
-    if (activeIdx === undefined) setActiveIdx(0);
-  }, []);
 
   // Preload all images on mount so switching between previews is instant.
   useEffect(() => {
@@ -50,7 +46,7 @@ export const InteractiveShowcase = ({ id, title, description, color, images, rev
   const theme = themeColors[color] || themeColors.orange;
 
   return (
-    <div id={id} className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 md:gap-12 lg:gap-24 mb-24 md:mb-32 scroll-mt-32 px-4 sm:px-12 md:px-24 w-full relative overflow-hidden`}>
+    <div id={id} className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 md:gap-12 lg:gap-24 mb-24 md:mb-32 scroll-mt-32 px-4 sm:px-12 md:px-24 w-full relative overflow-hidden text-theme-blue`}>
       {/* Background decoration for mobile context */}
       <div className="md:hidden absolute top-0 -left-10 w-40 h-40 bg-theme-yellow opacity-10 rounded-full blur-3xl pointer-events-none" />
 
@@ -103,87 +99,96 @@ export const InteractiveShowcase = ({ id, title, description, color, images, rev
           initial={{ opacity: 0, scale: 0.9, rotate: reverse ? -5 : 5 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
           viewport={{ once: true }}
-          className={`relative z-10 bg-theme-cream border-[4px] md:border-[6px] border-theme-blue p-3 md:p-4 shadow-[12px_12px_0px_0px_var(--theme-yellow)] md:shadow-[24px_24px_0px_0px_var(--theme-yellow)] max-w-[300px] sm:max-w-[400px] w-full transform transition-transform duration-300 touch-pan-y`}
+          className={`relative z-10 bg-theme-cream border-[4px] md:border-[6px] border-theme-blue p-2 md:p-4 shadow-[8px_8px_0px_0px_var(--theme-yellow)] md:shadow-[24px_24px_0px_0px_var(--theme-yellow)] max-w-[280px] sm:max-w-[400px] w-full transform transition-transform duration-300 touch-pan-y`}
         >
           {/* Mobile-only condensed header integrated into widget top */}
-          <div className="md:hidden flex flex-col items-center mb-4">
-            <div className={`font-mono text-[10px] font-black tracking-widest ${theme.text} ${theme.bg} inline-block px-1.5 py-0.5 border-2 border-theme-blue shadow-[2px_2px_0px_0px_#1b27b5] mb-2`}>
+          <div className="md:hidden flex flex-col items-center mb-2">
+            <div className={`font-mono text-[9px] font-black tracking-widest ${theme.text} ${theme.bg} inline-block px-1 py-0.5 border-[2px] border-theme-blue shadow-[2px_2px_0px_0px_#1b27b5] mb-1.5`}>
               [ {title} ]
             </div>
             {/* Swipe indicator (Mobile only) */}
-            <div className="flex justify-center items-center gap-2 text-theme-blue opacity-40 font-mono text-[9px] font-black uppercase pointer-events-none mb-1">
-              <FiArrowRight className="rotate-180" /> Swipe <FiArrowRight />
+            <div className="flex justify-center items-center gap-2 text-theme-blue opacity-40 font-mono text-[8px] font-black uppercase pointer-events-none mb-0.5">
+              <FiArrowLeft size={8} /> SWIPE <FiArrowRight size={8} />
             </div>
           </div>
 
-          <motion.div
-            className="relative w-full cursor-grab active:cursor-grabbing"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            onDragEnd={(e, info) => {
-              if (info.offset.x > 50 && activeIdx > 0) setActiveIdx(activeIdx - 1);
-              else if (info.offset.x < -50 && activeIdx < images.length - 1) setActiveIdx(activeIdx + 1);
-            }}
-          >
-            {/* Main Frame Container */}
-            <div className={`${theme.bg} border-[3px] md:border-4 border-theme-blue p-1.5 md:p-2 relative overflow-hidden aspect-[9/19] bg-opacity-50`}>
-              {/* Visual Dot Pattern Inside Frame */}
-              <div className="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:10px_10px]" />
+          <div className="relative flex items-center justify-center gap-2">
+             {/* Side Navigation: Back/Restart (Mobile only) */}
+             <button 
+                onClick={() => {
+                  if (activeIdx > 0) setActiveIdx(activeIdx - 1);
+                  else setActiveIdx(images.length - 1);
+                }}
+                className="md:hidden bg-white border-2 border-theme-blue p-1 shadow-[2px_2px_0px_0px_#1b27b5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+                aria-label="Previous Feature"
+             >
+                <FiArrowLeft size={16} />
+             </button>
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIdx}
-                  initial={{ opacity: 0, x: 20, scale: 0.97 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  exit={{ opacity: 0, x: -20, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                  className="w-full h-full relative z-10"
-                >
-                  <img
-                    src={getAssetPath(images[activeIdx].src)}
-                    alt={images[activeIdx].alt}
-                    className="w-full h-full object-contain rounded-lg sm:rounded-2xl"
-                  />
-                </motion.div>
-              </AnimatePresence>
+             <motion.div
+                className="relative flex-1 cursor-grab active:cursor-grabbing max-w-[180px] sm:max-w-none"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={(e, info) => {
+                if (info.offset.x > 50 && activeIdx > 0) setActiveIdx(activeIdx - 1);
+                else if (info.offset.x < -50 && activeIdx < images.length - 1) setActiveIdx(activeIdx + 1);
+                }}
+             >
+                {/* Main Frame Container */}
+                <div className={`${theme.bg} border-[2px] md:border-4 border-theme-blue p-1 md:p-2 relative overflow-hidden aspect-[9/19] bg-opacity-50`}>
+                {/* Visual Dot Pattern Inside Frame */}
+                <div className="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:10px_10px]" />
 
-              {/* Preview Tag */}
-              <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 bg-theme-bg border-[3px] md:border-4 border-theme-blue px-2 md:px-3 py-0.5 md:py-1 font-mono text-[8px] md:text-[10px] font-black uppercase text-theme-blue shadow-[3px_3px_0px_0px_#1b27b5] md:shadow-[4px_4px_0px_0px_#1b27b5] z-20 transform -rotate-2">
-                {activeIdx + 1} / {images.length}
-              </div>
-            </div>
-          </motion.div>
+                <AnimatePresence mode="wait">
+                    <motion.div
+                    key={activeIdx}
+                    initial={{ opacity: 0, x: 20, scale: 0.97 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    exit={{ opacity: 0, x: -20, scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                    className="w-full h-full relative z-10"
+                    >
+                    <img
+                        src={getAssetPath(images[activeIdx].src)}
+                        alt={images[activeIdx].alt}
+                        className="w-full h-full object-contain rounded-md sm:rounded-2xl"
+                    />
+                    </motion.div>
+                </AnimatePresence>
+
+                {/* Preview Tag */}
+                <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4 bg-theme-bg border-[2px] md:border-4 border-theme-blue px-1.5 md:px-3 py-0.5 md:py-1 font-mono text-[7px] md:text-[10px] font-black uppercase text-theme-blue shadow-[2px_2px_0px_0px_#1b27b5] md:shadow-[4px_4px_0px_0px_#1b27b5] z-20 transform -rotate-2">
+                    {activeIdx + 1}/{images.length}
+                </div>
+                </div>
+             </motion.div>
+
+             {/* Side Navigation: Next (Mobile only) */}
+             <button 
+                onClick={() => setActiveIdx((activeIdx + 1) % images.length)}
+                className="md:hidden bg-white border-2 border-theme-blue p-1 shadow-[2px_2px_0px_0px_#1b27b5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+                aria-label="Next Feature"
+             >
+                <FiArrowRight size={16} />
+             </button>
+          </div>
 
           {/* Integrated Info Card (Mobile only) */}
-          <div className="md:hidden mt-4 space-y-3">
+          <div className="md:hidden mt-3 space-y-2">
             <motion.div
               key={activeIdx}
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white border-[3px] border-theme-blue p-3 shadow-[4px_4px_0px_0px_#1b27b5]"
+              className="bg-white border-[2px] border-theme-blue p-2 shadow-[3px_3px_0px_0px_#1b27b5]"
             >
-              <div className="font-mono text-[9px] font-black uppercase text-theme-blue mb-1 opacity-60">
+              <div className="font-mono text-[8px] font-black uppercase text-theme-blue mb-0.5 opacity-60">
                 {images[activeIdx].alt}
               </div>
-              <p className="text-[11px] font-bold leading-tight text-theme-blue line-clamp-2">
+              <p className="text-[10px] font-bold leading-tight text-theme-blue line-clamp-2">
                 {images[activeIdx].description || `Experience the ${images[activeIdx].alt} feature in action.`}
               </p>
             </motion.div>
 
-            <div className="flex gap-2">
-              <button
-                onClick={() => setActiveIdx(0)}
-                className="flex-1 bg-white border-[3px] border-theme-blue p-2 font-mono font-black text-[9px] uppercase shadow-[3px_3px_0px_0px_#1b27b5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center gap-1.5"
-              >
-                <FiArrowRight className="rotate-180" /> START
-              </button>
-              <button 
-                onClick={() => setActiveIdx((activeIdx + 1) % images.length)}
-                className={`${theme.bg} ${theme.text} border-[3px] border-theme-blue p-2 flex-[1.5] font-mono font-black text-[9px] uppercase shadow-[3px_3px_0px_0px_#1b27b5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center gap-1.5`}
-              >
-                NEXT <FiArrowRight />
-              </button>
-            </div>
           </div>
 
           {/* Decorative accents - Scaled for mobile */}
