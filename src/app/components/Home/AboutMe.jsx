@@ -9,9 +9,10 @@ export function AboutMe() {
             <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-30 bg-[radial-gradient(var(--theme-yellow)_15%,transparent_15%)] bg-[size:3rch_3ch] md:bg-[size:40px_40px]">
             </div>
 
+            {/* Structural Line down the middle like reference */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none z-10" />
+
             <div className='w-full h-full flex flex-col justify-end px-6 md:px-12 pb-6 md:pb-8 z-10 flex-grow relative'>
-                {/* Structural Line down the middle like reference */}
-                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[4px] bg-theme-blue pointer-events-none" />
 
                 <div className="flex flex-col md:flex-row w-full justify-between items-end gap-12">
                     {/* Left Side: Massive Text */}
