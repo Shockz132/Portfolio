@@ -151,7 +151,7 @@ export default function HealthifyPage() {
               images={[
                 { src: "/Healthify/screenshots/HealthifyIntroScreen1.png", alt: "Welcome Intro" },
                 { src: "/Healthify/screenshots/HealthifyIntroScreen2.png", alt: "Splash Screen" },
-                { src: "/Healthify/screenshots/HealthifyLoginScreen.png", alt: "Brutalist Login" },
+                { src: "/Healthify/screenshots/HealthifyLoginScreen.png", alt: "Login Screen" },
                 { src: "/Healthify/screenshots/HealthifyIntroScreen4.png", alt: "New User Reg" }
               ]}
             />
