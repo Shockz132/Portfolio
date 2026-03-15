@@ -8,9 +8,11 @@ import { getAssetPath } from '@/app/utils/paths';
 export const InteractiveShowcase = ({ id, title, description, color, images, reverse = false }) => {
   const [activeIdx, setActiveIdx] = useState(0);
 
+  useEffect(() => {
+    if (activeIdx === undefined) setActiveIdx(0);
+  }, []);
+
   // Preload all images on mount so switching between previews is instant.
-  // Image objects are not stored — setting src triggers the browser to fetch
-  // and cache each image; the cache persists independently of the JS objects.
   useEffect(() => {
     images.forEach((img) => {
       const preloadImg = new Image();
@@ -95,100 +97,99 @@ export const InteractiveShowcase = ({ id, title, description, color, images, rev
         </div>
       </div>
 
-      {/* Main Mobile Header (Condensed) */}
-      <div className="md:hidden space-y-2 mb-4 text-center">
-        <div className={`font-mono text-[10px] font-black tracking-widest ${theme.text} ${theme.bg} inline-block px-1.5 py-0.5 border-2 border-theme-blue shadow-[2px_2px_0px_0px_#1b27b5] mb-2`}>
-          [ FEATURE HIGHLIGHT ]
-        </div>
-        <h2 className="text-2xl font-black uppercase text-theme-blue tracking-tighter leading-none">
-          {title}
-        </h2>
-      </div>
-
-      {/* Device Side (Interactive) */}
+      {/* Device Side (Interactive consolidated widget on mobile) */}
       <div className="flex-1 flex flex-col items-center justify-start lg:sticky lg:top-32 h-fit md:px-4 sm:px-0">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, rotate: reverse ? -5 : 5 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
           viewport={{ once: true }}
-          className={`relative z-10 bg-theme-cream border-[4px] md:border-[6px] border-theme-blue p-3 md:p-4 shadow-[12px_12px_0px_0px_var(--theme-yellow)] md:shadow-[24px_24px_0px_0px_var(--theme-yellow)] max-w-[300px] sm:max-w-[380px] w-full transform hover:scale-105 transition-transform duration-300 touch-pan-y`}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragEnd={(e, info) => {
-            if (info.offset.x > 50 && activeIdx > 0) setActiveIdx(activeIdx - 1);
-            else if (info.offset.x < -50 && activeIdx < images.length - 1) setActiveIdx(activeIdx + 1);
-          }}
+          className={`relative z-10 bg-theme-cream border-[4px] md:border-[6px] border-theme-blue p-3 md:p-4 shadow-[12px_12px_0px_0px_var(--theme-yellow)] md:shadow-[24px_24px_0px_0px_var(--theme-yellow)] max-w-[300px] sm:max-w-[400px] w-full transform transition-transform duration-300 touch-pan-y`}
         >
-          {/* Swipe indicator (Mobile only) */}
-          <div className="md:hidden absolute -top-10 left-0 right-0 flex justify-center items-center gap-2 text-theme-blue opacity-40 font-mono text-[9px] font-black uppercase pointer-events-none">
-            <FiArrowRight className="rotate-180" /> Swipe to navigate <FiArrowRight />
+          {/* Mobile-only condensed header integrated into widget top */}
+          <div className="md:hidden flex flex-col items-center mb-4">
+            <div className={`font-mono text-[10px] font-black tracking-widest ${theme.text} ${theme.bg} inline-block px-1.5 py-0.5 border-2 border-theme-blue shadow-[2px_2px_0px_0px_#1b27b5] mb-2`}>
+              [ {title} ]
+            </div>
+            {/* Swipe indicator (Mobile only) */}
+            <div className="flex justify-center items-center gap-2 text-theme-blue opacity-40 font-mono text-[9px] font-black uppercase pointer-events-none mb-1">
+              <FiArrowRight className="rotate-180" /> Swipe <FiArrowRight />
+            </div>
           </div>
 
-          {/* Main Frame Container */}
-          <div className={`${theme.bg} border-[3px] md:border-4 border-theme-blue p-1.5 md:p-2 relative overflow-hidden aspect-[9/19] bg-opacity-50`}>
-            {/* Visual Dot Pattern Inside Frame */}
-            <div className="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:10px_10px]" />
+          <motion.div
+            className="relative w-full cursor-grab active:cursor-grabbing"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={(e, info) => {
+              if (info.offset.x > 50 && activeIdx > 0) setActiveIdx(activeIdx - 1);
+              else if (info.offset.x < -50 && activeIdx < images.length - 1) setActiveIdx(activeIdx + 1);
+            }}
+          >
+            {/* Main Frame Container */}
+            <div className={`${theme.bg} border-[3px] md:border-4 border-theme-blue p-1.5 md:p-2 relative overflow-hidden aspect-[9/19] bg-opacity-50`}>
+              {/* Visual Dot Pattern Inside Frame */}
+              <div className="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:10px_10px]" />
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIdx}
-                initial={{ opacity: 0, x: 20, scale: 0.97 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: -20, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                className="w-full h-full relative z-10"
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIdx}
+                  initial={{ opacity: 0, x: 20, scale: 0.97 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -20, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                  className="w-full h-full relative z-10"
+                >
+                  <img
+                    src={getAssetPath(images[activeIdx].src)}
+                    alt={images[activeIdx].alt}
+                    className="w-full h-full object-contain rounded-lg sm:rounded-2xl"
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Preview Tag */}
+              <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 bg-theme-bg border-[3px] md:border-4 border-theme-blue px-2 md:px-3 py-0.5 md:py-1 font-mono text-[8px] md:text-[10px] font-black uppercase text-theme-blue shadow-[3px_3px_0px_0px_#1b27b5] md:shadow-[4px_4px_0px_0px_#1b27b5] z-20 transform -rotate-2">
+                {activeIdx + 1} / {images.length}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Integrated Info Card (Mobile only) */}
+          <div className="md:hidden mt-4 space-y-3">
+            <motion.div
+              key={activeIdx}
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white border-[3px] border-theme-blue p-3 shadow-[4px_4px_0px_0px_#1b27b5]"
+            >
+              <div className="font-mono text-[9px] font-black uppercase text-theme-blue mb-1 opacity-60">
+                {images[activeIdx].alt}
+              </div>
+              <p className="text-[11px] font-bold leading-tight text-theme-blue line-clamp-2">
+                {images[activeIdx].description || `Experience the ${images[activeIdx].alt} feature in action.`}
+              </p>
+            </motion.div>
+
+            <div className="flex gap-2">
+              <button
+                onClick={() => setActiveIdx(0)}
+                className="flex-1 bg-white border-[3px] border-theme-blue p-2 font-mono font-black text-[9px] uppercase shadow-[3px_3px_0px_0px_#1b27b5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center gap-1.5"
               >
-                <img
-                  src={getAssetPath(images[activeIdx].src)}
-                  alt={images[activeIdx].alt}
-                  className="w-full h-full object-contain rounded-lg sm:rounded-2xl"
-                />
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Preview Tag */}
-            <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 bg-theme-bg border-[3px] md:border-4 border-theme-blue px-2 md:px-3 py-0.5 md:py-1 font-mono text-[8px] md:text-[10px] font-black uppercase text-theme-blue shadow-[3px_3px_0px_0px_#1b27b5] md:shadow-[4px_4px_0px_0px_#1b27b5] z-20 transform -rotate-2">
-              PREVIEW {activeIdx + 1} / {images.length}
+                <FiArrowRight className="rotate-180" /> START
+              </button>
+              <button 
+                onClick={() => setActiveIdx((activeIdx + 1) % images.length)}
+                className={`${theme.bg} ${theme.text} border-[3px] border-theme-blue p-2 flex-[1.5] font-mono font-black text-[9px] uppercase shadow-[3px_3px_0px_0px_#1b27b5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center gap-1.5`}
+              >
+                NEXT <FiArrowRight />
+              </button>
             </div>
           </div>
 
           {/* Decorative accents - Scaled for mobile */}
-          <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-8 md:w-12 h-8 md:h-12 bg-theme-orange border-[3px] md:border-4 border-theme-blue -z-10 rotate-12"></div>
-          <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-12 md:w-16 h-12 md:h-16 bg-theme-green border-[3px] md:border-4 border-theme-blue rounded-full -z-10"></div>
-          <div className="absolute top-1/2 -right-3 md:-right-4 w-6 md:w-8 h-16 md:h-24 bg-theme-yellow border-y-[3px] md:border-y-4 border-theme-blue -z-10"></div>
+          <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-8 md:w-12 h-8 md:h-12 bg-theme-orange border-[3px] md:border-4 border-theme-blue -z-10 rotate-12 md:block hidden"></div>
+          <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-12 md:w-16 h-12 md:h-16 bg-theme-green border-[3px] md:border-4 border-theme-blue rounded-full -z-10 md:block hidden"></div>
         </motion.div>
-
-        {/* Mobile Info Card & Controls (Visible only on mobile) */}
-        <div className="md:hidden mt-10 w-full max-w-[320px] space-y-4">
-          <motion.div
-            key={activeIdx}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-theme-cream border-[3px] border-theme-blue p-4 shadow-[6px_6px_0px_0px_#1b27b5]"
-          >
-            <div className="font-mono text-[9px] font-black uppercase text-theme-blue mb-1 opacity-60">
-              {String(activeIdx + 1).padStart(2, '0')} — {images[activeIdx].alt}
-            </div>
-            <p className="text-sm font-bold leading-tight text-theme-blue line-clamp-2">
-              {images[activeIdx].description || `Experience the ${images[activeIdx].alt} feature in action.`}
-            </p>
-          </motion.div>
-
-          <div className="flex gap-3">
-            <button
-               onClick={() => setActiveIdx(0)}
-               className="flex-1 bg-white border-[3px] border-theme-blue p-3 font-mono font-black text-[10px] uppercase shadow-[4px_4px_0px_0px_#1b27b5] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2"
-            >
-              <FiArrowRight className="rotate-180" /> RESTART
-            </button>
-            <button 
-              onClick={() => setActiveIdx((activeIdx + 1) % images.length)}
-              className={`${theme.bg} ${theme.text} border-[3px] border-theme-blue p-3 flex-[1.5] font-mono font-black text-[10px] uppercase shadow-[4px_4px_0px_0px_#1b27b5] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2`}
-            >
-              NEXT FEATURE <FiArrowRight />
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
