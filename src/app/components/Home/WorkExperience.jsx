@@ -33,23 +33,23 @@ const WorkExperienceList = () => {
         <img src={getAssetPath("/giraffe_coding.png")} alt="Giraffe Coding" className="w-[60vw] md:w-[40vw] max-w-[350px] object-contain drop-shadow-[4px_4px_0px_theme(colors.theme-blue)]" />
       </div>
 
-      <div className="max-w-full mx-auto px-8 md:px-16 lg:px-24 relative z-10">
+      <div className="max-w-full mx-auto px-4 md:px-16 lg:px-24 relative z-10">
         <motion.div
           initial={{ y: 48, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ ease: "easeInOut", duration: 0.75 }}
-          className="mb-24"
+          className="mb-16 md:mb-24 px-4 md:px-0"
         >
-          <div className="font-mono text-xs font-bold tracking-[0.2em] mb-4 border-l-4 border-theme-blue text-theme-blue bg-theme-bg inline-block px-2 py-1 shadow-[2px_2px_0px_0px_#1b27b5] brut-hover">
+          <div className="font-mono text-xs font-bold tracking-[0.2em] mb-4 border-l-4 border-theme-blue text-theme-blue bg-theme-bg inline-block px-2 py-1 shadow-[2px_2px_0px_0px_#1b27b5] brut-hover brut-active">
             [ 01 ]
           </div>
-          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight text-theme-blue drop-shadow-[4px_4px_0px_var(--theme-cream)]">
+          <h1 className="text-4xl md:text-8xl font-black uppercase tracking-tight text-theme-blue drop-shadow-[4px_4px_0px_var(--theme-cream)]">
             Experience
           </h1>
         </motion.div>
 
-        <div className="relative border-l-4 border-theme-blue ml-4 md:ml-8 space-y-20">
+        <div className="relative border-l-4 border-theme-blue ml-2 md:ml-8 space-y-12 md:space-y-20">
           {experienceData.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} index={index} />
           ))}
@@ -62,7 +62,7 @@ const WorkExperienceList = () => {
 const ExperienceCard = ({ experience, index }) => {
   const isEven = index % 2 === 0;
   const accentColor = isEven ? "bg-theme-green" : "bg-theme-orange";
-  const rotateClass = isEven ? "group-hover:-rotate-2" : "group-hover:rotate-2";
+  const rotateClass = isEven ? "group-hover:-rotate-2 active:-rotate-1" : "group-hover:rotate-2 active:rotate-1";
 
   return (
     <motion.div
@@ -70,22 +70,22 @@ const ExperienceCard = ({ experience, index }) => {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ ease: "easeInOut", duration: 0.5 }}
-      className="relative pl-12 md:pl-20 group max-w-[1500px]"
+      className="relative pl-8 md:pl-20 group max-w-[1500px]"
     >
       {/* Timeline Dot/Line connection */}
-      <div className={`absolute left-0 top-8 w-8 md:w-16 h-[6px] ${accentColor} border-y-4 border-r-4 border-theme-blue`} />
+      <div className={`absolute left-0 top-8 w-4 md:w-16 h-[6px] ${accentColor} border-y-4 border-r-4 border-theme-blue`} />
 
-      <div className={`flex flex-col gap-4 border-4 border-theme-blue p-8 md:p-10 bg-theme-bg transition-transform duration-300 ${rotateClass} origin-bottom-left shadow-[8px_8px_0px_0px_#1b27b5] brut-hover`}>
-        <div className={`font-mono text-xs md:text-sm font-bold uppercase tracking-widest ${accentColor} text-theme-blue border-4 border-theme-blue self-start px-4 py-2 shadow-[4px_4px_0px_0px_#1b27b5]`}>
+      <div className={`flex flex-col gap-3 md:gap-4 border-4 border-theme-blue p-6 md:p-10 bg-theme-bg transition-transform duration-300 ${rotateClass} origin-bottom-left shadow-[8px_8px_0px_0px_#1b27b5] brut-hover brut-active`}>
+        <div className={`font-mono text-[10px] md:text-sm font-bold uppercase tracking-widest ${accentColor} text-theme-blue border-4 border-theme-blue self-start px-3 md:px-4 py-1.5 md:py-2 shadow-[4px_4px_0px_0px_#1b27b5]`}>
           [ {experience.period} ]
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-black text-theme-blue tracking-tight leading-none mt-4 pb-2 drop-shadow-[2px_2px_0px_var(--theme-cream)]">
+        <h2 className="text-2xl md:text-5xl font-black text-theme-blue tracking-tight leading-none mt-2 md:mt-4 pb-2 drop-shadow-[2px_2px_0px_var(--theme-cream)]">
           {experience.role}
         </h2>
 
-        <div className="flex items-center gap-4 text-lg md:text-xl font-mono font-bold text-theme-blue border-t-4 border-theme-blue pt-6 mt-2">
-          <Building2 size={28} strokeWidth={2.5} />
+        <div className="flex items-center gap-3 md:gap-4 text-base md:text-xl font-mono font-bold text-theme-blue border-t-4 border-theme-blue pt-4 md:pt-6 mt-1 md:mt-2">
+          <Building2 size={24} className="md:w-[28px] md:h-[28px]" strokeWidth={2.5} />
           <span>{experience.company}</span>
         </div>
       </div>

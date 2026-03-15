@@ -17,23 +17,23 @@ export const SkillsPreview = () => {
         <img src={getAssetPath("/giraffe_reading.png")} alt="reading giraffe" className="w-[50vw] md:w-[30vw] max-w-[300px] object-contain drop-shadow-[4px_4px_0px_theme(colors.theme-blue)] translate-x-1/4 translate-y-12" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24">
+      <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24">
         <motion.div
           initial={{ y: 48, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ ease: "easeOut", duration: 0.6 }}
-          className="mb-24 relative z-30"
+          className="mb-12 md:mb-24 relative z-30"
         >
-          <div className="relative font-mono text-xs font-bold tracking-[0.2em] mb-4 border-l-4 border-theme-blue text-theme-blue inline-block bg-theme-yellow px-2 py-1 shadow-[2px_2px_0px_0px_#1b27b5] brut-hover">
+          <div className="relative font-mono text-xs font-bold tracking-[0.2em] mb-4 border-l-4 border-theme-blue text-theme-blue inline-block bg-theme-yellow px-2 py-1 shadow-[2px_2px_0px_0px_#1b27b5] brut-hover brut-active">
             [ 02 ]
           </div>
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tight text-theme-blue drop-shadow-[4px_4px_0px_var(--theme-orange)]">
+          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight text-theme-blue drop-shadow-[4px_4px_0px_var(--theme-orange)]">
             Skills
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-30">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative z-30">
           {skillsData.map((skill, index) => (
             <SkillCard key={index} {...skill} index={index} />
           ))}
@@ -62,22 +62,22 @@ const SkillCard = ({ title, icon, description, tags, index }) => {
       viewport={{ once: true, amount: 0.1 }}
       className="h-full"
     >
-      <div className={`relative flex flex-col h-full ${bgColor} border-4 border-theme-blue group shadow-[8px_8px_0px_0px_#1b27b5] hover:shadow-[14px_14px_0px_0px_#1b27b5] hover:-translate-x-3 hover:-translate-y-3 hover:scale-[1.02] transition-all duration-150`}>
-        <div className="flex-1 flex flex-col items-start p-8 gap-6 brut-hover">
-          <div className={`p-4 border-4 border-theme-blue bg-theme-bg text-theme-blue shadow-[4px_4px_0px_0px_#1b27b5] group-hover:bg-theme-yellow transition-colors duration-200`}>
-            {icon}
+      <div className={`relative flex flex-col h-full ${bgColor} border-4 border-theme-blue group shadow-[6px_6px_0px_0px_#1b27b5] md:shadow-[8px_8px_0px_0px_#1b27b5] hover:shadow-[14px_14px_0px_0px_#1b27b5] active:shadow-[3px_3px_0px_0px_#1b27b5] hover:-translate-x-1 md:hover:-translate-x-3 hover:-translate-y-1 md:hover:-translate-y-3 active:translate-x-0.5 active:translate-y-0.5 transition-all duration-150`}>
+        <div className="flex-1 flex flex-col items-start p-5 md:p-8 gap-4 md:gap-6 brut-hover">
+          <div className={`p-3 md:p-4 border-4 border-theme-blue bg-theme-bg text-theme-blue shadow-[4px_4px_0px_0px_#1b27b5] group-hover:bg-theme-yellow transition-colors duration-200`}>
+            {React.cloneElement(icon, { size: 28, className: "md:w-[32px] md:h-[32px]" })}
           </div>
           <div>
-            <h3 className="text-2xl font-black font-mono tracking-tight mb-3 text-theme-blue uppercase">
+            <h3 className="text-xl md:text-2xl font-black font-mono tracking-tight mb-2 md:mb-3 text-theme-blue uppercase">
               {title}
             </h3>
-            <p className="text-base leading-relaxed font-sans font-medium text-theme-blue opacity-90">
+            <p className="text-sm md:text-base leading-relaxed font-sans font-medium text-theme-blue opacity-90">
               {description}
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 mt-auto pt-6 w-full">
+          <div className="flex flex-wrap gap-2 mt-auto pt-4 md:pt-6 w-full">
             {tags.map((tag, i) => (
-              <span key={i} className={`px-3 py-1 text-xs font-bold uppercase tracking-widest font-mono border-4 border-theme-blue bg-theme-bg text-theme-blue shadow-[2px_2px_0px_0px_#1b27b5] group-hover:bg-theme-green transition-colors duration-200`}>
+              <span key={i} className={`px-2 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest font-mono border-4 border-theme-blue bg-theme-bg text-theme-blue shadow-[2px_2px_0px_0px_#1b27b5] group-hover:bg-theme-green transition-colors duration-200`}>
                 {tag}
               </span>
             ))}

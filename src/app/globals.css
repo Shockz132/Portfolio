@@ -65,6 +65,10 @@ body {
     border: 2px solid var(--theme-blue);
     box-shadow: 3px 3px 0px 0px var(--theme-blue);
   }
+  .brut-active:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--theme-blue);
+  }
   .halftone-effect {
     filter: sepia(100%) hue-rotate(190deg) saturate(400%) contrast(150%) brightness(90%);
     mix-blend-mode: multiply;

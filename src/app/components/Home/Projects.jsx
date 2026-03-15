@@ -24,7 +24,7 @@ export const Projects = () => {
           <div className="font-mono text-xs font-bold tracking-[0.2em] mb-4 border-l-4 border-theme-blue text-theme-blue bg-theme-yellow inline-block px-2 py-1 shadow-[2px_2px_0px_0px_#1b27b5] brut-hover">
             [ 04 ]
           </div>
-          <h1 className="text-[12vw] md:text-8xl leading-none font-black uppercase tracking-tighter text-theme-blue mb-12 drop-shadow-[4px_4px_0px_var(--theme-green)]">
+          <h1 className="text-5xl md:text-8xl leading-none font-black uppercase tracking-tighter text-theme-blue mb-12 drop-shadow-[4px_4px_0px_var(--theme-green)] px-4 md:px-0">
             Selected Work
           </h1>
         </motion.div>
@@ -99,23 +99,33 @@ const Link = ({ heading, imgSrc, subheading, href, hoverClass }) => {
       onMouseMove={handleMouseMove}
       initial="initial"
       whileHover="whileHover"
-      className={`group relative flex flex-col md:flex-row items-start md:items-center justify-between border-b-4 border-theme-blue py-8 md:py-12 transition-all duration-300 ${hoverClass} px-4 md:px-8 text-theme-blue hover:border-r-8 hover:z-20`}
+      whileTap="whileHover" // Added for mobile tap
+      className={`group relative flex flex-col md:flex-row items-start md:items-center justify-between border-b-4 border-theme-blue py-6 md:py-12 transition-all duration-300 ${hoverClass} px-6 md:px-8 text-theme-blue md:hover:border-r-8 hover:z-20`}
     >
       <motion.div
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="z-10"
+        className="z-10 w-full"
       >
         <span
-          className="relative block text-4xl md:text-6xl font-black tracking-tighter transition-colors duration-500 drop-shadow-[2px_2px_0px_var(--theme-cream)]"
+          className="relative block text-2xl md:text-6xl font-black tracking-tighter transition-colors duration-500 drop-shadow-[2px_2px_0px_var(--theme-cream)]"
         >
           {heading}
         </span>
-        <span className="relative mt-4 inline-block text-sm font-mono font-bold tracking-wider uppercase opacity-90 border-4 border-theme-blue px-3 py-1 bg-theme-bg group-hover:bg-theme-yellow text-theme-blue shadow-[4px_4px_0px_0px_#1b27b5] transition-all duration-300">
+        <span className="relative mt-3 md:mt-4 inline-block text-[10px] md:text-sm font-mono font-bold tracking-wider uppercase opacity-90 border-4 border-theme-blue px-2 md:px-3 py-1 bg-theme-bg group-hover:bg-theme-yellow group-active:bg-theme-yellow text-theme-blue shadow-[4px_4px_0px_0px_#1b27b5] transition-all duration-300">
           [ {subheading} ]
         </span>
+
+        {/* Mobile View Image - Only visible on small screens */}
+        <div className="mt-8 md:hidden w-full h-64 border-4 border-theme-blue shadow-[8px_8px_0px_0px_var(--theme-yellow)] overflow-hidden bg-theme-bg flex items-center justify-center">
+          <img 
+            src={getAssetPath(imgSrc)} 
+            className="w-full h-full object-contain p-2" 
+            alt={`Preview of ${heading}`} 
+          />
+        </div>
       </motion.div>
 
       <motion.img
@@ -131,7 +141,7 @@ const Link = ({ heading, imgSrc, subheading, href, hoverClass }) => {
         }}
         transition={{ type: "spring" }}
         src={getAssetPath(imgSrc)}
-        className={`absolute z-50 h-32 w-48 object-cover md:h-64 md:w-96 border-4 border-theme-blue shadow-[8px_8px_0px_0px_var(--theme-yellow)] bg-theme-bg`}
+        className={`hidden md:block absolute z-50 h-32 w-48 object-cover md:h-64 md:w-96 border-4 border-theme-blue shadow-[8px_8px_0px_0px_var(--theme-yellow)] bg-theme-bg`}
         alt={`Image representing a link for ${heading}`}
       />
 
@@ -147,7 +157,7 @@ const Link = ({ heading, imgSrc, subheading, href, hoverClass }) => {
           },
         }}
         transition={{ type: "spring" }}
-        className="relative z-10 p-4 mt-4 md:mt-0 font-black"
+        className="relative z-10 p-4 mt-4 md:mt-0 font-black hidden md:block" // Hidden on mobile to save space
       >
         <FiArrowRight className="text-5xl" strokeWidth={3} />
       </motion.div>

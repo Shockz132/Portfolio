@@ -31,7 +31,7 @@ export default function WingsOfSustainabilityPage() {
         {/* Pattern Background */}
         <div className="absolute inset-0 pointer-events-none z-0 opacity-20 bg-[radial-gradient(var(--theme-green)_15%,transparent_15%)] bg-[size:40px_40px]" />
 
-        <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-24 relative z-10">
 
           <ProjectHeader
             title="Wings Of"

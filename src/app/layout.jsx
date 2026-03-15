@@ -18,11 +18,6 @@ const BASE_PATH = isProd ? '/Portfolio' : '';
 export const metadata = {
   title: "Jethro's Portfolio",
   description: "Jethro's Portfolio",
-  icons: {
-    icon: `${BASE_PATH}/favicon.ico`,
-    shortcut: `${BASE_PATH}/favicon.ico`,
-    apple: `${BASE_PATH}/favicon.ico`,
-  },
 };
 
 import { SmoothScroll } from "@/app/components/core/smooth-scroll";

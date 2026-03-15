@@ -30,7 +30,7 @@ export default function CircuitSolverPage() {
         {/* Pattern Background */}
         <div className="absolute inset-0 pointer-events-none z-0 opacity-20 bg-[radial-gradient(var(--theme-orange)_15%,transparent_15%)] bg-[size:40px_40px]" />
 
-        <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-24 relative z-10">
 
           <ProjectHeader
             title="Circuit"
@@ -100,11 +100,11 @@ export default function CircuitSolverPage() {
 
           {/* Project Showcase Section */}
           <section id="showcase" className="mb-32 scroll-mt-32">
-            <div className="flex items-center gap-6 mb-16">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
+            <div className="flex items-center gap-4 md:gap-6 mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
                 Visual Showcase
               </h2>
-              <div className="h-2 flex-1 bg-theme-blue"></div>
+              <div className="h-1.5 md:h-2 flex-1 bg-theme-blue"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -120,12 +120,12 @@ export default function CircuitSolverPage() {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-theme-cream border-[6px] border-theme-blue p-4 shadow-[16px_16px_0px_0px_var(--theme-yellow)] hover:shadow-[24px_24px_0px_0px_var(--theme-yellow)] transition-all group"
+                  className="bg-theme-cream border-[4px] md:border-[6px] border-theme-blue p-3 md:p-4 shadow-[10px_10px_0px_0px_var(--theme-yellow)] md:shadow-[16px_16px_0px_0px_var(--theme-yellow)] hover:shadow-[24px_24px_0px_0px_var(--theme-yellow)] transition-all group"
                 >
-                  <div className="aspect-video bg-white border-4 border-theme-blue mb-4 overflow-hidden shadow-inner">
+                  <div className="aspect-video bg-white border-[3px] md:border-4 border-theme-blue mb-3 md:mb-4 overflow-hidden shadow-inner">
                     <img src={getAssetPath(img.src)} alt={img.desc} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <p className="font-mono font-black text-sm uppercase text-theme-blue border-l-4 border-theme-orange pl-3">
+                  <p className="font-mono font-black text-xs md:text-sm uppercase text-theme-blue border-l-4 border-theme-orange pl-3">
                     {img.desc}
                   </p>
                 </motion.div>

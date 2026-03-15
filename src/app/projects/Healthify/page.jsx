@@ -30,7 +30,7 @@ export default function HealthifyPage() {
         {/* Playful polka-dot background pattern */}
         <div className="absolute inset-0 pointer-events-none z-0 opacity-20 bg-[radial-gradient(var(--theme-green)_15%,transparent_15%)] bg-[size:40px_40px]" />
 
-        <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-24 relative z-10">
 
           <ProjectHeader
             title="Health"
@@ -108,11 +108,11 @@ export default function HealthifyPage() {
 
           {/* APP SHOWCASE - INTERACTIVE GALLERIES */}
           <section id="ai-assistant" className="mb-32 w-full max-w-none scroll-mt-32">
-            <div className="flex items-center gap-6 mb-16 px-12 md:px-24">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
+            <div className="flex items-center gap-4 md:gap-6 mb-12 md:mb-16 px-6 md:px-24">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
                 App Showcase
               </h2>
-              <div className="h-2 flex-1 bg-theme-blue"></div>
+              <div className="h-1.5 md:h-2 flex-1 bg-theme-blue"></div>
             </div>
 
             {/* Feature 1: AI Assistant */}

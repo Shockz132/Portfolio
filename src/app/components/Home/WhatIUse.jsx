@@ -45,18 +45,18 @@ const TechStackGrid = () => {
 
                 return (
                     <div key={index} className="flex flex-col md:flex-row border-b-4 border-theme-blue last:border-b-0">
-                        <div className={`w-full md:w-1/3 p-6 border-b-4 md:border-b-0 md:border-r-4 border-theme-blue ${color} flex items-center justify-center md:justify-start`}>
-                            <h3 className={`font-mono text-base font-black uppercase tracking-widest ${textColor} drop-shadow-[2px_2px_0px_rgba(255,255,255,0.3)]`}>
-                                [ {category.dirName} ]
-                            </h3>
-                        </div>
-                        <div className="w-full md:w-2/3 p-6 flex flex-wrap gap-4 items-center bg-theme-cream">
-                            {category.tools.map((tool, i) => (
-                                <span key={i} className="px-4 py-2 border-4 border-theme-blue bg-theme-bg text-theme-blue font-sans font-bold text-sm shadow-[4px_4px_0px_0px_#1b27b5] brut-hover hover:bg-theme-blue hover:text-white transition-colors cursor-pointer">
-                                    {tool}
-                                </span>
-                            ))}
-                        </div>
+            <div className={`w-full md:w-1/3 p-4 md:p-6 border-b-4 md:border-b-0 md:border-r-4 border-theme-blue ${color} flex items-center justify-center md:justify-start`}>
+                <h3 className={`font-mono text-sm md:text-base font-black uppercase tracking-widest ${textColor} drop-shadow-[2px_2px_0px_rgba(255,255,255,0.3)]`}>
+                    [ {category.dirName} ]
+                </h3>
+            </div>
+            <div className="w-full md:w-2/3 p-4 md:p-6 flex flex-wrap gap-2 md:gap-4 items-center bg-theme-cream">
+                {category.tools.map((tool, i) => (
+                    <span key={i} className="px-2.5 md:px-4 py-1 md:py-2 border-[3px] md:border-4 border-theme-blue bg-theme-bg text-theme-blue font-sans font-bold text-[10px] md:text-sm shadow-[3px_3px_0px_0px_#1b27b5] md:shadow-[4px_4px_0px_0px_#1b27b5] brut-hover brut-active hover:bg-theme-blue hover:text-white transition-colors cursor-pointer">
+                        {tool}
+                    </span>
+                ))}
+            </div>
                     </div>
                 );
             })}

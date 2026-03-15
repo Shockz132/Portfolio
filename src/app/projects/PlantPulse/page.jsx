@@ -29,7 +29,7 @@ export default function PlantPulsePage() {
         {/* Pattern Background */}
         <div className="absolute inset-0 pointer-events-none z-0 opacity-20 bg-[radial-gradient(var(--theme-yellow)_15%,transparent_15%)] bg-[size:40px_40px]" />
 
-        <div className="max-w-7xl mx-auto px-12 md:px-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-24 relative z-10">
 
           <ProjectHeader
             title="Plant"
@@ -99,11 +99,11 @@ export default function PlantPulsePage() {
 
           {/* Unique Videos Section */}
           <section id="videos" className="mb-32 scroll-mt-32">
-            <div className="flex items-center gap-6 mb-16">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
+            <div className="flex items-center gap-4 md:gap-6 mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-theme-blue">
                 Project Showcase
               </h2>
-              <div className="h-2 flex-1 bg-theme-blue"></div>
+              <div className="h-1.5 md:h-2 flex-1 bg-theme-blue"></div>
             </div>
 
             <div className="space-y-24">
@@ -112,12 +112,12 @@ export default function PlantPulsePage() {
                 initial={{ y: 32, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                className="relative bg-theme-cream border-[6px] border-theme-blue p-4 shadow-[24px_24px_0px_0px_var(--theme-yellow)]"
+                className="relative bg-theme-cream border-[4px] md:border-[6px] border-theme-blue p-2 md:p-4 shadow-[12px_12px_0px_0px_var(--theme-yellow)] md:shadow-[24px_24px_0px_0px_var(--theme-yellow)]"
               >
-                <div className="flex items-center gap-3 mb-4 font-mono font-bold text-sm uppercase">
+                <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 font-mono font-bold text-xs md:text-sm uppercase">
                   <FiVideo className="text-theme-orange" /> Website Walkthrough
                 </div>
-                <div className="aspect-video bg-neutral-900 border-4 border-theme-blue overflow-hidden shadow-inner">
+                <div className="aspect-video bg-neutral-900 border-2 md:border-4 border-theme-blue overflow-hidden shadow-inner">
                   <iframe
                     src="https://drive.google.com/file/d/1iuhmn8AHq0--gj3DnhPOO-IdYtrBgE7S/preview"
                     className="w-full h-full"
@@ -144,12 +144,12 @@ export default function PlantPulsePage() {
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
-                    className="bg-white border-4 border-theme-blue p-3 shadow-[8px_8px_0px_0px_#1b27b5] group hover:-translate-y-2 transition-transform"
+                    className="bg-white border-4 border-theme-blue p-2 md:p-3 shadow-[6px_6px_0px_0px_#1b27b5] md:shadow-[8px_8px_0px_0px_#1b27b5] group hover:-translate-y-2 transition-transform"
                   >
-                    <div className="aspect-[9/16] bg-neutral-900 border-2 border-theme-blue mb-3 overflow-hidden">
+                    <div className="aspect-[9/16] bg-neutral-900 border-2 border-theme-blue mb-2 md:mb-3 overflow-hidden">
                       <iframe src={`https://drive.google.com/file/d/${clip.id}/preview`} className="w-full h-full" loading="lazy"></iframe>
                     </div>
-                    <p className="font-mono font-black text-xs uppercase text-center text-theme-blue">{clip.label}</p>
+                    <p className="font-mono font-black text-[10px] md:text-xs uppercase text-center text-theme-blue">{clip.label}</p>
                   </motion.div>
                 ))}
               </div>
